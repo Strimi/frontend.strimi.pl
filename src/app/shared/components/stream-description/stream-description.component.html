@@ -1,0 +1,7 @@
+<div class="stream-single-content-description description-markdown" [innerHTML]="description | markdown  | sanitize "></div>
+<span class="stream-single-content-description-more" *ngIf="showButton">
+  <a (click)="showMoreLess()">
+    <span *ngIf="showButtonLess === true">{{ 'stream.hide'|translate }}</span>
+    <span *ngIf="showButtonLess !== true">{{ 'stream.show_more'|translate }}</span>
+  </a>
+</span>

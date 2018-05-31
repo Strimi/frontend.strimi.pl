@@ -1,0 +1,9 @@
+<span [class]="classReport">
+  <i class="fa fa-flag-o" aria-hidden="true"></i>
+</span>
+<span [class]="classRemove" (click)="deletePost()" *ngIf="showDelete">
+  <i class="fa fa-trash-o" aria-hidden="true"></i>
+</span>
+<span [class]="classEdit" (click)="editPost()" *ngIf="showEdit">
+  <i aria-hidden="true" class="fa fa-pencil"></i>
+</span>

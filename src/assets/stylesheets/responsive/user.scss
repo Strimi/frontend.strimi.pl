@@ -1,0 +1,210 @@
+@media (max-width: 575px) {
+  .user {
+    &-header {
+      .container {
+        position: relative;
+      }
+      &-avatar {
+        position: relative;
+        display: inline-block;
+        border: 2px solid $white;
+        width: 65px;
+        height: 65px;
+        margin-top: 10px;
+        &-reputation {
+          border: 2px solid $white;
+          width: 30px;
+          height: 30px;
+          right: -9px;
+          top: -1px;
+          line-height: 2.5rem;
+        }
+      }
+      &-meta {
+        position: absolute;
+        display: inline-block;
+        top: 41px;
+        left: 95px;
+        &-username,
+        &-created {
+          font-size: 2.3rem;
+          font-weight: 500;
+          color: $white;
+          text-shadow: 1px 1px 4px $black;
+          width: 100%;
+          display: inline-block;
+        }
+        &-created {
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin-top: 5px;
+          color: rgba($white, .9) !important;
+          a {
+            color: rgba($white, .9) !important;
+          }
+          .fa {
+            font-size: 1.3rem;
+            margin-right: 3px;
+          }
+        }
+      }
+      &-menu {
+        a {
+          &:first-child {
+            margin-left: 0;
+          }
+          &:nth-child(1),
+          &:nth-child(4),
+          &:nth-child(6),
+          &:nth-child(7) {
+            display: none;
+          }
+        }
+      }
+    }
+    &-new-content {
+      .mat-form-field {
+        height: auto;
+        min-height: 45px;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .user {
+    &-header {
+      .container {
+        position: relative;
+      }
+      &-avatar {
+        position: relative;
+        display: inline-block;
+        border: 2px solid $white;
+        width: 65px;
+        height: 65px;
+        margin-top: 10px;
+        &-reputation {
+          border: 2px solid $white;
+          width: 30px;
+          height: 30px;
+          right: -9px;
+          top: -1px;
+          line-height: 2.5rem;
+        }
+      }
+      &-meta {
+        position: absolute;
+        display: inline-block;
+        top: 41px;
+        left: 95px;
+        &-username,
+        &-created {
+          font-size: 2.3rem;
+          font-weight: 500;
+          color: $white;
+          text-shadow: 1px 1px 4px $black;
+          width: 100%;
+          display: inline-block;
+        }
+        &-created {
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin-top: 5px;
+          color: rgba($white, .9) !important;
+          a {
+            color: rgba($white, .9) !important;
+          }
+          .fa {
+            font-size: 1.3rem;
+            margin-right: 3px;
+          }
+        }
+      }
+      &-menu {
+        a {
+          &:first-child {
+            margin-left: 0;
+          }
+          &:nth-child(1),
+          &:nth-child(6),
+          &:nth-child(7) {
+            display: none;
+          }
+        }
+      }
+    }
+    &-new-content {
+      .mat-form-field {
+        height: auto;
+        min-height: 45px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .user {
+    &-header {
+      .container {
+        position: relative;
+      }
+      &-avatar {
+        position: relative;
+        display: inline-block;
+        border: 2px solid $white;
+        width: 65px;
+        height: 65px;
+        margin-top: 10px;
+        &-reputation {
+          border: 2px solid $white;
+          width: 30px;
+          height: 30px;
+          right: -9px;
+          top: -1px;
+          line-height: 2.5rem;
+        }
+      }
+      &-meta {
+        position: absolute;
+        display: inline-block;
+        top: 41px;
+        left: 95px;
+        &-username,
+        &-created {
+          font-size: 2.3rem;
+          font-weight: 500;
+          color: $white;
+          text-shadow: 1px 1px 4px $black;
+          width: 100%;
+          display: inline-block;
+        }
+        &-created {
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin-top: 5px;
+          color: rgba($white, .9) !important;
+          a {
+            color: rgba($white, .9) !important;
+          }
+          .fa {
+            font-size: 1.3rem;
+            margin-right: 3px;
+          }
+        }
+      }
+      &-menu {
+        a {
+          &:first-child {
+            margin-left: 0;
+          }
+          &:nth-child(1),
+          &:nth-child(6),
+          &:nth-child(7) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

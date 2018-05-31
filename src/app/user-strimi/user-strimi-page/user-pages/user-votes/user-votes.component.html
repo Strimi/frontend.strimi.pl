@@ -1,0 +1,42 @@
+<ng-container *ngIf="data">
+  <div class="user-votes">
+    <div class="user-votes-single" *ngFor="let vote of data">
+      <div class="votes-avatar" [ngStyle]="{'background-image':'url(https://cdn.steemitimages.com/u/'+ getAuthorName(vote) +'/avatar)'}"></div>
+      <div class="votes-content">
+        <div class="votes-content-name">
+          <a [title]="getAuthorName(vote)" [routerLink]="['/','@' + getAuthorName(vote)]">
+            @{{getAuthorName(vote)}}
+          </a>
+          <div class="votes-content-time">
+            <app-date [date]="vote.time"></app-date>
+          </div>
+        </div>
+        <div class="votes-content-description">
+          <span class="vote-plus" *ngIf="vote.percent/100 > 0">
+            {{ vote.percent/100 + '%' }}
+          </span>
+          <span class="vote-minus" *ngIf="vote.percent/100 < 0">
+            {{ vote.percent/100 + '%' }}
+          </span>
+          <a>
+            {{ getAuthorName(vote) + '/' + getPermLink(vote)}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <app-button-next (clickButton)="nextPosts()" *ngIf="showButton" [disabled]="disabledButton" [showSpinner]="showSpinnerButton" [message]="'no_content.default'"></app-button-next>
+  </div>
+</ng-container>
+
+<!-- Info no content to show -->
+<app-no-content-info *ngIf="showNoContent" [message]="'no_content.default'"></app-no-content-info>
+
+<!-- info about errors -->
+<app-error-info *ngIf="showError" [message]="'no_content.error'"></app-error-info>
+
+<!-- Spinner after request -->
+<div class="loading-content" *ngIf="showSpinner">
+  <app-spinner></app-spinner>
+</div>

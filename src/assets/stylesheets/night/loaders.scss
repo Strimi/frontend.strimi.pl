@@ -1,0 +1,10 @@
+body {
+  &.night {
+    .loading-content,
+    .no-content {
+      background-color: darken($NightFirst, 1%);
+      border: 1px solid $NightBorder;
+      color: lighten($purple, 30%);
+    }
+  }
+}

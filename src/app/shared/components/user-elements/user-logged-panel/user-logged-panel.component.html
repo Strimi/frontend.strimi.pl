@@ -1,0 +1,63 @@
+<div class="header-user">
+  <div ngbDropdown class="d-inline-block" placement="bottom-right">
+    <div class="header-user-avatar" id="dropdown-user"
+         [ngStyle]=" {'background-image': 'url(https://cdn.steemitimages.com/u/' + userName + '/avatar)' }"
+         placement="bottom" container="body" ngbTooltip="{{ 'user.profil_menu.your_profile'|translate }}"
+         ngbDropdownToggle></div>
+    <div ngbDropdownMenu aria-labelledby="dropdown-user">
+      <a [routerLink]="['/','@'+userName, 'feed']" class="dropdown-item">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+        {{ 'user.profil_menu.feed'|translate }}
+      </a>
+      <a [routerLink]="['/','@'+userName ]" class="dropdown-item">
+        <i class="fa fa-pencil-square" aria-hidden="true"></i>
+        {{ 'user.profil_menu.posts'|translate }}
+      </a>
+      <a [routerLink]="['/','@'+userName, 'comments']" class="dropdown-item">
+        <i class="fa fa-comment" aria-hidden="true"></i>
+        {{ 'user.profil_menu.comments'|translate }}
+      </a>
+      <a [routerLink]="['/','@'+userName, 'replies']" class="dropdown-item">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        {{ 'user.profil_menu.replies'|translate }}
+      </a>
+      <a [routerLink]="['/','@'+userName, 'votes']" class="dropdown-item">
+        <i aria-hidden="true" class="fa fa-thumbs-up"></i>
+        {{ 'user.profil_menu.votes'|translate }}
+      </a>
+      <a [routerLink]="['/','@'+userName, 'transfers']" class="dropdown-item">
+        <i class="fa fa-suitcase" aria-hidden="true"></i>
+        {{ 'user.profil_menu.wallet'|translate }}
+      </a>
+      <a [routerLink]="['/','@'+userName, 'settings']" class="dropdown-item">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        {{ 'user.profil_menu.settings'|translate }}
+      </a>
+      <a class="dropdown-item" (click)="authService.logOut()">
+        <i class="fa fa-power-off" aria-hidden="true"></i>
+        {{ 'user.profil_menu.logout'|translate }}
+      </a>
+    </div>
+  </div>
+  <div class="voting-power" placement="bottom" container="body"
+       ngbTooltip="{{ 'user.profil_menu.voting_power'|translate }} {{ votingPower }}%">
+    {{ votingPower }}%
+    <div class="count">
+      <i aria-hidden="true" class="fa fa-bolt"></i>
+    </div>
+  </div>
+  <div class="bandwidth" placement="bottom" container="body"
+       ngbTooltip="{{ 'user.profil_menu.bandwith'|translate }} {{ bandWith }}%">
+    {{ bandWith }}%
+    <div class="count">
+      <i aria-hidden="true" class="fa fa-thermometer-full"></i>
+    </div>
+  </div>
+  <app-user-notification-modal
+    [notifications]="notifications"
+    (next)="nextNotifications()"
+    [numNotifications]="numNotifications"
+    (click)="resetCounter()"
+  >
+  </app-user-notification-modal>
+</div>

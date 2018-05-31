@@ -1,0 +1,16 @@
+<div class="voting-slider">
+  <div class="voting-slider-count">
+    {{ 'user.vote_slider.name'|translate }} {{ value + '%' }}
+  </div>
+  <mat-slider [max]="max" [min]="min" [step]="step" [thumb-label]="thumbLabel" [tick-interval]="tickInterval" [vertical]="false"
+    [value]="startValue" (input)="value= $event.value">
+  </mat-slider>
+  <div class="voting-slider-buttons">
+    <button class="btn small btn-primary" (click)="close()">
+      {{ 'user.vote_slider.close'|translate }}
+    </button>
+    <button class="btn small btn-green" (click)="vote()">
+      {{ 'user.vote_slider.vote'|translate }}
+    </button>
+  </div>
+</div>

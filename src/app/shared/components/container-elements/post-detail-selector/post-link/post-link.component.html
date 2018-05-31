@@ -1,0 +1,34 @@
+<div class="container-wrapper details-link">
+  <div class="container-meta details">
+    <app-vote-post-small [post]="post"></app-vote-post-small>
+    <div class="meta-author-container">
+      <app-avatar-post [author]="post.author" [classStyle]="'meta-author-avatar'"></app-avatar-post>
+      <app-author-post [author]="post.author" [classRep]="'meta-author-reputation'" [classAuthor]="'meta-author'" [reputation]="post.author_reputation"></app-author-post>
+    </div>
+    <span class="d-xl-inline-block d-lg-none d-md-none d-sm-none d-none">
+      <app-tag-post [jsonMeta]="post.json_metadata"></app-tag-post>
+    </span>
+    <app-cash-post [post]="post" [classCash]="'meta-cash'"></app-cash-post>
+    <span class="d-xl-inline-block d-lg-inline-block d-md-inline-block d-sm-none d-none">
+      <app-date [date]=post.created [classDate]="'meta-time'"></app-date>
+    </span>
+    <app-report-post
+      [classReport]="'meta-flag'"
+      [classRemove]="'meta-remove'"
+      [classEdit]="'meta-edit'"
+      [showEdit]="showEdit"
+      (edit)="postToEdit.next(post)"
+      [showDelete]="showDelete"
+      (delete)="postToDelete.next(post)"></app-report-post>
+  </div>
+  <app-image-post [jsonMeta]="post.json_metadata"></app-image-post>
+  <h1 class="post-type-link">
+    <a [href]="metaStrimi.source" target="_blank" rel="nofallow" [innerHTML]="metaStrimi.title | sanitize"></a>
+  </h1>
+  <div class="description default post-type-link">
+    {{metaStrimi.body}}
+  </div>
+  <div class="container-tags post-link">
+    <app-tag-post-details [jsonMeta]="post.json_metadata"></app-tag-post-details>
+  </div>
+</div>

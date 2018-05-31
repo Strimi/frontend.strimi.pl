@@ -1,0 +1,37 @@
+<ng-container *ngIf="data && data.length>0">
+  <div class="follow-container">
+    <div class="row">
+      <div class="col-lg-6" *ngFor="let follow of data">
+        <div class="follow-content">
+          <div class="follow-content-header">
+            <app-avatar-post [author]="follow.following" [classStyle]="'avatar'"></app-avatar-post>
+            <div class="created">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <app-date [date]="follow.user?.created"></app-date>
+            </div>
+          </div>
+          <a class="follow-content-username" [routerLink]="['/','@'+ follow.following]">
+            @{{follow['following']}}
+          </a>
+          <span class="follow-content-username-reputation">
+            ({{follow.user?.reputation}})
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <app-button-next (clickButton)="nextPosts()" *ngIf="showButton" [disabled]="disabledButton" [showSpinner]="showSpinnerButton" [message]="'no_content.default'"></app-button-next>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Info no content to show -->
+<app-no-content-info *ngIf="showNoContent" [message]="'no_content.default'"></app-no-content-info>
+
+<!-- info about errors -->
+<app-error-info *ngIf="showError" [message]="'no_content.error'"></app-error-info>
+
+<!-- Spinner after request -->
+<div class="loading-content" *ngIf="showSpinner">
+  <app-spinner></app-spinner>
+</div>

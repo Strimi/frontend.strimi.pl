@@ -1,0 +1,7 @@
+<span class="meta-time" [class]="classDate">
+  <ng-container *ngIf="!simpleDate; else textDate">
+    <ng-template #tipContent>{{formattedTipDate}}</ng-template>
+    <a placement="top" container="body" [ngbTooltip]="tipContent">{{formattedDate}}</a>
+  </ng-container>
+  <ng-template #textDate>{{formattedDate}}</ng-template>
+</span>

@@ -1,0 +1,57 @@
+.voting-slider {
+  display: inline-block;
+  width: 170px;
+  &-count {
+    font-size: 1.4rem;
+    color: $purple;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+  }
+  &-buttons {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    .small {
+      letter-spacing: normal;
+      font-weight: 600;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+    }
+    .btn-primary {
+      @extend .trans;
+      font-weight: 400;
+      opacity: .5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .btn-green {}
+  }
+  .mat-slider-horizontal {
+    width: 100%;
+  }
+  .mat-slider-track-background {
+    @include border-radius(5px);
+    background-color: lighten($purple, 10%); // Line bg
+  }
+  .mat-slider-horizontal .mat-slider-track-fill,
+  .mat-slider-horizontal .mat-slider-track-wrapper,
+  .mat-slider-horizontal .mat-slider-track-background {
+    height: 4px;
+  }
+  .mat-accent .mat-slider-thumb-label,
+  .mat-accent .mat-slider-thumb {
+    background-color: $green; // Circle
+  }
+  .mat-accent .mat-slider-thumb {
+    top: -9px;
+  }
+  .mat-accent .mat-slider-track-fill {
+    @include border-radius(5px);
+    background-color: $green; // Line
+  }
+}

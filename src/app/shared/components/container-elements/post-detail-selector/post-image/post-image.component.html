@@ -1,0 +1,46 @@
+<div class="container-wrapper details-image">
+  <div class="container-meta details">
+    <app-vote-post-small [post]="post"></app-vote-post-small>
+    <div class="meta-author-container">
+      <app-avatar-post [author]="post.author" [classStyle]="'meta-author-avatar'"></app-avatar-post>
+      <app-author-post [author]="post.author" [reputation]="post.author_reputation" [classAuthor]="'meta-author'" [classRep]="'meta-author-reputation'"></app-author-post>
+    </div>
+
+    <span class="d-xl-inline-block d-lg-none d-md-none d-sm-none d-none">
+      <app-tag-post [jsonMeta]="post.json_metadata"></app-tag-post>
+    </span>
+
+    <app-cash-post [post]="post" [classCash]="'meta-cash'"></app-cash-post>
+
+    <span class="d-xl-inline-block d-lg-inline-block d-md-inline-block d-sm-none d-none">
+      <app-date [date]=post.created [classDate]="'meta-time'"></app-date>
+    </span>
+    <app-report-post
+      [classReport]="'meta-flag'"
+      [classRemove]="'meta-remove'"
+      [classEdit]="'meta-edit'"
+      [showEdit]="showEdit"
+      (edit)="postToEdit.next(post)"
+      [showDelete]="showDelete"
+      (delete)="postToDelete.next(post)"></app-report-post>
+  </div>
+  <h1 class="details-video" [innerHTML]="metaStrimi.title | sanitize"></h1>
+  <div class="description default">
+    {{metaStrimi.body}}
+  </div>
+  <div class="image">
+    <a [href]="metaStrimi.source" target="_blank" rel="nofollow">
+      <img [src]="metaStrimi.source">
+    </a>
+  </div>
+  <div class="image-source">
+    {{'post-details.source' | translate}}:
+    <a [href]="metaStrimi.source" target="_blank" rel="nofollow">{{metaStrimi.domain}}</a>
+    <span class="size">
+      {{metaStrimi.type.width}}x{{metaStrimi.type.height}}{{'px'}}
+    </span>
+  </div>
+  <div class="container-tags post-video">
+    <app-tag-post-details [jsonMeta]="post.json_metadata"></app-tag-post-details>
+  </div>
+</div>

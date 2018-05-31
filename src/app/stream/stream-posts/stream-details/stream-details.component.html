@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xl-9 col-lg-8 col-md-12">
+    <div class="stream">
+      <div class="stream-container" *ngIf="!showSpinner">
+        <div class="stream-single details" *ngIf="post">
+          <app-avatar-post [author]="post.author" [classStyle]="'stream-single-avatar'"></app-avatar-post>
+          <div class="stream-single-content">
+            <div class="stream-single-content-author">
+              <app-author-post [author]="post.author" [reputation]="post.author_reputation"
+                               [classAuthor]="'stream-single-content-author-username'"
+                               [classRep]="'stream-single-content-author-reputation'"></app-author-post>
+              <app-date [routerLink]="['detail', '@' + post.author, post.permlink]" [date]=post.created
+                        [classDate]="'stream-single-content-author-time'"></app-date>
+              <app-report-post
+                [classReport]="'stream-single-content-author-flag'"
+                [showEdit]="canEdit()"
+                (edit)="onEditPost()"
+                (delete)="onDeletePost()"
+                [showDelete]="canDelete()"
+              ></app-report-post>
+            </div>
+            <div *ngIf="!isEdit" class="stream-single-content-description description-markdown"
+                 [innerHTML]="post.body | markdown | sanitize: post.json_metadata"
+                 san></div>
+
+            <app-add-content-post
+              *ngIf="isEdit"
+              [editPost]="post"
+              [showCancel]="true"
+              (isCancel)="onCancel()"
+              (editedMessage)="onEditComment($event)"
+              [showSpinner]="showSpinnerUpdate"
+              [showError]="showError"></app-add-content-post>
+
+            <div class="stream-single-content-meta">
+              <app-vote-post-thumb [post]="post"></app-vote-post-thumb>
+              <app-cash-post [post]="post" [classCash]="'stream-single-content-meta-cash'"></app-cash-post>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Spinner after request -->
+      <div class="loading-content" *ngIf="showSpinner">
+        <app-spinner></app-spinner>
+      </div>
+    </div>
+    <app-container-comments [post]="post"></app-container-comments>
+  </div>
+
+  <div class="col-xl-3 col-lg-4 d-xl-block d-lg-block d-none">
+    <app-user-profile [user]="author"></app-user-profile>
+  </div>
+
+</div>

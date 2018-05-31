@@ -1,0 +1,362 @@
+.description-markdown {
+  color: $black;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 1.6rem !important;
+  line-height: 3.0rem !important;
+  font-weight: 400;
+  &:hover {
+    cursor: default;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: 2.6rem !important;
+    margin: 2.5rem 0 .3rem;
+    width: 100%;
+  }
+  a {
+    color: $green;
+    text-decoration: none;
+    &:hover {
+      @extend .trans;
+      color: $green2;
+      text-decoration: none;
+    }
+  }
+  p {
+    margin: 0 0 1.5rem;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  code {
+    @include border-radius(3px);
+    background-color: lighten($text87, 5%);
+    padding: 3px 6px;
+    color: $purple;
+  }
+  sub,
+  sup {
+    font-size: 1.4rem;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  } // ul {
+  //   li {
+  //     list-style-type: disc !important;
+  //     list-style-position: inside !important;
+  //   }
+  // }
+  center {
+    text-align: center;
+  }
+  strong,
+  b {
+    font-weight: 500;
+  }
+  blockquote {
+    border-left: 3px solid lighten($purple, 30%);
+    color: lighten($purple, 30%);
+    padding-left: 15px;
+  }
+  img {
+    @include border-radius(3px);
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  } // hr {}
+  div {
+    .pull-right {
+      float: right;
+      padding-left: 1rem;
+      max-width: 50%;
+    }
+    .pull-left {
+      float: left;
+      padding-right: 1rem;
+      max-width: 50%;
+    }
+    .text-justify {
+      text-align: justify;
+    }
+    .text-right {
+      text-align: right;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .text-rtl {
+      direction: rtl;
+    }
+  } // Table
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+  }
+  thead,
+  tbody,
+  tfoot {
+    border: 1px solid #f1f1f1;
+    background-color: #fefefe;
+  }
+  caption {
+    padding: 0.5rem 0.625rem 0.625rem;
+    font-weight: bold;
+  }
+  thead {
+    background: #f8f8f8;
+    color: #333333;
+  }
+  tfoot {
+    background: #f1f1f1;
+    color: #333333;
+  }
+  thead tr,
+  tfoot tr {
+    background: transparent;
+  }
+  thead th,
+  thead td,
+  tfoot th,
+  tfoot td {
+    padding: 0.5rem 0.625rem 0.625rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  tbody th,
+  tbody td {
+    padding: 0.5rem 0.625rem 0.625rem;
+  }
+  tbody tr:nth-child(even) {
+    border-bottom: 0;
+    background-color: #f1f1f1;
+  }
+  table.unstriped tbody {
+    background-color: #fefefe;
+  }
+  table.unstriped tbody tr {
+    border-bottom: 0;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #fefefe;
+  }
+  @media screen and (max-width: 63.9375em) {
+    table.stack thead {
+      display: none;
+    }
+    table.stack tfoot {
+      display: none;
+    }
+    table.stack tr,
+    table.stack th,
+    table.stack td {
+      display: block;
+    }
+    table.stack td {
+      border-top: 0;
+    }
+  }
+  table.scroll {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  table.hover thead tr:hover {
+    background-color: #f3f3f3;
+  }
+  table.hover tfoot tr:hover {
+    background-color: #ececec;
+  }
+  table.hover tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  table.hover:not(.unstriped) tr:nth-of-type(even):hover {
+    background-color: #ececec;
+  } // tutaj
+}
+
+.description-comments-markdown {
+  @extend .description-markdown;
+  font-size: 1.4rem !important;
+  line-height: 2.2rem !important;
+  ul, ol {
+    margin-top: 0 !important;
+    li {
+      list-style-type: disc !important;
+      list-style-position: inside !important;
+      margin-bottom: 5px !important;
+    }
+  }
+}
+
+.description-markdown2 {
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: $purple;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  margin: 4px 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700
+  }
+  h1 {
+    font-size: 160% !important;
+  }
+  h1,
+  h2 {
+    margin: 2.5rem 0 .3rem;
+  }
+  h2 {
+    font-size: 140% !important;
+  }
+  h3 {
+    margin: 2rem 0 .3rem;
+    font-size: 120% !important;
+  }
+  h4 {
+    margin: 1.5rem 0 .2rem;
+    font-size: 110% !important;
+  }
+  h5 {
+    font-size: 100% !important;
+  }
+  h5,
+  h6 {
+    margin: 1rem 0 .2rem
+  }
+  h6 {
+    font-size: 90% !important;
+  }
+  a {
+    color: $green;
+    text-decoration: none;
+    &:hover {
+      @extend .trans;
+      color: $green2;
+      text-decoration: none;
+    }
+  }
+  p {
+    font-size: 1.8rem !important;
+    ;
+    line-height: 150%;
+    &:not(:last-child) {
+      margin: 0 0 .5rem
+    }
+  }
+  ol {
+    list-style-type: decimal
+  }
+  ul {
+    list-style-type: disc
+  }
+  ol,
+  ul {
+    margin-left: 20px
+  }
+  ol li,
+  ul li {
+    list-style-position: outside;
+    margin: 8px 0
+  }
+  blockquote {
+    border-left: 3px solid lighten($purple, 30%);
+    color: lighten($purple, 30%);
+    padding-left: 15px;
+  }
+  &:not(pre)>code {
+    padding: 2px 4px;
+    color: #303030;
+    background-color: #f2f2f2
+  }
+  pre {
+    @include border-radius(3px);
+    background-color: lighten($text87, 5%);
+    color: $purple;
+    overflow: auto;
+    padding: 10px 20px;
+    margin-bottom: 14px;
+    line-height: 1em;
+    code {
+      font-size: 1.6rem;
+    }
+  }
+  table {
+    width: 100%;
+    display: block;
+    overflow: auto;
+    tr>th {
+      text-align: left;
+      background-color: #f2f2f2;
+    }
+    td,
+    tr>th {
+      padding: 4px 12px;
+      word-wrap: break-word;
+      vertical-align: middle;
+      word-break: normal
+    }
+    tr:nth-child(2n) td {
+      background-color: #f2f2f2
+    }
+    div {
+      &.pull-left {
+        float: left;
+        padding-right: 1rem;
+        max-width: 50%
+      }
+      &.pull-right {
+        float: right;
+        padding-left: 1rem;
+        max-width: 50%
+      }
+      &.text-justify {
+        text-align: justify
+      }
+      &.text-right {
+        text-align: right
+      }
+      &.text-center {
+        text-align: center
+      }
+      &.text-rtl {
+        direction: rtl
+      }
+    }
+  }
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 20px
+  }
+  p>img:first-child {
+    margin-top: 0
+  }
+  hr {
+    clear: both;
+    margin: 20px auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #e9e7e7
+  }
+}

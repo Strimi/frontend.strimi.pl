@@ -1,0 +1,28 @@
+<div class="container-vote-small" [ngClass]="{'app-user': loggedData, 'voted': postResult.isVoted}">
+  <div class="vote-name" *ngIf="loggedData && !canSelfVote" (click)="voteDirect()">
+    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+  </div>
+  <div class="vote-name" *ngIf="loggedData && canSelfVote" [ngbPopover]="popContent" placement="top" #p="ngbPopover" [disablePopover]="!loggedData">
+    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+    <ng-template #popContent>
+      <app-vote-slider [popover]="p" (eventValue)="voteSlider($event)"></app-vote-slider>
+    </ng-template>
+  </div>
+  <div class="vote-name" *ngIf="!loggedData">
+    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+  </div>
+  <div class="vote-count" *ngIf="!showSpinner">
+    <!-- Wher is post there is 'upvotes' prop in comment 'net_votes' -->
+    <app-voters-list *ngIf="postResult" [post]="postResult" [votes]="postResult.upvotes ? postResult.upvotes : postResult.net_votes"></app-voters-list>
+
+  </div>
+  <div class="vote-count" *ngIf="showSpinner">
+    <app-spinner></app-spinner>
+  </div>
+
+
+  <div *ngIf="errorVote">
+    <i class="fa fa-exclamation" aria-hidden="true"></i>
+  </div>
+
+</div>

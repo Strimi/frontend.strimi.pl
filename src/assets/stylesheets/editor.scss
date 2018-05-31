@@ -1,0 +1,16 @@
+.editor-preview {
+    @extend .description-markdown;
+}
+.editor-toolbar {
+    padding: 0 2px !important;
+    &:before {
+        margin-bottom: 2px !important;
+    }
+    &:after {
+        margin-top: 2px !important; 
+    }
+
+    a {
+        font-size: 1.4rem !important; 
+    }
+}

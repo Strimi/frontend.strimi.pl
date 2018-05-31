@@ -1,0 +1,22 @@
+<div class="sidebar tags-lists hidden-sm hidden-xs">
+  <div class="sidebar-title">
+    {{ 'sidebar.exchange_cantor.name'|translate }}
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-content-exchange-cantor">
+      <ul>
+        <li *ngFor="let price of rates">
+          <span class="name">
+            {{ price.name }}
+          </span>
+          <span class="price">
+            {{ price.price | number:'1.2-8'}}
+          </span>
+        </li>
+      </ul>
+      <div class="information">
+        {{ 'sidebar.exchange_cantor.information'|translate }}
+      </div>
+    </div>
+  </div>
+</div>

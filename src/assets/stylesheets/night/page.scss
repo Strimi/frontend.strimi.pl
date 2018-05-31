@@ -1,0 +1,78 @@
+body {
+  &.night {
+    .page {
+      background-color: $NightPostBackground;
+      box-shadow: transparent;
+      border: 1px solid $NightPostBorder;
+      &-title {
+        color: lighten($purple, 30%);
+        border-bottom: 1px solid darken($NightMeta, 10%);
+        &.small-title {
+          span {
+            color: $text54;
+          }
+        }
+      }
+      &-content {
+        color: lighten($purple, 45%);
+        &-search {
+          input {
+            border-color: $NightBorderInput;
+            background-color: $NightFirst;
+            &:focus {
+              border-color: $NightBorderInput;
+              box-shadow: none;
+            }
+          }
+          .form-control {
+            &:focus {
+              color: lighten($purple, 35%);
+            }
+          }
+        }
+        &-table {
+          .mat-table {
+            background-color: transparent;
+            border: 1px solid $NightBorderInput;
+            .mat-header-row {
+              background-color: $NightFirst;
+              border-bottom-color: $NightBorderInput;
+              .mat-header-cell {
+                color: lighten($purple, 30%);
+              }
+            }
+            .mat-row {
+              border-bottom-color: $NightBorderInput;
+              .mat-cell {
+                color: lighten($purple, 45%);
+                .username {
+                  .reputation {
+                    color: $green;
+                  }
+                }
+                a {
+                  color: $green;
+                  &:hover {
+                    color: $green;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .page-404 {
+      color: lighten($purple, 45%);
+      .info-links {
+        .or {
+          background-color: $NightBorder;
+          span {
+            background-color: $NightBodyBackground;
+            color: lighten($purple, 45%);
+          }
+        }
+      }
+    }
+  }
+}

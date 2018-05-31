@@ -1,0 +1,19 @@
+<div class="container-sorting">
+  <div class="row">
+      <!-- col-md-8 col-sm-9 col-7 -->
+      <div class="col-xl-6 col-lg-6 col-md-6">
+      <div class="container-sorting-order">
+        <a [ngClass]="{'active' : sortModel.selectedOrder === sort.value}" *ngFor="let sort of orderSort" (click)="onOrderSort(sort.value)">
+          {{ sort.label | translate }}
+        </a>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 d-xl-block d-lg-block d-md-block d-none">
+      <div class="container-sorting-time">
+        <a [ngClass]="{'active' : sortModel.selectedTime === time.value}" *ngFor="let time of timeSort" (click)="onTimeSort(time.value)">
+          {{ time.label }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

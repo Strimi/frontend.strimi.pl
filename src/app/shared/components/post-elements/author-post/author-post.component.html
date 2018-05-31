@@ -1,0 +1,6 @@
+<a [class]="classAuthor" [title]="author" [routerLink]="['/','@'+author]">
+  {{ author }}
+</a>
+<span *ngIf="rep" [class]="classRep">
+  ({{ rep }})
+</span>

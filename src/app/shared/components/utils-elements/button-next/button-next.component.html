@@ -1,0 +1,14 @@
+<div *ngIf="showSpinner" class="btn large btn-primary spinner">
+  <app-spinner></app-spinner>
+</div>
+
+<button *ngIf="!showSpinner && !disabled" class="btn large btn-primary" (click)="next()" [disabled]="disabled">
+  {{ 'pagination.next'|translate }}
+</button>
+
+<!-- <app-spinner *ngIf="showSpinner"></app-spinner> -->
+<span *ngIf="disabled">
+  <div class="no-content posts">
+    {{ message|translate }}
+  </div>
+</span>

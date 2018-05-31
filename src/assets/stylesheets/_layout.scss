@@ -1,0 +1,561 @@
+html,
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  font-size: 62.5%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $body;
+  font-family: $fontRoboto;
+  font-size: 1.4rem; //14px
+  line-height: 1.6rem; //16px
+  //margin-bottom: $footerHeight;
+  &.sticky {
+    margin-bottom: $bodySticky;
+  }
+  .wrapper {
+    padding-top: $wrapperMargin;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    &.blur {
+      -webkit-filter: blur(10px);
+      -moz-filter: blur(10px);
+      -ms-filter: blur(10px);
+      -o-filter: blur(10px);
+      filter: blur(10px);
+    }
+  }
+}
+
+.container {
+  max-width: 1220px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: $headerHeight;
+  background-color: $purple; // box-shadow: 0 2px 4px 0 lighten($black, 75%);
+  // border-bottom: 1px solid lighten($black, 75%);
+  // box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  // box-shadow: 0 3px 5px -1px lighten($black, 98%), 0 6px 10px 0 lighten($black, 86%), 0 1px 18px 0 lighten($black, 88%);
+  box-shadow: 0 3px 5px -1px rgba($black, .2), 0 6px 10px 0 rgba($black, .14), 0 1px 18px 0 rgba($black, .12);
+  z-index: 3;
+  .mobile-global-menu {
+    display: none;
+    @include border-radius(3px);
+    background-color: darken($purple, 5%);
+    color: lighten($purple, 30%);
+    position: relative;
+    font-size: 2.8rem;
+    float: left;
+    width: 39px;
+    height: 35px;
+    text-align: center;
+    margin-top: 11px;
+    line-height: 3.4rem;
+    margin-right: 25px;
+  }
+  .logo {
+    position: relative;
+    display: inline-block;
+    font-family: 'Baloo Bhaina', cursive;
+    color: $white;
+    font-size: 2.8rem; //line-height: 2.5rem;
+    text-transform: lowercase;
+    text-decoration: none;
+    padding-right: 35px;
+    padding-top: 22px;
+    float: left;
+    &:after {
+      content: 'beta';
+      position: absolute;
+      font-family: $fontRoboto;
+      font-size: 1rem;
+      font-weight: 400;
+      color: lighten($purple, 45%);
+      top: 35px;
+      left: 55px;
+    }
+    &:hover {
+      @extend .trans;
+      color: lighten($purple, 45%);
+      text-decoration: none;
+    }
+  }
+  .header-content {
+    position: relative;
+    display: inline-block;
+    max-height: 35px;
+    margin-top: 12px;
+    float: right;
+    .posts,
+    .links {
+      position: relative;
+      background-color: darken($purple, 5%);
+      border: 2px solid $green; // color: $green;
+      color: lighten($purple, 30%);
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      margin-right: 10px;
+      float: right;
+      .fa {
+        position: absolute;
+        font-size: 1.7rem;
+        &.fa-link {
+          top: 6px;
+          left: 7px;
+        }
+        &.fa-pencil {
+          top: 6px;
+          left: 8px;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        @extend .trans;
+        color: $white;
+      }
+    }
+    .posts {
+      margin-right: 0;
+    }
+  }
+  .header-user {
+    float: right;
+    display: inline-block;
+    max-height: 35px;
+    margin-top: 12px;
+    .dropdown {
+      float: right;
+      .dropdown-menu {
+        @include border-radius(5px);
+        .dropdown-item {
+          padding: 8px 20px;
+          color: $purple;
+          font-weight: 500;
+          &:hover {
+            background-color: lighten($purple, 55%);
+            color: $green;
+          }
+          .fa {
+            min-width: 22px;
+          }
+        }
+      }
+    }
+    .bandwidth,
+    .voting-power,
+    .notification,
+    .hashtag {
+      background-color: darken($purple, 5%);
+      position: relative;
+      display: inline-block;
+      line-height: 3.1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      margin-right: 10px;
+      float: right;
+    }
+    .bandwidth {
+      border: 2px solid transparentize($headerBandwith, .5);
+      color: $headerBandwith;
+    }
+    .voting-power {
+      border: 2px solid transparentize($headerVotingPower, .5);
+      color: $headerVotingPower;
+    }
+    .notification,
+    .hashtag {
+      position: relative;
+      font-size: 1.7rem;
+      line-height: 3.3rem;
+      color: lighten($purple, 30%);
+      &:hover {
+        cursor: pointer;
+        @extend .trans;
+        color: lighten($purple, 40%);
+      }
+    }
+    .bandwidth,
+    .voting-power,
+    .notification,
+    .hashtag {
+      .count {
+        position: absolute; // background-color: #ffe484;
+        border-radius: 50%;
+        display: block;
+        width: 18px;
+        height: 18px;
+        font-size: 1.0rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+        top: -5px;
+        right: -5px;
+      }
+    }
+    .notification,
+    .hashtag {
+      .count {
+        background-color: $red;
+        color: $white;
+      }
+    }
+    .voting-power,
+    .bandwidth {
+      cursor: help;
+      .count {
+        width: 15px;
+        height: 15px;
+        line-height: 1.6rem;
+      }
+    }
+    .voting-power {
+      .count {
+        background-color: $headerVotingPower;
+        color: $white;
+      }
+    }
+    .bandwidth {
+      .count {
+        background-color: $headerBandwith;
+        color: $white;
+      }
+    }
+    .header-user-avatar {
+      @include border-radius(5px);
+      background-color: darken($purple, 5%);
+      background-position: center center;
+      background-size: cover;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: inline-block;
+      opacity: 1;
+      &:after {
+        display: none;
+      }
+      &:hover {
+        cursor: pointer;
+        @extend .trans;
+        opacity: .9;
+      }
+    }
+  }
+}
+
+.header-menu {
+  width: 100%;
+  position: absolute;
+  padding-top: $headerMenuMargin;
+  background-color: lighten($purple, 5%);
+  box-shadow: 0 3px 5px -1px rgba($black, .2), 0 6px 10px 0 rgba($black, .14), 0 1px 18px 0 rgba($black, .12);
+  z-index: 1;
+  .tags {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    text-transform: lowercase;
+    ul {
+      display: inline-block;
+      margin-bottom: 0;
+      padding-left: 0;
+      li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 15px;
+        color: lighten($purple, 45%);
+        font-size: 1.4rem;
+        font-weight: 500;
+        a {
+          color: lighten($purple, 45%);
+          &.active,
+          &:hover {
+            @extend .trans;
+            color: $green2;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.welcome-banner {
+  position: absolute;
+  background-color: #008b5d;
+  background-image: url('/assets/images/welcome_bg.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  border-top: 1px solid darken($purple, 5%);
+  height: 250px;
+  width: 100%;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+  &-close {
+    position: absolute;
+    font-size: 2.8rem;
+    top: 15px;
+    right: 20px;
+    color: $white;
+    opacity: .5;
+    &:hover {
+      @extend .trans;
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+  &-title {
+    color: $white;
+    font-size: 5.8rem;
+    line-height: 3.6rem;
+    font-weight: 100;
+    margin-top: 50px;
+    width: 100%;
+    display: inline-block;
+  }
+  &-description {
+    font-size: 2.2rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+    color: $white;
+    margin-top: 30px;
+    width: 100%;
+    display: inline-block;
+  }
+  &-button {
+    width: 100%;
+    display: inline-block;
+    margin-top: 40px;
+    .btn-primary,
+    .btn-white {
+      letter-spacing: 0 !important;
+      font-weight: 500 !important;
+    }
+    .btn-primary {
+      box-shadow: 0 3px 5px -1px rgba($black, .2), 0 6px 10px 0 rgba($black, .14), 0 1px 18px 0 rgba($black, .12);
+      color: lighten($purple, 45%) !important;
+      border: 2px solid $white;
+      background-color: lighten($purple, 5%);
+      &:focus,
+      &:hover {
+        @extend .trans;
+        background-color: $purple;
+        box-shadow: 0 3px 5px -1px rgba($black, .2), 0 6px 10px 0 rgba($black, .14), 0 1px 18px 0 rgba($black, .12);
+        border-color: $white;
+      }
+    }
+    .btn-white {
+      box-shadow: transparent;
+      border: 2px solid transparent;
+      margin-left: 25px;
+      &:focus,
+      &:hover {
+        @extend .trans;
+        box-shadow: 0 3px 5px -1px rgba($black, .2), 0 6px 10px 0 rgba($black, .14), 0 1px 18px 0 rgba($black, .12);
+        border: 2px solid transparent;
+      }
+    }
+  }
+}
+
+.welcome-banner-padding {
+  padding-top: 245px;
+}
+
+.cookies-message {
+  position: fixed;
+  background-color: $cookiesBackground;
+  border-top: 1px solid $white;
+  box-shadow: $shadow;
+  color: $black;
+  width: 100%;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  bottom: 0;
+  z-index: 1;
+  text-align: center;
+  a {
+    color: $black;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    &:hover {
+      @extend .trans;
+      cursor: pointer;
+      color: lighten($black, 25%);
+      text-decoration: none;
+    }
+  }
+  span {
+    @include border-radius(3px);
+    background-color: $black;
+    display: inline-block;
+    color: lighten($purple, 45%);
+    padding: 6px 12px;
+    margin-left: 15px;
+    &:hover {
+      @extend .trans;
+      cursor: pointer;
+      color: $white;
+    }
+  }
+}
+
+footer {
+  //position: absolute; // background-color: $green;
+  background-color: $purple3;
+  color: lighten($purple, 45%);
+  width: 100%;
+  height: $footerHeight;
+  bottom: 0;
+  border-top: 1px solid $border;
+  padding-top: 35px;
+  padding-bottom: 25px;
+  margin-top: 25px;
+  &.sticky1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footerHeight;
+  }
+  .copyrights {
+    font-weight: 500;
+    span {
+      color: $green2;
+      margin-right: 8px;
+      &.version {
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+  }
+  .copyrights-info {
+    font-weight: 300;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: lighten($purple, 45%);
+    a {
+      color: lighten($purple, 45%);
+      text-decoration: none;
+      &:hover {
+        @extend .trans;
+        text-decoration: underline;
+      }
+    }
+  }
+  .copyrights-short-info {
+    margin-top: 15px;
+    font-weight: 300;
+    display: inline-block;
+    line-height: 20px;
+    span {
+      font-weight: 400;
+    }
+  }
+  .language {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    font-weight: 400;
+    color: lighten($purple, 45%);
+    span {
+      position: relative;
+      margin-left: 10px;
+      padding-left: 10px;
+      &.active,
+      &:hover {
+        @extend .trans;
+        color: $green2;
+        cursor: pointer;
+      }
+      &:first-child {
+        margin-left: 0;
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+      &:before {
+        position: absolute;
+        content: "•";
+        color: lighten($purple, 45%);
+        font-size: 1.5rem;
+        display: block;
+        left: -5px;
+        top: 0;
+      }
+    }
+  }
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    li {
+      position: relative;
+      list-style: none;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      font-weight: 400;
+      padding-left: 15px;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:before {
+        position: absolute;
+        content: "•";
+        color: lighten($purple, 45%);
+        display: block;
+        left: 0;
+        top: 0;
+        font-size: 2.2rem;
+      }
+      &.name {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 25px;
+        padding-left: 0;
+        color: $green2;
+        &:before {
+          content: "";
+        }
+      }
+      a {
+        color: lighten($purple, 45%);
+        text-decoration: none;
+        &:hover {
+          @extend .trans;
+          color: $green2;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

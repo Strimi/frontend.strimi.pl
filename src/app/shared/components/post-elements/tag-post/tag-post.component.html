@@ -1,0 +1,25 @@
+<span class="meta-to">
+  {{ 'post.meta.to' | translate }}
+  <a [routerLink]="['/trending',tag]">
+    #{{ tag }}
+  </a>
+</span>
+
+<ng-container *ngIf="strimiDomain">
+  <span class="meta-from">
+    {{ 'post.meta.from' | translate }}
+    <a class="meta-domain" [href]="urlSource" target="_blank" rel="nofollow">
+      {{ strimiDomain }}
+    </a>
+  </span>
+</ng-container>
+
+
+<ng-container *ngIf="otherDomain">
+  <span class="meta-from">
+    {{ 'post.meta.from' | translate }}
+    <span class="meta-domain">
+      {{ otherDomain }}
+    </span>
+  </span>
+</ng-container>

@@ -1,0 +1,47 @@
+@media (max-width: 575px) {
+  .stream {
+    &-container {
+      .stream-single {
+        &-content {
+          &-description {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .stream {
+    &-container {
+      .stream-single {
+        &-content {
+          &-description {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .stream {
+    &-container {
+      .stream-single {
+        &-content {
+          &-description {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

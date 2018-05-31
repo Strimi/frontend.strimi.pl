@@ -1,0 +1,36 @@
+<ng-template #content>
+  <div class="modal-header">
+    <h4 class="modal-title">
+      {{ 'user.notifications.name'|translate }}
+      <span *ngIf="numNotifications > 0">{{ numNotifications }}</span>
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="notification-container" *ngFor="let n of notifications">
+      <div [ngSwitch]="n.code" (click)="close()">
+        <app-notification-voted-post *ngSwitchCase="2" [notification]="n"></app-notification-voted-post>
+        <app-notification-followed *ngSwitchCase="4" [notification]="n"></app-notification-followed>
+        <app-notification-commented *ngSwitchCase="6" [notification]="n"></app-notification-commented>
+        <app-notification-tagged-comment *ngSwitchCase="8" [notification]="n"></app-notification-tagged-comment>
+        <app-notification-tagged-post *ngSwitchCase="9" [notification]="n"></app-notification-tagged-post>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a (click)="onNext()">
+      {{ 'user.notifications.see-all'|translate }}
+    </a>
+
+    <a href="#" class="all-read">
+      {{ 'user.notifications.read-all'|translate }}
+    </a>
+  </div>
+</ng-template>
+
+<div (click)="open(content)" class="notification" placement="bottom" container="body" ngbTooltip="{{ 'user.profil_menu.notification'|translate }}{{ numNotifications }}">
+  <i class="fa fa-bell" aria-hidden="true"></i>
+  <div class="count" *ngIf="numNotifications > 0">{{numNotifications}}</div>
+</div>

@@ -1,0 +1,50 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-8">
+        <app-modal-menu></app-modal-menu>
+        <a routerLink="/" class="logo" title="{{ 'Srimi' }}">
+          {{ 'header.top_menu.logo'|translate }}
+        </a>
+        <span class="d-xl-block d-lg-block d-none">
+          <a routerLink="/created" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-header-menu">
+            {{ 'header.top_menu.created'|translate }}
+            <span class="count">{{postSrvice.getNumberCreatedPosts() | async | number}}</span>
+          </a>
+          <!-- <a routerLink="/hot" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-header-menu">
+            {{ 'header.top_menu.hot'|translate }}
+          </a> -->
+          <a routerLink="/stream" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-header-menu">
+            {{ 'header.top_menu.stream' | translate }}
+          </a>
+        </span>
+      </div>
+
+      <!-- <div *ngIf="!isLogged" class="col-xl-6 col-lg-6 d-xl-block d-lg-block"> -->
+      <div *ngIf="!isLogged" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-4">
+        <app-login-modal></app-login-modal>
+      </div>
+
+      <div *ngIf="isLogged" class="col-xl-3 col-lg-3 d-xl-block d-lg-block d-none">
+        <app-user-add-content></app-user-add-content>
+      </div>
+      <div *ngIf="isLogged" class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-4">
+        <app-user-logged-panel></app-user-logged-panel>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="cookies-message" *ngIf="localStorage.showCookies()">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        {{ 'cookies.text'|translate }}
+        <a routerLink="pages/privacy-policy">
+          {{ 'cookies.privacy'|translate }}.
+        </a>
+        <span (click)="agree()">{{ 'cookies.agree'|translate }}</span>
+      </div>
+    </div>
+  </div>
+</div>

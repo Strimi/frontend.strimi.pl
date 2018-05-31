@@ -1,0 +1,20 @@
+body {
+  &.night {
+    .tag {
+      &-header {
+        background-color: $NightFirst;
+        border-top: 1px solid transparent;
+        a {
+          color: lighten($purple, 25%);
+          &:hover,
+          &.active {
+            color: $green2;
+          }
+          .count {
+            color: $purple;
+          }
+        }
+      }
+    }
+  }
+}

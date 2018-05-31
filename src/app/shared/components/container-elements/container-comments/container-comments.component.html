@@ -1,0 +1,50 @@
+<div class="comments">
+  <div class="comments-header" *ngIf="(data && !showSpinner)">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="comments-header-name">
+          {{ 'post.comments.title'|translate }}
+          <span class="count">{{ countComments }}</span>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="comments-header-sorting">
+          <span [ngClass]="{'active':selected === const.SORT_BEST}" (click)="sortComments(const.SORT_BEST)">{{ 'post.comments.sorting.best'|translate }}</span>
+          <span [ngClass]="{'active':selected === const.SORT_DESC}" (click)="sortComments(const.SORT_DESC)">{{ 'post.comments.sorting.new'|translate }}</span>
+          <span [ngClass]="{'active':selected === const.SORT_ASC}" (click)="sortComments(const.SORT_ASC)">{{ 'post.comments.sorting.old'|translate }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="col-xs-12">
+        <app-add-content-post *ngIf="this.authService.isLogged() | async"
+        (message)="sendNewComment($event)"
+        [showSpinner]="showSpinnerComment"
+        [showError]="showError"
+        [errorLimitTime]="errorLimitTime"
+        [text]="text"></app-add-content-post>
+    </div>
+
+  </div>
+
+  <div class="comments-container" *ngIf="(data && !showSpinner)">
+    <ul>
+      <app-comment-post *ngFor="let com of data" [comment]="com"
+      [addContentService]="addContentService"
+      [postService]="postService"
+      [isLogged]="isLogged"
+      (onDelete)="onDeleteComment($event)"></app-comment-post>
+      <li class="no_comments" *ngIf="showNoContent">
+        {{ 'post.comments.no_comments'|translate }}
+      </li>
+    </ul>
+  </div>
+  <!-- Spinner after request -->
+  <div class="loading-content" *ngIf="showSpinner">
+    <app-spinner></app-spinner>
+  </div>
+  <!-- info about errors -->
+  <app-error-info *ngIf="showError" [message]="'post.comments.error_comments'"></app-error-info>
+</div>

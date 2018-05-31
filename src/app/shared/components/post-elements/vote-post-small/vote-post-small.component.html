@@ -1,0 +1,25 @@
+<div *ngIf="!showSpinner" class="container-vote-small" [ngClass]="{'app-user': loggedData, 'voted': postResult.isVoted}">
+  <div class="vote-count">
+    <app-voters-list *ngIf="postResult" [post]="postResult" [votes]="postResult.upvotes"></app-voters-list>
+  </div>
+  <div class="vote-name" *ngIf="loggedData && !canSelfVote" (click)="voteDirect()">
+    {{ 'post.vote.votes'|translate }}
+  </div>
+  <div class="vote-name" *ngIf="loggedData && canSelfVote" [ngbPopover]="popContent" placement="top" #p="ngbPopover" [disablePopover]="!loggedData">
+    {{ 'post.vote.votes'|translate }}
+    <ng-template #popContent>
+      <app-vote-slider [popover]="p" (eventValue)="voteSlider($event)"></app-vote-slider>
+    </ng-template>
+  </div>
+  <div class="vote-name" *ngIf="!loggedData">
+    {{ 'post.vote.votes'|translate }}
+  </div>
+  <div *ngIf="errorVote">
+    <i class="fa fa-exclamation" aria-hidden="true"></i>
+  </div>
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+</div>
+
+<div class="container-vote-small spinner" *ngIf="showSpinner">
+  <app-spinner></app-spinner>
+</div>

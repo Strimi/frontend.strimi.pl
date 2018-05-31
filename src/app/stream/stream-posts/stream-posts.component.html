@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xl-9 col-lg-8 col-md-12">
+
+    <app-sort-header (eventSortParam)="onSort($event)"></app-sort-header>
+    <div class="stream" *ngIf="data">
+
+      <app-add-content-post *ngIf="authService.isLogged() | async" (message)="sendNewPost($event)"
+                            [showSpinner]="showSpinner"
+                            [showError]="showError" [errorLimitTime]="errorLimitTime"
+                            [text]="textPost"></app-add-content-post>
+      <div class="stream-new-post" *ngIf="postCount > 0">
+        {{ 'stream.new_post'|translate }}
+        <span class="count">{{ postCount }}</span>
+      </div>
+      <div class="stream-container">
+        <app-stream-container
+          [posts]="data"
+          [loggedData]="loggedData"
+          (onEditPost)="onEditPost($event)"
+          (onDeletePost)="onDeletePost($event)"></app-stream-container>
+      </div>
+      <div class="row-fluid">
+        <app-button-next *ngIf="showButton" (clickButton)="nextPosts()" [disabled]="disabledButton"
+                         [showSpinner]="showSpinnerButton"
+                         [message]="'no_content.default'"></app-button-next>
+      </div>
+    </div>
+
+    <!-- Info no content to show -->
+    <app-no-content-info *ngIf="showNoContent" [message]="'no_content.default'"></app-no-content-info>
+
+    <!-- info about errors -->
+    <app-error-info *ngIf="showError" [message]="'no_content.error'"></app-error-info>
+
+    <!-- Spinner after request -->
+    <div class="loading-content" *ngIf="showSpinner">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-4 d-xl-block d-lg-block d-none">
+    <app-user-search></app-user-search>
+    <app-popular-tags></app-popular-tags>
+    <app-sidebar-exchange></app-sidebar-exchange>
+    <app-select-post-lang></app-select-post-lang>
+  </div>
+</div>

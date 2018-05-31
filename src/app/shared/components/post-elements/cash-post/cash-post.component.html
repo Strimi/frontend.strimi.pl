@@ -1,0 +1,42 @@
+<ng-container *ngIf="payout.cashoutInTime; else releasePayment">
+  <ng-template #potencialTooltip>
+    <ul class="payout">
+      <li *ngIf="payout.isPayoutDeclined">
+        {{'payment.declined' | translate}}
+      </li>
+      <li>
+        {{ 'payment.payment' | translate}} {{payout?.potentialPayout | currency:'USD':'symbol':'1.3'}}
+      </li>
+      <li>
+
+        {{ getTranslate(payout.cashoutInTime) | translate}}
+        <app-date [date]="payout.cashoutInTime" [simpleDate]="true"></app-date>
+      </li>
+    </ul>
+  </ng-template>
+  <span [class]="classCash" [ngClass]="{'resignation' : payout.isPayoutDeclined}" placement="top" container="body" [ngbTooltip]="potencialTooltip">
+    {{payout?.potentialPayout | currency:'USD':'symbol':'1.3'}}
+  </span>
+</ng-container>
+
+<ng-template #releasePayment>
+  <ng-template #releaseTooltip>
+    <ul class="payout">
+      <li *ngIf="!payout.isPayoutDeclined">
+        {{ 'payment.payout' | translate}} {{payout.pastPayouts | currency:'USD':'symbol':'1.3'}}
+      </li>
+      <li *ngIf="!payout.isPayoutDeclined">
+        {{ 'payment.author' | translate}} {{payout.authorPayouts | currency:'USD':'symbol':'1.3'}}
+      </li>
+      <li *ngIf="!payout.isPayoutDeclined">
+        {{ 'payment.curators' | translate}} {{payout.curatorPayouts | currency:'USD':'symbol':'1.3'}}
+      </li>
+      <li *ngIf="payout.isPayoutDeclined">
+        {{'payment.declined' | translate}}
+      </li>
+    </ul>
+  </ng-template>
+  <span [class]="classCash" placement="top" [ngbTooltip]="releaseTooltip" [ngClass]="{'resignation' : payout.isPayoutDeclined}">
+    {{payout.pastPayouts | currency:'USD':'symbol':'1.3'}}
+  </span>
+</ng-template>

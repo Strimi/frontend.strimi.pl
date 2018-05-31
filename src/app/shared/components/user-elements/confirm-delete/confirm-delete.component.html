@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    {{ 'delete.info'|translate }}
+  </h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('dismiss click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn medium btn-green" (click)="confrim()">
+    {{ 'delete.confirm'|translate }}
+  </button>
+  <button type="button" class="btn medium btn-green" (click)="activeModal.dismiss('dismiss click')">
+    {{ 'delete.cancel'|translate }}
+  </button>
+</div>

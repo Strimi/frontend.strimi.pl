@@ -1,0 +1,12 @@
+<app-header-user></app-header-user>
+
+<div class="user-content">
+  <div class="row">
+      <div class="col-xl-3 col-lg-4 d-xl-block d-lg-block d-none">
+      <app-user-profile [user]="user"></app-user-profile>
+    </div>
+    <div class="col-xl-9 col-lg-8 col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

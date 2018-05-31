@@ -1,0 +1,47 @@
+<div *ngFor="let post of posts" class="post-single">
+  <div class="container-reblogged" *ngIf="post?.first_reblogged_on">
+    <i class="fa fa-retweet" aria-hidden="true"></i>
+    {{ 'reblog' }}
+    <app-date [date]=post.first_reblogged_on [classDate]="'container-reblogged-time'"></app-date>
+  </div>
+  <div class="container-wrapper">
+    <span class="d-xl-block d-lg-block d-md-none d-sm-none d-none">
+      <app-vote-post [post]="post"></app-vote-post>
+    </span>
+    <div class="container-meta">
+      <span class="d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
+        <app-vote-post-small [post]="post"></app-vote-post-small>
+      </span>
+      <span class="meta-author-container">
+        <app-avatar-post [author]="post.author" [classStyle]="'meta-author-avatar'"></app-avatar-post>
+        <app-author-post [author]="post.author" [reputation]="post.author_reputation" [classAuthor]="'meta-author'"
+                         [classRep]="'meta-author-reputation'"></app-author-post>
+      </span>
+      <span class="d-xl-inline-block d-lg-none d-md-none d-sm-none d-none">
+        <app-tag-post [jsonMeta]="post.json_metadata"></app-tag-post>
+      </span>
+      <app-cash-post [post]="post" [classCash]="'meta-cash'"></app-cash-post>
+      <span class="d-xl-inline-block d-lg-inline-block d-md-inline-block d-sm-none d-none">
+        <app-comments-post [routerLink]="['/', post.category, '@' + post.author, post.permlink]" fragment="comments"
+                           [children]="post.children"></app-comments-post>
+        <app-date [date]=post.created [classDate]="'meta-time'"></app-date>
+      </span>
+      <app-report-post
+        [classReport]="'meta-flag'"
+        [classRemove]="'meta-remove'"
+        [classEdit]="'meta-edit'"
+        (edit)="onEdit(post)"
+        [showEdit]="showEdit(post)"
+        (delete)="onDeletePost(post)"
+        [showDelete]="showDelete(post)"></app-report-post>
+    </div>
+    <app-image-post [routerLink]="['/', post.category, '@' + post.author, post.permlink]"
+                    [jsonMeta]="post.json_metadata"></app-image-post>
+    <div class="container-content" [ngClass]="{'no-image': !isImage(post)}">
+      <app-title-post [title]="post.title" [author]="post.author" [category]="post.category" [permlink]="post.permlink"
+                      [titleLength]="126"></app-title-post>
+      <app-description-post [post]="post" [textLength]="136"></app-description-post>
+    </div>
+  </div>
+</div>
+

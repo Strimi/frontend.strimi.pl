@@ -1,0 +1,147 @@
+<div class="row">
+  <div class="col-xl-9 col-lg-8 col-md-12">
+    <div class="page">
+      <h1 class="page-title">
+        {{ 'post-new.text.title' | translate }}
+      </h1>
+      <div class="page-content user-new-content">
+
+        <div class="row" *ngIf="recognizedLink" [ngClass]="{'hidden': recognizedLink }">
+          <div class="col-xl-10">
+            <div class="input">
+              <div class="input-title" [innerHtml]="'post-new.link.link'|translate"></div>
+              <div class="input-inline">
+                <input [disabled]="true" [(ngModel)]="recognizedLink.source" type="text" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit()" potsForm="ngForm">
+          <div class="row">
+
+              <div class="col-xl-2" *ngIf="recognizedLink">
+                  <div class="input">
+                    <div class="input-title">
+                      {{ 'post-new.link.thumb'|translate }}
+                    </div>
+                    <div class="link-thumb"
+                         [style.background-image]="'url(' + recognizedLink.thumbnails[0] + ')' | sanitizeStyle">
+                      <!--<span class="left">-->
+                      <!--<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>-->
+                      <!--</span>-->
+                      <!--<span class="right">-->
+                      <!--<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>-->
+                      <!--</span>-->
+                    </div>
+                  </div>
+                </div>
+
+            <div class="col-xl-12" [ngClass]="{'col-xl-10': recognizedLink, 'col-xl-12': !recognizedLink}">
+              <div class="input">
+                <div class="input-title" [innerHtml]="'post-new.text.title_input'|translate">
+                </div>
+                <div class="input-inline">
+                  <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newPost.title">
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-title" *ngIf="!recognizedLink" [innerHtml]="'post-new.text.description'|translate"></div>
+                <div class="input-title" *ngIf="recognizedLink" [innerHtml]="'post-new.link.description'|translate"></div>
+                <div class="input-inline">
+                  <simplemde *ngIf="!linkPost"
+                             [options]="{
+                    shortcuts: {toggleCodeBlock:'', drawImage:'', toggleOrderedList:''},
+                    spellChecker: false, toolbarTips: false, hideIcons: ['fullscreen', 'side-by-side', 'heading', 'guide'],
+                    showIcons: ['code', 'table', 'strikethrough'],
+                    autosave: { enabled: true, uniqueId: 1 }, status: false }"
+                             name="body" [(ngModel)]="newPost.body"></simplemde>
+                  <textarea *ngIf="linkPost" name="body" [(ngModel)]="newPost.body"  class="form-control" [maxlength]="180"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-xl-6"[ngClass]="{'col-xl-4 offset-xl-2': recognizedLink, 'col-xl-6': !recognizedLink}">
+              <div class="input new-content">
+                <div class="input-title" [innerHtml]="'post-new.text.tags'|translate"></div>
+                <mat-form-field class="demo-chip-list">
+
+                  <mat-chip-list #chipList>
+                    <mat-chip *ngFor="let tag of slectedTags" [selectable]="true" [removable]="true"
+                              (remove)="remove(tag)">
+                      #{{ tag }}
+                      <mat-icon matChipRemove>x</mat-icon>
+                    </mat-chip>
+                    <input #input class="form-control" [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matAutocomplete]="auto"
+                           [ngModel] (matChipInputTokenEnd)="add($event)" (ngModelChange)="valueChange($event)"
+                           id="tags" name="tags"
+                           [disabled]="slectedTags.length > 4"/>
+                  </mat-chip-list>
+
+                </mat-form-field>
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let tag of filteredTags" [value]="tag"
+                              (onSelectionChange)="onSelectionChange($event)">
+                    <img style="vertical-align:middle;" aria-hidden height="25"/>
+                    <span>#{{ tag }}</span>
+                  </mat-option>
+                </mat-autocomplete>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="input new-content">
+                <div class="input-title" [innerHtml]="'post-new.text.nsfw.title'|translate"></div>
+                <div class="input-inline">
+                  <select class="form-control" id="adult" name="adult" [(ngModel)]="newPost.forAdult"
+                          (change)="selectedNsfw($event.target.value)">
+                    <option value="0" [value]="false">
+                      {{ 'post-new.text.nsfw.no'|translate }}
+                    </option>
+                    <option value="1" [value]="true">
+                      {{ 'post-new.text.nsfw.yes'|translate }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3">
+              <div *ngIf="showSelectReward" class="input new-content">
+                <div class="input-title" [innerHtml]="'post-new.text.payout.title'|translate"></div>
+                <div class="input-inline">
+                  <select class="form-control" [(ngModel)]="newPost.reward" id="reward" name="reward">
+                    <option *ngFor="let p of payoutType" [value]="p.value">
+                      {{ p.label | translate }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="input">
+                <button type="submit" class="btn submit btn-green" [disabled]="!isValid()">
+                  <span *ngIf="!showSpinner">
+                    {{ 'post-new.text.submit'|translate }}
+                  </span>
+                  <app-spinner *ngIf="showSpinner"></app-spinner>
+                </button>
+                <span *ngIf="showError"> {{ 'post-new.error.add_error'|translate }}</span>
+                <span *ngIf="errorLimitTime"> {{ 'post-new.error.add_error_to_often'|translate }}</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-xl-3 col-lg-4 d-xl-block d-lg-block d-none">
+    <app-sidebar-info></app-sidebar-info>
+  </div>
+</div>

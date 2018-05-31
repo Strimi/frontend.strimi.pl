@@ -1,0 +1,424 @@
+{
+  "header": {
+    "top_menu": {
+      "logo": "Strimi",
+      "created": "Najnowsze",
+      "hot": "Gorące",
+      "stream": "Stream",
+      "type": {
+        "content": "treści",
+        "stream": "stream"
+      },
+      "my_strimi": {
+        "name": "Moje Strimi",
+        "title": "Logowanie",
+        "username": "Login",
+        "password": "Hasło lub WIF",
+        "submit": "Zaloguj się",
+        "no_account": "Nie masz konta?",
+        "sign_up": "Zarejestruj się",
+        "bad_login": "Zły login",
+        "bad_pass":"Złe hasło",
+        "accept": "Akceptuję",
+        "regulations": "regulamin",
+        "service": "serwisu."
+      }
+    }
+  },
+  "welcome": {
+    "title": "Witaj w świecie Blockchain!",
+    "description": "Twój głos ma znaczenie.",
+    "button": {
+      "login": "Zaloguj się",
+      "more": "Zobacz więcej"
+    }
+  },
+  "cookies": {
+    "text": "Strimi korzysta z plików cookies. Pozostając na tej stronie, wyrażasz zgodę na korzystanie z tych plików. Dowiedz się więcej w ",
+    "privacy": "Polityce Prywatności",
+    "agree": "Akceptuję"
+  },
+  "language": {
+    "polish": "Polski",
+    "english": "English",
+    "korean": "한국의"
+  },
+  "switch": {
+    "total": "wszystkie",
+    "polish": "polskie"
+  },
+  "sidebar": {
+    "exchange_cantor": {
+      "name": "Przybliżone kursy",
+      "information": "Powyższe wartości są wyłącznie szacunkowe i w dowolnym momencie mogą ulec zmianie."
+    },
+    "popular_tags": {
+      "name": "Popularne tagi"
+    },
+    "users_lists": {
+      "name": "Szukaj użytkowników"
+    }
+  },
+  "page": {
+    "contact": {
+      "name": "Kontakt",
+      "description": "Jeśli masz pytania, uwagi, pomysły lub sugestie skontaktuj się z nami. Możesz to zrobić poprzez kontakt mailowy hello@strimi.pl <p></p><p>Pozdrawiamy</br>Strimi Team</p>"
+    },
+    "cookies": {
+      "name": "Cookies (ciasteczka)",
+      "description": "<p>Serwis Strimi.it korzysta z plików cookies (tzw. \"ciasteczka\"). Cookies są to małe pliki tekstowe przechowywane w urządzeniu końcowym (najczęściej w przeglądarce internetowej). Pliki cookies są podstawą funkcjonowania Internetu i większość stron internetowych z nich korzysta. Najczęściej są wykorzystywane do zapisania informacji o sesji użytkownika, dzięki czemu użytkownik może być zalogowany na stronie, ale mogą także pełnić inne różnorodne funkcje, np. przechowywać informacje o preferencjach użytkowników dotyczących interfejsu strony.</p><p>Stosujemy dwa rodzaje plików cookies: \"sesyjne\" (session cookies) oraz \"stałe\" (persistent cookies). Cookies \"sesyjne\" są tymczasowe i przechowywane są w urządzeniu końcowym do czasu wylogowania lub wyłączenia urządzenia końcowego. \"Stałe\" pliki cookies przechowywane są w urządzeniu końcowym przez określony w pliku cookies czas lub do czasu usunięcia go przez użytkownika.</p><p>Nie przechowujemy w plikach cookies żadnych poufnych czy prywatnych informacji o naszych użytkowaniach. Pliki cookies wykorzystywane są wyłącznie do realizacji podstawowych funkcji serwisu, które bez plików cookies byłyby niemożliwe. Korzystamy z następujących plików cookies: session - plik przechowuje identyfikator sesji w celu zapamiętania zalogowania użytkownika (plik \"sesyjny\"), auth_autologin - plik zapisywany jest gdy użytkownik wyrazi zgodę na zapamiętanie zalogowania (plik \"stały\" zapamiętywany na 60 dni). Okazjonalnie zapisujemy pliki cookies, które zapamiętują indywidualne ustawienia interfejsu użytkownika. Serwis Strimi.it korzysta z narzędzia Google Analytics, które zapisuje dodatkowe pliki cookies w celu generowania anonimowych statystyk oglądalności serwisu.</p><p>Plikami cookies można zarządzać przeważnie z poziomu ustawień urządzenia końcowego. Popularne przeglądarki internetowe umożliwiają usuwanie i blokowanie plików cookies. Informujemy, że zablokowanie plików cookies może ograniczyć funkcjonalność serwisu, przede wszystkim nie będzie możliwe zalogowanie się.</p><p><strong>Google Analytics</strong></p><p>Strimi.it korzysta z Google Analytics, usługi analizy oglądalności stron internetowych udostępnianej przez Google, Inc. (\"Google\"). Google Analytics używa \"cookies\", czyli plików tekstowych umieszczanych na komputerze użytkownika w celu umożliwienia witrynie przeanalizowania sposobu, w jaki użytkownicy z niej korzystają. Informacje generowane przez cookie na temat korzystania z witryny przez użytkownika (włącznie z jego adresem IP) będą przekazywane spółce Google i przechowywane przez nią na serwerach w Stanach Zjednoczonych.</p><p>Google będzie korzystał z tych informacji w celu oceny korzystania z witryny przez użytkownika, tworzenia raportów dotyczących ruchu na stronach dla operatorów witryn oraz świadczenia innych usług związanych z ruchem na witrynach internetowych i korzystaniem z internetu. Google może również przekazywać te informacje osobom trzecim, jeżeli będzie zobowiązana to uczynić na podstawie przepisów prawa lub w przypadku, gdy osoby te przetwarzają takie informacje w imieniu Google.</p><p>Google nie będzie łączyła adresu IP użytkownika z żadnymi innymi danymi będącymi w jej posiadaniu. Użytkownik może zrezygnować z cookies wybierając odpowiednie ustawienia na przeglądarce, jednak należy pamiętać, że w takim przypadku korzystanie z wszystkich funkcji witryny może okazać się niemożliwe Korzystając z niniejszej witryny internetowej użytkownik wyraża zgodę na przetwarzanie przez Google dotyczących go danych w sposób i w celach określonych powyżej.</p><p><strong>Facebook</strong></p><p>Na stronach Strimi.it znajduje się zintegrowany plugin (wtyczka) portalu społecznościowego Facebook, 1601 South Carolina Avenue, Palo Alto, CA 943404, USA. Plugin Facebooka znajduje się pod przyciskiem \"Lubię to\" na naszej stronie. Listę pluginów na Facebooku znajdziesz tutaj.</p><p>Kiedy odwiedzasz naszą stronę, następuje automatyczne połączenie poprzez plugin pomiędzy serwerem Facebooka, a Twoją przeglądarką internetową. Facebook otrzyma wtedy informację, że Ty pod swoim adresem IP odwiedziłeś naszą stronę. Jeśli klikniesz na przycisk \"Lubię to\" w czasie kiedy jesteś zalogowany w swoim koncie na Facebooku, to zawartość naszej strony może zostać podlinkowana do Twojego profilu. Dodatkowe informacje znajdziesz na stronach Facebooka.</p><p>Jeśli nie życzysz sobie, aby Facebook odnotowywał fakt Twoich odwiedzin na naszej stronie, prosimy wylogować się ze swojego konta użytkownika na Facebooku.</p>"
+    },
+    "idea": {
+      "name": "Idea",
+      "description": "Strimi to miejsce do publikowania treści na dowolny temat. Tematy kreowane przez społeczność pogrupowane są w tagi o różnorodnej tematyce. Dołącz do nas już teraz i rozwijaj swoje zainteresowania. Strimi to Ty."
+    },
+    "privacy": {
+      "name": "Polityka prywatności",
+      "description": "<p>Serwis Strimi szanuje prywatność swoich użytkowników. Przeczytaj dokładnie poniższe informacje, aby lepiej zapoznać się z naszą polityką prywatności.</p><p><strong>Prawa autorskie</strong></p><p>Serwis Strimi zawiera przekierowania (linki) do innych stron www wraz ze zwięzłym opisem. Treści zawarte na tych stronach są przedmiotem praw autorskich przysługujących ich twórcy i podlegają ochronie zgodnie z prawem autorskim.</p><p><strong>Zastrzeżenia prawne i odpowiedzialność</strong></p><p>Wszelkie materiały zawarte w serwisie Strimi są bezpłatne. Użytkownicy oraz zespół serwisu Strimi nie odpowiadają za jakiekolwiek szkody wynikłe z ich korzystania. Serwis Strimi zastrzega sobie \"usuwania\" materiałów oraz blokowania użytkowników, którzy naruszają regulamin serwisu Strimi.</p><p><strong>Wyłączenie odpowiedzialności</strong></p><p>Serwis Strimi nie ponosi odpowiedzialności za treści i opinie wyrażane przez użytkowników w komentarzach lub wpisach. Są one wyłącznie własnością użytkowników, od których pochodzą.</p><p><strong>Informacje logowania</strong></p><p>Podczas korzystania z serwisu Strimi nasze serwery automatycznie rejestrują informacje przesyłane przez przeglądarkę użytkownika w trakcie wyświetlania witryny. Dzienniki serwera mogą zawierać takie informacje jak: żądanie sieciowe, adres IP, typ przeglądarki, język przeglądarki, data i godzina przesłania żądania oraz co najmniej jeden plik cookie.</p>"
+    },
+    "regulations": {
+      "name": "Regulamin",
+      "description": ""
+    },
+    "faq": {
+      "name": "FAQ - Najczęstsze pytania",
+      "description": ""
+    },
+    "tags_ranking": {
+      "name": "Ranking tagów",
+      "table": {
+        "name": "Nazwa",
+        "comments": "Komentarzy",
+        "content": "Treści",
+        "payout": "Wypłat"
+      }
+    },
+    "users_ranking": {
+      "name": "Ranking Użytkowników",
+      "table": {
+        "name": "Użytkownik",
+        "steem": "Steem",
+        "sbd": "SteemDollars",
+        "voting_power": "Siła Głosu",
+        "steem_power": "SteemPower"
+      }
+    },
+    "registration": {
+      "title": "Rejestracja"
+    }
+  },
+  "footer": {
+    "information": {
+      "rights_info": "Korzystanie z serwisu oznacza akceptację <a routerLink=\"/regulations\">Regulaminu</a>. Opinie wyrażone w Serwisie są właśnością ich autorów.",
+      "short_info": "Strimi to miejsce do publikowania treści na dowolny temat. Dołącz do nas już teraz i rozwijaj swoje zainteresowania. <span>Strimi to Ty.</span>"
+    },
+    "name": {
+      "useful": "Przydatne",
+      "using": {
+        "name": "Informacje",
+        "bug": "Zgłoś problem"
+      },
+      "social_media": "Social Media"
+    }
+  },
+  "pagination": {
+    "next": "Następne"
+  },
+  "post": {
+    "vote": {
+      "modal_votes": {
+        "title": "Lista głosujących"
+      },
+      "votes": "głosy"
+    },
+    "meta": {
+      "to": "do",
+      "from": "z",
+      "comments": "komentarze"
+    },
+    "comments": {
+      "title": "Komentarze",
+      "no_comments": "Brak komentarzy do wyświetlenia.",
+      "error_comments": "Pojawił się problem z pobraniem komentarzy.",
+      "hide": "ukryj",
+      "show": "pokaż",
+      "reply": "odpowiedz",
+      "sorting": {
+        "best": "Najlepsze",
+        "new": "Najnowsze",
+        "old": "Najstarsze"
+      }
+    }
+  },
+  "post-details": {
+    "source": "źródło",
+    "error": "Problem z połączeniem, przeładuj stronę."
+  },
+  "post-new": {
+    "sidebar": {
+      "title": "Dobre praktyki",
+      "info": "Przeczytaj naszych kilka zasad, aby uniknąć niepotrzebnych sytuacji.",
+      "info_0": "Nie używaj żadnych tagów HTML, stosuj wyłącznie Markdown.",
+      "info_1": "Dodawaj treści które nie łamią w żadnym stopniu naszego regulaminu.",
+      "info_2": "Rzetelnie wypełniaj wszystkie pola podczas dodawania.",
+      "info_3": "Wybieraj zawsze odpowiednie tagi dla swoich treści.",
+      "info_4": "Twój link nie zawsze musi mieć miniaturę. Czasem nawet lepiej jest gdy jej nie ma wcale.",
+      "info_5": "Zastanów się czy Twoja treść jest wyłącznie dla osób powyżej osiemnastego roku życia.",
+      "info_6": "Nie dodawaj linków ciągle z tych samych domen, zazwyczaj ma to odwrotny skutek do zamierzonego."
+    },
+    "text": {
+      "title": "Dodaj tekst",
+      "title_input": "Tytuł <span>- jest podstawą zainteresowania naszej społeczności. Od 10 - 180 znaków</span>",
+      "description": "Tekst <span>- dobrą treść czyta się jednym tchem, postaraj się pisać zwięźle i na temat. Od 25 - 25000 znaków</span>",
+      "tags": "Tagi <span>(min 1, max 5)</span>",
+      "nsfw": {
+        "title": "Treść dla osób +18?",
+        "yes": "Tak",
+        "no": "Nie"
+      },
+      "payout": {
+        "title": "Nagroda",
+        "50": "50% / 50%",
+        "100": "100% SteemPower",
+        "resignation": "Rezygnacja"
+      },
+      "submit": "Opublikuj"
+    },
+    "link": {
+      "link": "Link <span>- wklej w poniższe pole link który chcesz dodać</span>",
+      "thumb": "Miniatura",
+      "title": "Dodaj link",
+      "description": "Opis <span>- opisz własnymi słowami dodawany link (nie kopiuj bezmyślnie żadnych tekstów). Od 25 - 180 znaków</span>",
+      "submit": "Dodaj"
+    },
+    "error": {
+      "add_error": "Wystąpił problem z dodaniem treści do steem. Spróbuj ponownie później.",
+      "add_error_to_often": "Możesz dodać treść raz na 5 minut.",
+      "add_error_to_often_comment": "Możesz dodać treść raz na 20 sekund.",
+      "add_error_link": "Link nie jest poprawny lub coś poszło nie tak"
+    }
+  },
+  "content_sorting": {
+    "default": "Domyślne",
+    "observed": "Obserwowane",
+    "followed": "Obserwowani",
+    "popular": "Popularne",
+    "new": "Najnowsze",
+    "commented": "Komentowane"
+  },
+  "stream": {
+    "new_post": "Pojawiły się nowe posty",
+    "show_more": "Pokaż więcej",
+    "hide": "Pokaż mniej",
+    "submit": {
+      "description": "Co słychać?",
+      "submit": "Opublikuj",
+      "markdown": "Markdown",
+      "clean": "Wyczyść",
+      "cancel": "Anuluj",
+      "edit": "Zapisz"
+    }
+  },
+  "payment": {
+    "payment": "Potencjalna nagroda",
+    "payout": "Suma Nagród",
+    "author": "Nagroda Autora",
+    "curators": "Nagroda Głosujących",
+    "release": "Nastąpi",
+    "released": "Wypłacono",
+    "declined": "Odmowa przyjęcia wypłaty"
+  },
+  "user": {
+    "vote_slider": {
+      "name": "Moc głosu:",
+      "vote": "Głosuj",
+      "close": "Zamknij"
+    },
+    "sidebar": {
+      "voting_power": "Siła głosu",
+      "voting_power_dollar": "Wartość głosu",
+      "bandwith": "Dostępny bandwith",
+      "ranking": "w rankingu",
+      "watch": "Obserwuj",
+      "mute": "Wycisz"
+    },
+    "profil_menu": {
+      "add_post": "Napisz tekst",
+      "add_link": "Dodaj link",
+      "hashtags": "HashTagi: ",
+      "notification": "Powiadomienia: ",
+      "voting_power": "Siła głosu: ",
+      "bandwith": "Bandwith: ",
+      "your_profile": "Twój Profil",
+      "feed": "Feed",
+      "posts": "Treści",
+      "comments": "Komentarze",
+      "replies": "Odpowiedzi",
+      "votes": "Głosy",
+      "following": "Obserwowani",
+      "followers": "Obserwujący",
+      "wallet": "Portfel",
+      "settings": "Ustawienia",
+      "notifications": "Powiadomienia",
+      "logout": "Wyloguj"
+    },
+    "notifications": {
+      "name": "Powiadomienia",
+      "type": {
+        "watch": "Zaczął Cię obserwować",
+        "comments_content": "Skomentował Twoją treść",
+        "comments_stream": "Skomentował Twój wpis w Stream",
+        "comments_response": "Odpowiedział na Twój komentarz",
+        "comments_response_stream": "Odpowiedział na Twój komentarz w Stream",
+        "tagged_content": "Oznaczył Cię w treści",
+        "tagged_comment": "Oznaczył Cię w komentarzu",
+        "tagged_stream": "Oznaczył Cię we wpisie Stream",
+        "post_voted": "Zagłosował na Twój post",
+        "post_voted_stream": "Zagłosował na Twój post w Streamie",
+        "comment_voted": "Zagłosował na Twój komentarz w ",
+        "comment_voted_stream": "Zagłosował na Twój komentarz w Streamie"
+      },
+      "see-all": "Zobacz następne",
+      "read-all": "Oznacz wszystkie jako przeczytane"
+    },
+    "wallet": {
+      "receive": "Odbierz nagrody",
+      "error_recive": "Pojawił się błąd przy odbieraniu  nagrody",
+      "steem": {
+        "description": "Tokeny które mogą być przesłane gdziekolwiek w dowolnym momencie. Tokeny Steem mogą zostać również przekonwertowane na SteemPower."
+      },
+      "steem_power": {
+        "description": "Tokeny które zwiększają Twój wpływ na podział wypłat za publikowanie treści.",
+        "description_delegated": "Część z Twoich tokenów SteemPower jest Ci delegowana (czasowe użyczenie aby pomóc nowym użytkownikom platformy, kwota delegacji może się zmieniać)."
+      },
+      "steem_dollars": {
+        "description": "Tokeny warte około $1.00 z Steem, aktualnie zbierają 0% APR."
+      },
+      "savings": {
+        "name": "Oszczędności",
+        "description": "Saldo zależy od 3-dniowego okresu karencji wymaganego do wycofania środków, SteemDdollars aktualnie zbierający 0% APR."
+      },
+      "estimated_account_value": {
+        "name": "Szacowana wartość konta",
+        "description": "Szacowana wartość bazuje na średniej cenie tokenu Steem w dolarach amerykańskich."
+      },
+      "spam_alert": "<p>Uważaj na spam i linki phishingowe w notatkach transferowych!</p><p>Nie otwieraj żadnych linków od użytkowników których nie znasz i którym nie ufasz.</p> Nie udostępniaj żadnych swoich prywatnych kluczy.",
+      "transfer": {
+        "reward": "Nagroda",
+        "from": "od",
+        "to": "do",
+        "author": "Autor",
+        "vote": "Głos"
+      },
+      "transfer-vesting": "SteemPower - Zwiększono",
+      "exchange": {
+        "name": "Market - Wymiana",
+        "on": "na"
+      },
+      "delegation": "Delegacja: ",
+      "fee": "Opłata: ",
+      "delegate-vesting": "SteemPower - Delegacja",
+      "account-create": "Utworzenie konta"
+    },
+    "settings": {
+      "title": "Edycja profilu",
+      "alias": "Pseudonim",
+      "about": "Opis",
+      "location": "Lokalizacja",
+      "avatar": "Link do avatara",
+      "background": "Link do tła",
+      "website": "Strona www",
+      "submit": "Zapisz",
+      "error": "Wystąpił problem w czasie aktualizacji",
+      "update": "Konto zaktualizowane",
+      "keys": {
+        "name": {
+          "title": "Twoje klucze",
+          "alert": "Nikomu nie udostępniaj żadnych swoich prywatnych kluczy czy hasła.",
+          "info": {
+            "public": "Publiczne",
+            "private": "Prywatne"
+          }
+        },
+        "posting": {
+          "text": "Klucz jest wymagany do publikowania treści, komentarzy i głosowania. Powinien różnić się od klucza <strong>Active</strong> i klucza <strong>Owner</strong>."
+        },
+        "active": {
+          "text": "Klucz jest wymagany do przesyłania tokenów (Steem, SteemPower, SteemDollars) i składania ofert na wewnętrznym rynku wymiany."
+        },
+        "owner": {
+          "text": "Klucz <strong>Owner</strong> jest kluczem głównym dla Twojego konta i jest wymagany do zmiany pozostałych kluczy."
+        },
+        "memo": {
+          "text": "Klucz memo jest używany do tworzenia i czytania memo."
+        }
+      }
+    }
+  },
+  "extended_authorization": {
+    "title": "Weryfikacja uprawnień",
+    "text": "Operacja wymaga autoryzacji, podaj swój prywatny klucz <strong>Active</strong>."
+  },
+  "no_content": {
+    "default": "Brak danych do wyświetlenia.",
+    "error": "Wystąpił problem z pobraniem danych, spróbuj za chwilę jeszcze raz."
+  },
+  "search-inp": {
+    "search": "Szukaj"
+  },
+  "drop-down": {
+    "label": "Sortowanie",
+    "best": "Najlepsze",
+    "desc": "Najnowsze",
+    "asc": "Najstarsze"
+  },
+  "user-rank": {
+    "title": "Users ranking",
+    "user": "User",
+    "rep": "Reputation",
+    "rank": "Ranking",
+    "fol": "Followers",
+    "con": "Contents",
+    "steem": "Steem",
+    "sbd": "SBD",
+    "vp": "VP",
+    "eav": "EAV",
+    "sp": "SP"
+  },
+  "theme": {
+    "light": "Jasna",
+    "dark": "Ciemna"
+  },
+  "page-404": {
+    "title": "Przepraszamy, taka strona nie istnieje.",
+    "info": "Korzystając z okazji, możesz jeszcze raz przeczytać nasz",
+    "or": "lub",
+    "info_title": {
+      "homepage": "Strona Główna",
+      "created": "Najnowsze",
+      "hot": "Gorące",
+      "stream": "Stream"
+    }
+  },
+  "page-403": {
+    "title": {
+      "author": "Użytkownik został usunięty z Serwisu.",
+      "content": "Treść została usunięta z Serwisu.",
+      "tag": "Tag został usunięty z Serwisu."
+    }
+  },
+  "banned": {
+    "comments": {
+      "author": "[MOD] Użytkownik usunięty z Serwisu.",
+      "content": "[MOD] Komentarz usunięty z Serwisu."
+    }
+  },
+  "delete": {
+    "info": "Czy naprawdę chcesz usunąć ten post?",
+    "confirm": "Potwierdź",
+    "cancel": "Anuluj",
+    "process": "Trwa usuwanie posta",
+    "errorDelete": "Nie można było usunąć tego posta"
+  }
+
+}

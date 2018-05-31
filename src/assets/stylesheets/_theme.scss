@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900&subset=latin-ext');
+
+$fontRoboto: "Roboto", "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif;
+
+$body: #f3f6f8;
+$black: #000;
+$white: #fff;
+$purple: #4f5875;
+$purple3: #3A3E64;
+$purple2: #c1e7da;
+
+$green: #13c1a3;
+$green2: #41CDB4;
+
+// $green: #008B5D;
+//$green2: #54d2a0;
+
+$logo: #37474f;
+$red: #df4b38;
+
+// Steemit
+$steemitGreen: #06D6A9;
+
+// Text
+$text: $black;
+$text38: lighten($text, 38%);
+$text54: lighten($text, 54%);
+$text87: lighten($text, 87%);
+// Button
+$btn-primary: $purple;
+$btn-primary-border: lighten($btn-primary, 87%); // #3C4452;
+
+// Header
+$headerHeight: 55px;
+$headerHeightCookies: 87px;
+$headerMenuMargin: 60px;
+$wrapperMargin: 55px;
+$headerVotingPower: #b4cc91;
+$headerBandwith: #90a5cd;
+
+// Footer
+$footerHeight: 252px;
+$bodySticky: 252x;
+
+// Border
+$border: lighten($black,95%);
+$borderInput: #ddd;
+$blueBorder: #5c9dd5;
+
+// Shadow
+// $shadow: 0 0 5px 0 lighten($black, 90%);
+$shadow: 0 1px 5px -1px rgba($black, .2);
+
+// Title
+$title: #222;
+
+// Sidebar
+$sidebarBackground: #f9f9f9;
+$sidebarBorder: #ddd;
+
+// Cookies
+$cookiesBackground:  #fee490;
+
+// Steem
+$lightBlue: #4CA2F2;
+$darkBlue: #1B5199;
+
+// User Receive Cash
+$yellowInfoBackground: #fee490;
+$yellowInfoBorder: #fedb6d;
+
+.trans {
+  $second: 0.2s;
+  transition-timing-function: ease-in-out;
+  -o-transition: all $second linear;
+  -moz-transition: all $second linear;
+  -khtml-transition: all $second linear;
+  -webkit-transition: all $second linear;
+  -ms-transition: all $second linear;
+  transition: all $second linear;
+}
+
+%word-break {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.form-control {
+  &:focus {
+    box-shadow: 0 0 0 transparent !important;
+    border-color: $purple !important;
+  }
+}
+
+

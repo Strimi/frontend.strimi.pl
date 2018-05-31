@@ -1,0 +1,196 @@
+body {
+  &.night {
+    .post {
+      .posts-lists {
+        &-sorting {
+          background-color: darken($NightFirst, 1%);
+          border: 1px solid $NightThird;
+          a {
+            color: lighten($purple, 10%);
+            &.active {
+              color: lighten($purple, 30%);
+              text-decoration: none;
+            }
+            &:hover {
+              @extend .trans;
+              color: lighten($purple, 30%);
+              text-decoration: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &-single {
+        background-color: $NightPostBackground;
+        box-shadow: transparent;
+        border: 1px solid $NightPostBorder;
+        .container-reblogged {
+          border-bottom: 1px solid $NightPostBorder;
+          color: lighten($purple, 55%) !important;
+        }
+        .container-wrapper {
+          .container-vote {
+            &.voted {
+              &.app-user {
+                &:hover {
+                  cursor: pointer;
+                  .vote-count {
+                    border: 2px solid darken($green, 5%);
+                    color: darken($green, 5%);
+                    &:after {
+                      border-top: 7px solid darken($green, 5%);
+                    }
+                  }
+                  .vote-name {
+                    @extend .trans;
+                    background-color: darken($green, 5%);
+                  }
+                }
+              }
+              .vote-count {
+                border: 2px solid $green;
+                color: $green;
+                &:after {
+                  border-top: 7px solid $green;
+                }
+              }
+              .vote-name {
+                background-color: $green;
+              }
+            }
+            .vote-count {
+              border: 2px solid $NightVotesColor;
+              color: lighten($purple, 30%);
+              &:after {
+                border-top: 7px solid $NightVotesColor;
+              }
+            }
+            .vote-name {
+              background-color: $NightVotesColor;
+              color: lighten($purple, 45%);
+            }
+          }
+          .container-vote-small {
+            .vote-name {
+              background-color: $NightVotesColor;
+              color: lighten($purple, 45%);
+            }
+            &.voted {
+              &.app-user {
+                &:hover {
+                  cursor: pointer;
+                  .vote-count {
+                    border: 2px solid darken($green, 5%);
+                    color: darken($green, 5%);
+                    &:after {
+                      border-right: 7px solid darken($green, 5%);
+                    }
+                  }
+                  .vote-name {
+                    @extend .trans;
+                    background-color: darken($green, 5%);
+                  }
+                }
+              }
+              .vote-count {
+                border: 2px solid $green;
+                color: $green;
+                &:after {
+                  border-right: 7px solid $green;
+                }
+              }
+              .vote-name {
+                background-color: $green;
+              }
+            }
+            .vote-count {
+              border: 2px solid $NightVotesColor;
+              color: lighten($purple, 30%);
+              &:after {
+                border-right: 7px solid $NightVotesColor;
+              }
+              &:hover {
+                @extend .trans;
+                cursor: pointer;
+                border: 2px solid $NightVotesColor;
+                color: lighten($purple, 35%);
+                &:after {
+                  border-right: 7px solid $NightVotesColor;
+                }
+              }
+            }
+          }
+          .container-meta {
+            color: $NightMetaColor;
+            a {
+              color: $NightMetaColor;
+              &:hover {
+                color: lighten($NightMeta, 15%);
+              }
+            }
+            .meta-author-avatar {
+              background-color: $NightHeaderBackground;
+            }
+            .meta-author,
+            .meta-author-reputation {
+              color: lighten($NightMeta, 15%);
+              &:hover {
+                color: lighten($NightMeta, 15%);
+              }
+            }
+            .meta-edit,
+            .meta-remove,
+            .meta-flag {
+              color: $NightMeta;
+              &:hover {
+                color: $red;
+              }
+            }
+            .meta-edit,
+            .meta-remove {
+              &:hover {
+                color: $green;
+              }
+            }
+          }
+          .container-image {
+            background-color: $NightHeaderBackground;
+          }
+          h1,
+          h2 {
+            color: lighten($purple, 55%);
+            &.details-text,
+            &.details-video {
+              border-bottom: 1px solid darken($NightMeta, 10%);
+            }
+            a {
+              color: lighten($purple, 55%);
+              &:hover {
+                color: lighten($purple, 60%);
+              }
+            }
+          }
+          .description {
+            color: lighten($purple, 45%);
+            &:hover {
+              color: lighten($purple, 45%);
+            }
+          }
+          .container-tags {
+            &.post-text,
+            &.post-video,
+            &.post-link {
+              border-top: 1px solid darken($NightMeta, 10%);
+            }
+            a {
+              color: lighten($NightMeta, 15%);
+              &:hover {
+                color: lighten($NightMeta, 20%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

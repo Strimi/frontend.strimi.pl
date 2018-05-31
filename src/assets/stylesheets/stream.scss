@@ -1,0 +1,315 @@
+.stream {
+  &-submit {
+    @include border-radius(3px);
+    padding: 10px;
+    background-color: darken($white, .8%); // border: 1px solid $border;
+    box-shadow: $shadow;
+    width: 100%;
+    display: inline-block; //margin-bottom: 15px;
+    margin-top: 15px;
+    .CodeMirror,
+    .CodeMirror-scroll {
+      min-height: 140px;
+    }
+    &-description {
+      @include border-radius(3px);
+      border: 1px solid $borderInput;
+      width: 100%;
+      padding: 10px;
+      min-height: 80px;
+      margin-bottom: 10px;
+      &:active,
+      &:focus {
+        @extend .trans;
+        border: 1px solid $green;
+        outline: none;
+      }
+    }
+    &-meta {
+      width: 100%;
+      display: inline-block;
+      margin-top: 12px;
+      #markdown,
+      #clean,
+      #submit {
+        font-size: 1.4rem;
+        padding: 6px 12px;
+      }
+      #markdown,
+      #clean {
+        border: 1px solid lighten($borderInput, 3%);
+      }
+      #markdown {
+        float: right;
+        margin-right: 15px;
+      }
+      #submit {
+        background-color: $green;
+        border-color: transparent;
+        color: $white;
+        float: right;
+        font-size: 1.4rem;
+        padding: 6px 12px;
+      }
+    }
+  }
+  &-new-post {
+    @extend .user-wallet-receive-cash;
+    margin-bottom: 0;
+    margin-top: 15px;
+    span {
+      &.count {
+        margin-left: 5px;
+      }
+    }
+  }
+  &-container {
+    width: 100%;
+    display: inline-block;
+    margin-top: 15px;
+    .stream-single {
+      @include border-radius(3px);
+      padding: 10px;
+      background-color: $white;
+      box-shadow: $shadow;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 15px;
+      &.details {
+        margin-bottom: 25px;
+      }
+      &-avatar {
+        position: absolute;
+        background-color: $sidebarBackground;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+        height: 35px;
+        width: 35px;
+        float: left;
+      }
+      &-content {
+        width: 100%;
+        display: inline-block;
+        padding-left: 45px;
+        &-author {
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          color: $purple;
+          font-weight: 500;
+          display: table;
+          float: left;
+          width: 100%;
+          margin-bottom: 5px;
+          &-username {
+            color: $green;
+            text-decoration: none;
+            margin-right: 3px;
+            &:hover {
+              @extend .trans;
+              text-decoration: none;
+              cursor: pointer;
+            }
+          }
+          &-reputation {
+            color: $purple;
+            font-weight: 400;
+            color: $green;
+          }
+          &-time {
+            position: relative;
+            color: lighten($purple, 30%);
+            font-weight: 400;
+            text-decoration: none;
+            padding-left: 15px;
+            margin-left: 5px;
+            &:hover {
+              @extend .trans;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            .fa {
+              margin-right: 3px;
+            }
+            &:before {
+              content: "•";
+              position: absolute;
+              font-size: 1.8rem;
+              opacity: 0.3;
+              left: 0;
+              top: -1px;
+            }
+          }
+          &-remove,
+          &-edit,
+          &-flag {
+            float: right;
+            color: lighten($purple, 55%);
+            &:hover {
+              @extend .trans;
+              color: $red;
+              cursor: pointer;
+            }
+          }
+          &-remove,
+          &-edit {
+            margin-right: 15px;
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+        &-description {
+          @extend %word-break;
+          font-size: 1.4rem !important;
+          line-height: 2.2rem !important;
+          color: $text;
+          display: inline-block;
+          width: 100%;
+          .dotted-more {
+            color: lighten($purple, 30%);
+            font-weight: 500;
+          }
+          p {
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+          img {
+            @include border-radius(3px);
+            display: inline-block;
+            vertical-align: middle;
+            width: auto;
+            max-width: 350px;
+            height: auto;
+            max-height: none;
+          }
+          &-more {
+            width: 100%;
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            a {
+              @include border-radius(3px);
+              background-color: $sidebarBackground;
+              border: 1px solid $sidebarBorder;
+              color: lighten($purple, 30%);
+              padding: 3px 5px;
+              &:hover {
+                @extend .trans;
+                cursor: pointer;
+                color: $purple;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        &-meta {
+          margin-top: 5px;
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          display: inline-block;
+          width: 100%;
+          color: lighten($purple, 30%);
+          font-weight: 400;
+          .container-vote-small {
+            position: relative;
+            display: inline-block;
+            margin-right: 5px;
+            .vote-name {
+              @include border-radius(3px);
+              background-color: transparent;
+              color: lighten($purple, 30%);
+              position: relative;
+              display: inline-block;
+              font-weight: 500;
+              text-align: center;
+              font-size: 1.3rem;
+              line-height: 2.2rem;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            &.voted {
+              &.app-user {
+                &:hover {
+                  cursor: pointer;
+                  .vote-count {
+                    color: darken($green, 5%);
+                  }
+                  .vote-name {
+                    @extend .trans;
+                    color: darken($green, 5%);
+                  }
+                }
+              }
+              .vote-count {
+                color: $green;
+              }
+              .vote-name {
+                color: $green;
+              }
+            }
+            .vote-count {
+              @include border-radius(3px);
+              position: relative;
+              display: inline-block;
+              color: lighten($purple, 30%);
+              text-align: center;
+              height: 23px;
+              line-height: 21px;
+              font-weight: 500;
+              margin-left: 5px;
+              &:hover {
+                @extend .trans;
+                color: lighten($purple, 35%);
+                cursor: pointer;
+              }
+
+              .loading-oval-content {
+                margin: 10px auto;
+                width: 15px;
+                height: 15px;
+              }
+
+            }
+          }
+          &-cash,
+          &-comments {
+            position: relative;
+            color: lighten($purple, 30%);
+            font-weight: 400;
+            text-decoration: none;
+            padding-left: 15px;
+            margin-left: 5px;
+            &:hover {
+              @extend .trans;
+              color: $purple;
+              cursor: pointer;
+              text-decoration: none;
+            }
+            &:before {
+              content: "•";
+              position: absolute;
+              font-size: 1.8rem;
+              opacity: 0.3;
+              left: 0;
+              top: -1px;
+            }
+            .fa {
+              margin-right: 3px;
+            }
+          }
+          &-cash {
+            &:hover {
+              cursor: text;
+            }
+          }
+        }
+      }
+    }
+  }
+}

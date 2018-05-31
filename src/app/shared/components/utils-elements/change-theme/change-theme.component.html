@@ -1,0 +1,8 @@
+<div class="language">
+  <span [ngClass]="{'active' : lightButton}" (click)="removeDarkTheme()">
+    {{ 'theme.light'|translate }}
+  </span>
+  <span [ngClass]="{'active' : darkButton}" (click)="setDarkTheme()">
+    {{ 'theme.dark'|translate }}
+  </span>
+</div>

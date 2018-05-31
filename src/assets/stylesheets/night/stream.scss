@@ -1,0 +1,153 @@
+body {
+  &.night {
+    .stream {
+      &-submit {
+        background: $NightFirst;
+        box-shadow: none;
+        border: 1px solid $NightPostBorder;
+        &-meta {
+          .btn-white,
+          #markdown {
+            background-color: $NightPostBackground;
+            border: none;
+            color: lighten($purple, 35%);
+          }
+        }
+        /* Editor */
+        .editor-preview {
+          background: $NightFirst;
+          color: lighten($purple, 35%);
+        }
+        .editor-toolbar {
+          border-top: 1px solid $NightBorderInput;
+          border-left: 1px solid $NightBorderInput;
+          border-right: 1px solid $NightBorderInput;
+          &.disabled-for-preview {
+            a {
+              &:not(.no-disable) {
+                background: transparent;
+              }
+            }
+          }
+          a {
+            color: $white !important;
+            &.active,
+            &:hover {
+              background: $NightFirst;
+              border-color: $NightBorderInput;
+            }
+          }
+          i {
+            &.separator {
+              border-left: 1px solid $NightBorderInput;
+              border-right: 1px solid $NightBorderInput;
+            }
+          }
+        }
+        .CodeMirror {
+          background: $NightFirst;
+          border: 1px solid $NightBorderInput;
+          color: lighten($purple, 35%);
+        }
+        .CodeMirror-cursor {
+          border-left: 1px solid lighten($purple, 35%);
+        }
+      }
+      .stream-single {
+        background-color: $NightPostBackground;
+        box-shadow: transparent;
+        border: 1px solid $NightPostBorder;
+        &-content {
+          &-author-username,
+          &-author-reputation {
+            color: $green;
+            a {
+              color: $green;
+              &:hover {
+                color: $green;
+              }
+            }
+          }
+          &-author-time {
+            color: $NightMeta;
+            a {
+              color: $NightMeta;
+              &:hover {
+                color: $NightMeta;
+                cursor: text;
+              }
+            }
+          }
+          &-author-remove,
+          &-author-edit,
+          &-author-flag {
+            color: $NightMeta;
+            &:hover {
+              color: $red;
+            }
+          }
+          &-author-remove,
+          &-author-edit {
+            &:hover {
+              color: $green;
+            }
+          }
+          &-description {
+            @extend %word-break;
+            color: lighten($purple, 45%);
+            &-more {
+              a {
+                background-color: $NightFirst;
+                border: 1px solid $NightFirst;
+                color: lighten($purple, 30%);
+                &:hover {
+                  @extend .trans;
+                  color: lighten($purple, 45%);
+                }
+              }
+            }
+          }
+          &-meta {
+            color: $NightMeta;
+            .container-vote-small {
+              &.voted {
+                &.app-user {
+                  &:hover {
+                    cursor: pointer;
+                    .vote-count {
+                      color: darken($green, 5%);
+                    }
+                    .vote-name {
+                      @extend .trans;
+                      color: darken($green, 5%);
+                    }
+                  }
+                }
+                .vote-count {
+                  color: $green;
+                }
+                .vote-name {
+                  color: $green;
+                }
+              }
+              .vote-name,
+              .vote-count {
+                color: lighten($purple, 30%);
+                &:hover {
+                  color: lighten($NightMeta, 35%);
+                }
+              }
+            }
+            &-cash,
+            &-comments {
+              color: $NightMeta;
+              &:hover {
+                color: lighten($NightMeta, 15%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

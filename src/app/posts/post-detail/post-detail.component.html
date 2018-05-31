@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xl-9 col-lg-8 col-md-12">
+
+    <!-- info about errors -->
+    <app-error-info *ngIf="postError" [message]="'post-details.error'"></app-error-info>
+
+    <app-error-info *ngIf="isDeleting" [message]="'delete.process'"></app-error-info>
+    <app-spinner *ngIf="isDeleting"></app-spinner>
+    <app-error-info *ngIf="deleteError" [message]="'delete.errorDelete'"></app-error-info>
+
+    <!-- Spinner after request -->
+    <div class="loading-content" *ngIf="showSpinner">
+      <app-spinner></app-spinner>
+    </div>
+
+    <div class="post-single detail" *ngIf="post">
+      <app-post-detail-selector
+        [post]="post"
+        [showEdit]="showEdit"
+        (postToEdit)="onEditPost($event)"
+        [showDelete]="showDelete"
+        (postToDelete)="onDeletePost($event)"></app-post-detail-selector>
+    </div>
+
+    <span #commentsRef></span>
+    <app-container-comments *ngIf="post" [post]="post"></app-container-comments>
+  </div>
+
+  <div class="col-xl-3 col-lg-4 d-xl-block d-lg-block d-none">
+    <app-user-profile [user]="author"></app-user-profile>
+  </div>

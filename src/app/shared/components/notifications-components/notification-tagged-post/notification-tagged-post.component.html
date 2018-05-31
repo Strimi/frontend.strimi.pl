@@ -1,0 +1,35 @@
+<a href="#" class="notification-single active">
+    <app-avatar-post [classStyle]="'notification-avatar'" [author]="notification.author"></app-avatar-post>
+    <div class="notification">
+      <div class="notification-author" not>
+        <app-author-post [author]="notification.author" [classAuthor]="'notification-author-username'"></app-author-post>
+        <app-date [classDate]="'notification-author-time'" [date]="notification.date"></app-date>
+      </div>
+
+      <!-- user tagged in comment -->
+      <ng-container *ngIf="notification.category !=='strimi-stream'">
+        <div class="notification-description">
+          <span>{{ 'user.notifications.type.tagged_content'|translate }}</span>
+          <app-title-post
+          [title]="notification.body"
+          [author]="notification.url.split('/')[2].replace('@','')"
+          [category]="notification.url.split('/')[1]"
+          [permlink]="notification.url.split('/')[3].split('#')[0]"
+          [titleLength]="40">
+          </app-title-post>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="notification.category ==='strimi-stream'">
+        <div class="notification-description">
+          <span>{{ 'user.notifications.type.tagged_stream'|translate }}</span>
+          <app-title-post
+          [title]="notification.body"
+          [author]="notification.url.split('/')[2].replace('@','')"
+          [category]="'stream/detail'"
+          [permlink]="notification.url.split('/')[3].split('#')[0]" [titleLength]="40">
+          </app-title-post>
+        </div>
+      </ng-container>
+    </div>
+  </a>

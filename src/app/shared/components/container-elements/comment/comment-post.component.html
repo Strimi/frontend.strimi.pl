@@ -1,0 +1,65 @@
+<li [ngClass]="{'comment-collapse': hideComment}" class="comments-single" *ngIf="comment">
+  <app-avatar-post [author]="comment.is_banned_author ? 0 : comment.author"
+                   [classStyle]="'comment-avatar'"></app-avatar-post>
+  <div class="comment">
+    <div class="comment-author">
+      <app-author-post [author]="comment.author" [reputation]="comment.author_reputation"
+                       [classAuthor]="comment.is_banned_author ? 'comment-author-username banned' : 'comment-author-username'"
+                       [classRep]="comment.is_banned_author ? 'comment-author-reputation banned' : 'comment-author-reputation'"></app-author-post>
+      <app-cash-post *ngIf="(!comment.is_banned_content && !comment.is_banned_author)" [post]="comment"
+                     [classCash]="'comment-author-cash'"></app-cash-post>
+      <app-date [date]=comment.created [classDate]="'comment-author-time'"></app-date>
+      <span class="comment-author-collapse" (click)="hideComment = !hideComment">
+        <ng-container *ngIf="hideComment">{{ 'post.comments.show' | translate }}</ng-container>
+        <ng-container *ngIf="!hideComment">{{ 'post.comments.hide' | translate }}</ng-container>
+      </span>
+
+      <app-report-post
+        *ngIf="(!comment.is_banned_content && !comment.is_banned_author && isLogged)"
+        [classReport]="'comment-author-flag'"
+        [classRemove]="'comment-author-remove'"
+        [classEdit]="'comment-author-edit'"
+        (edit)="onEditPost()"
+        [showEdit]="showEdit"
+        [showDelete]="showDelete"
+        (delete)="onDelete.next(comment)"></app-report-post>
+    </div>
+    <div *ngIf="comment.is_banned_content" class="comment-description banned">
+      {{ 'banned.comments.content'|translate }}
+    </div>
+    <div *ngIf="comment.is_banned_author" class="comment-description banned">
+      {{ 'banned.comments.author'|translate }}
+    </div>
+    <div *ngIf="(!comment.is_banned_content && !comment.is_banned_author)"
+         class="comment-description description-comments-markdown"
+         [innerHTML]="comment.body | markdown | sanitize: comment.json_metadata" san>
+    </div>
+    <div class="comment-meta">
+      <app-vote-post-thumb *ngIf="(!comment.is_banned_content && !comment.is_banned_author)"
+                           [post]="comment"></app-vote-post-thumb>
+      <span (click)="showReply = true" class="comment-meta-response"
+            [ngClass]="{'banned': (comment.is_banned_content || comment.is_banned_author) }">
+     <span>{{ 'post.comments.reply'|translate }}</span>
+    </span>
+      <app-add-content-post *ngIf="isLogged && showReply"
+                            (message)="sendNewComment($event)"
+                            (editedMessage)="onEditComment($event)"
+                            [showSpinner]="showSpinner"
+                            [showError]="showError"
+                            [errorLimitTime]="errorLimitTime"
+                            [text]="text"
+                            [showCancel]="true"
+                            (isCancel)="onCancel()"
+                            [editPost]="isEdited ?  comment : null"
+      ></app-add-content-post>
+
+    </div>
+  </div>
+  <ul *ngIf="comment.comments && comment.comments.length > 0">
+    <app-comment-post *ngFor="let c of comment.comments"
+                      [comment]="c"
+                      [addContentService]="addContentService"
+                      [postService]="postService"
+                      [isLogged]="isLogged"></app-comment-post>
+  </ul>
+</li>

@@ -1,0 +1,769 @@
+.user {
+  &-header {
+    position: absolute;
+    background-color: $border;
+    background-image: url('../images/user_bg.png');
+    background-position: center center;
+    border-top: 1px solid lighten($purple, 15%);
+    width: 100%;
+    height: 130px;
+    left: 0;
+    z-index: 2;
+    &-avatar {
+      position: absolute;
+      background-size: cover;
+      background-color: $white;
+      border-radius: 50%;
+      box-shadow: $shadow;
+      width: 115px;
+      height: 115px;
+      border: 4px solid $white;
+      bottom: -20px;
+      z-index: 1;
+      &-reputation {
+        position: absolute;
+        background-color: $purple;
+        border: 3px solid $white;
+        border-radius: 50%;
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 2.3rem;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        right: 0;
+      }
+    }
+    &-meta {
+      display: none;
+    }
+    &-menu {
+      position: absolute;
+      background-color: $white;
+      box-shadow: 5px 1px 5px -1px rgba($black, .2);
+      width: 100%;
+      bottom: -40px;
+      height: 40px;
+      a {
+        position: relative;
+        font-weight: 500;
+        color: $purple;
+        text-decoration: none;
+        padding-top: 12px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-right: 25px;
+        display: inline-block;
+        &:first-child {
+          margin-left: 130px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        &:hover,
+        &.active {
+          @extend .trans;
+          color: $green;
+          text-decoration: none;
+          &:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: $green2;
+            bottom: -12px;
+            left: 0;
+          }
+        }
+        .count {
+          display: inline-block;
+          color: lighten($purple, 30%);
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  &-content {
+    display: inline-block;
+    width: 100%;
+    margin-top: 170px;
+    .follow-container {
+      width: 100%;
+      display: inline-block;
+      margin-top: 25px;
+    }
+    .follow-content {
+      @include border-radius(5px);
+      padding: 10px;
+      background-color: $white;
+      box-shadow: $shadow;
+      margin-bottom: 25px;
+      width: 100%;
+      display: inline-block;
+      &-header {
+        position: relative;
+        @include border-radius(3px);
+        background-image: url('../images/user_bg.png');
+        background-position: center center;
+        border: 1px solid $border;
+        width: 100%;
+        height: 80px;
+        display: inline-block;
+        .avatar {
+          position: absolute;
+          background-size: cover;
+          background-color: $white;
+          border-radius: 50%;
+          box-shadow: $shadow;
+          width: 65px;
+          height: 65px;
+          border: 3px solid $white;
+          top: 5px;
+          left: 5px;
+          z-index: 1;
+          &-reputation {
+            position: absolute;
+            background-color: $purple;
+            border: 3px solid $white;
+            border-radius: 50%;
+            color: $white;
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 2.3rem;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            right: 0;
+          }
+        }
+        .created {
+          @include border-radius(3px);
+          position: absolute;
+          background-color: transparentize($purple, .6);
+          color: $white;
+          font-size: 1.3rem;
+          padding: 3px 6px;
+          right: 5px;
+          top: 5px;
+          i {
+            margin-right: 3px;
+          }
+        }
+      }
+      &-username,
+      &-username-reputation {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: $purple;
+        text-decoration: none;
+        &:hover {
+          color: lighten($purple, 15%);
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+      &-username-reputation {
+        display: inline-block;
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+    }
+  }
+  &-votes {
+    @include border-radius(5px);
+    background-color: $white;
+    box-shadow: $shadow;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    &-single {
+      width: 100%;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $border;
+      &:last-child {
+        border-bottom: 0px solid transparent;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .votes-avatar {
+        position: absolute;
+        background-color: $sidebarBackground;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+        height: 35px;
+        width: 35px;
+        float: left;
+      }
+      .votes-content {
+        width: 100%;
+        display: inline-block;
+        padding-left: 45px;
+        &-name {
+          display: inline-block;
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          color: $purple;
+          font-weight: 500;
+          float: left;
+          margin-bottom: 5px;
+          a {
+            color: $purple;
+            text-decoration: none;
+            &:hover {
+              color: lighten($purple, 15%);
+              text-decoration: none;
+              cursor: pointer;
+            }
+          }
+        }
+        &-time {
+          position: relative;
+          display: inline-block;
+          color: lighten($purple, 30%);
+          font-weight: 400;
+          text-decoration: none;
+          padding-left: 15px;
+          margin-left: 10px;
+          &:before {
+            content: "•";
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: 0.3;
+            left: 0;
+            top: 0;
+          }
+          a {
+            color: lighten($purple, 30%);
+            text-decoration: none;
+            &:hover {
+              text-decoration: none;
+              cursor: default;
+            }
+          }
+        }
+        &-description {
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          color: $text;
+          display: inline-block;
+          width: 100%;
+          margin-top: 5px;
+          .vote-plus,
+          .vote-minus {
+            @include border-radius(5px);
+            padding: 3px 6px;
+            color: $white;
+            padding: 4px 6px;
+            margin-right: 15px;
+            padding-left: 10px;
+          }
+          .vote-plus {
+            background-color: $green;
+          }
+          .vote-minus {
+            background-color: $red;
+          }
+          a {
+            color: $purple;
+            text-decoration: none;
+            &:hover {
+              color: lighten($purple, 15%);
+              text-decoration: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-wallet {
+    margin-top: 25px;
+    &-receive-cash {
+      @include border-radius(5px);
+      background-color: $yellowInfoBackground;
+      border: 1px solid $yellowInfoBorder;
+      color: #3a3e64;
+      margin-bottom: 25px;
+      text-align: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-weight: 500;
+      width: 100%;
+      display: inline-block;
+      &:hover {
+        @extend .trans;
+        background-color: lighten($yellowInfoBackground, 5%);
+        cursor: pointer;
+      }
+      .loading-oval-content {
+        width: 25px;
+        height: 25px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      span {
+        @include border-radius(3px);
+        padding: 6px 8px;
+        margin-right: 5px;
+        &.name {
+
+        }
+        &.count,
+        &.cash {
+          font-size: 1.2rem;
+          background-color: $purple;
+          color: $white;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    &-header {
+      @include border-radius(5px);
+      padding: 10px;
+      background-color: $white;
+      box-shadow: $shadow;
+      margin-bottom: 25px;
+      width: 100%;
+      display: inline-block;
+      .margin-top {
+        margin-top: 25px;
+      }
+      .name {
+        color: $purple;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+      .description {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        color: $purple;
+        margin-top: 10px;
+      }
+      .count {
+        color: $purple;
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-align: right;
+        &.min {
+          display: inline-block;
+          width: 100%;
+          font-weight: 400;
+          font-size: 1.4rem;
+          margin-top: 10px;
+        }
+      }
+    }
+    &-alert {
+      @include border-radius(5px);
+      padding: 10px;
+      background-color: $border;
+      border: 1px solid $blueBorder;
+      font-size: 1.3rem;
+      line-height: 2.2rem;
+      font-weight: 500;
+      color: $purple;
+      margin-bottom: 25px;
+      width: 100%;
+      display: inline-block;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    &-rewards {
+      @include border-radius(5px);
+      background-color: $white;
+      box-shadow: $shadow;
+      padding: 15px;
+      margin-bottom: 15px;
+      &-single {
+        width: 100%;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $border;
+        &:last-child {
+          border-bottom: 0px solid transparent;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        .reward-avatar {
+          position: absolute;
+          background-color: $sidebarBackground;
+          background-position: center center;
+          background-size: cover;
+          border-radius: 50%;
+          margin-right: 10px;
+          height: 35px;
+          width: 35px;
+          float: left;
+          svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+            margin-top: 7px;
+          }
+          &.exchange,
+          &.steem-power,
+          &.steem-power-delegate,
+          &.new-account {
+            position: absolute;
+            &:after {
+              position: absolute;
+              font-family: FontAwesome;
+              font-style: normal;
+              font-weight: normal;
+              text-decoration: inherit;
+              font-size: 2rem;
+              left: 14px;
+              top: 10px;
+            }
+          } // $lightBlue
+          // $darkBlue
+          &.exchange {
+            background-color: $green;
+            &:after {
+              content: "\f0ec";
+              color: $white;
+              font-size: 1.7rem;
+              left: 10px;
+              top: 9px;
+            }
+          }
+          &.steem-power {
+            background-color: $green;
+            &:after {
+              content: "\F0E7";
+              color: $white;
+            }
+          }
+          &.steem-power-delegate {
+            background-color: $lightBlue;
+            &:after {
+              content: "\F0E7";
+              color: $white;
+            }
+          }
+          &.new-account {
+            background-color: $lightBlue;
+            &:after {
+              content: "\f2bd";
+              color: $white;
+              left: 5px;
+              font-size: 2.6rem;
+            }
+          }
+        }
+        .reward-content {
+          width: 100%;
+          display: inline-block;
+          padding-left: 45px;
+          &-name {
+            display: inline-block;
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+            color: $purple;
+            font-weight: 500;
+            float: left;
+            margin-bottom: 5px;
+            a {
+              &:hover {
+                color: lighten($purple, 15%);
+                text-decoration: none;
+                cursor: pointer;
+              }
+            }
+            .fa {
+              margin-left: 4px;
+              margin-right: 4px;
+            }
+          }
+          &-from,
+          &-time {
+            position: relative;
+            display: inline-block;
+            color: lighten($purple, 30%);
+            font-weight: 400;
+            text-decoration: none;
+            padding-left: 15px;
+            margin-left: 10px;
+            &:before {
+              content: "•";
+              position: absolute;
+              font-size: 1.8rem;
+              opacity: 0.3;
+              left: 0;
+              top: 2px;
+            }
+          }
+          &-from {
+            color: $purple;
+            font-weight: 500;
+            padding-left: 0;
+            margin-left: 3px;
+            &:before {
+              display: none;
+            }
+            a {
+              color: $green;
+              text-decoration: none;
+            }
+          }
+          &-time {
+            padding-top: 2px;
+          }
+          &-description {
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+            color: $text;
+            display: inline-block;
+            width: 100%;
+            &-amount {
+              @include border-radius(3px);
+              background-color: transparentize($purple, .95);
+              color: $purple !important;
+              font-size: 1.4rem;
+              line-height: 2.2rem;
+              font-weight: 500;
+              padding: 3px 5px;
+              color: $text;
+              display: inline-block;
+              margin-right: 5px;
+              margin-bottom: 3px;
+            }
+            &-on {
+              font-size: 1.4rem;
+              line-height: 2.2rem;
+              font-weight: 500;
+              padding: 3px 5px;
+              color: $text;
+              display: inline-block;
+              margin-right: 8px;
+              margin-bottom: 3px;
+            }
+            &-memo {
+              @extend %word-break;
+              font-style: italic;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-settings,
+  &-new-content {
+    .input {
+      width: 100%;
+      display: inline-block;
+      margin-top: 15px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &.new-content {
+        display: inline-block;
+        margin-top: 15px;
+        width: 100%;
+      }
+      &-title {
+        display: inline-block;
+        width: 100%;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: $text54;
+        span {
+          color: lighten($text54, 15%);
+          font-weight: 400;
+        }
+      }
+      &-inline {
+        input,
+        select {
+          height: 38px !important;
+        }
+        textarea {
+          min-height: 114px;
+          resize: none;
+        }
+        input,
+        textarea,
+        select,
+        .form-control {
+          font-size: 1.4rem;
+          line-height: 1.8rem;
+          &:active,
+          &:focus {
+            @extend .trans;
+            border: 1px solid $green;
+            outline: none;
+          }
+        }
+      }
+      button {
+        margin-top: 25px;
+        float: right;
+      }
+    }
+    &.keys {
+      .key-info {
+        width: 100%;
+        display: inline-block;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $red;
+        margin-bottom: 15px;
+      }
+      .key-single {
+        width: 100%;
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $border;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: 1px solid transparent;
+        }
+        .name {
+          color: $purple;
+          font-size: 1.6rem;
+          font-weight: 500;
+          width: 100%;
+          display: inline-block;
+        }
+        .name,
+        .key {
+          color: $purple;
+          font-size: 1.4rem;
+          font-weight: 500;
+        }
+        .key {
+          font-size: 1.8rem;
+          font-weight: 300;
+          width: 100%;
+          display: inline-block;
+          margin-top: 5px;
+        }
+        .description {
+          font-size: 1.3rem;
+          line-height: 2.2rem;
+          color: $purple;
+          margin-top: 5px;
+        }
+      }
+    }
+    /* Button - Link preview */
+    #link-preview {
+      @include border-radius(5px);
+      display: inline-block;
+      margin-top: 22px;
+      width: 100%;
+    }
+    .input-link-line {
+      background-color: $border;
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    /* Link thumb */
+    .link-thumb {
+      @include border-radius(3px);
+      background-color: $sidebarBackground;
+      position: relative;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 100%;
+      height: 85px;
+      span {
+        position: absolute;
+        top: 30px;
+        height: 100%;
+        color: $white;
+        font-size: 2.2rem;
+        opacity: .7;
+        &:hover {
+          @extend .trans;
+          opacity: 1;
+          cursor: pointer;
+        }
+        &.left {
+          left: 5px;
+        }
+        &.right {
+          right: 5px;
+        }
+      }
+    }
+    /* Tags */
+    .mat-form-field {
+      @include border-radius(3px);
+      border: 1px solid #ced4da;
+      height: 38px;
+      width: 100%;
+    }
+    .mat-chip {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    .mat-chip:not(.mat-basic-chip) {
+      @include border-radius(15px);
+      background-color: $purple3;
+      color: lighten($purple, 45%);
+      padding: 5px 8px;
+    }
+    .mat-chip:not(.mat-basic-chip) .mat-chip-remove {
+      color: lighten($purple, 45%);
+      opacity: 1;
+    }
+    .mat-form-field-infix {
+      border-top: 0.04em solid transparent;
+      border-left: .3em solid transparent;
+      padding: 0;
+    }
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-form-field-ripple,
+    .mat-form-field-underline {
+      background-color: transparent;
+    }
+    input {
+      &.mat-chip-input {
+        height: 27px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+/* Adding Post - Dropdown tag select */
+
+.mat-autocomplete-panel {
+  @include border-radius(5px);
+}
+
+.mat-option {
+  line-height: 28px !important;
+  height: 28px !important;
+  color: $purple !important;
+  font-size: 1.4rem !important;
+}

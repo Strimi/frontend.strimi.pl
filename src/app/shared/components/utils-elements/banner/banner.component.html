@@ -1,0 +1,17 @@
+<div class="welcome-banner">
+  <div class="container">
+    <div class="row">
+      <div class="welcome-banner-close" id="welcome-banner-close">
+        <i class="fa fa-times" aria-hidden="true" (click)="agree()"></i>
+      </div>
+      <div class="welcome-banner-title">{{ 'welcome.title'|translate }}</div>
+      <div class="welcome-banner-description">{{ 'welcome.description'|translate }}</div>
+      <div class="welcome-banner-button">
+        <app-login-modal [buttonClass]="'btn large btn-primary'" [buttonText]="'welcome.button.login'" ></app-login-modal>
+        <a class="btn large btn-white" routerLink="pages/faq">
+          {{ 'welcome.button.more'|translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

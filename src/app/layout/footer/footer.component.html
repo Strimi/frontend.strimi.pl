@@ -1,0 +1,119 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 col-md-12">
+        <div class="row-fluid">
+          <div class="copyrights">
+            <span>
+              {{ '© 2016-' }}{{ today | date:'y' }}
+            </span>
+            {{ 'Strimi.pl' }}
+          </div>
+          <div class="copyrights-info" [innerHTML]="'footer.information.rights_info'|translate"></div>
+        </div>
+        <div class="row-fluid">
+          <div class="copyrights-short-info" [innerHTML]="'footer.information.short_info'|translate"></div>
+        </div>
+        <div class="row-fluid">
+          <app-select-language></app-select-language>
+          <app-change-theme></app-change-theme>
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-7 col-md-12">
+        <div class="row">
+          <div class="col-lg-4">
+            <ul>
+              <li class="name">
+                {{ 'footer.name.useful'|translate }}
+              </li>
+              <li>
+                <a routerLink="pages/faq">
+                  {{ 'FAQ' }}
+                </a>
+              </li>
+              <li>
+                <a routerLink="pages/regulations">
+                  {{ 'page.regulations.name'|translate }}
+                </a>
+              </li>
+              <li>
+                <a routerLink="pages/tags-rank">
+                  {{ 'page.tags_ranking.name' | translate }}
+                </a>
+              </li>
+              <li>
+                <a routerLink="pages/users-rank">
+                  {{ 'page.users_ranking.name' | translate }}
+                </a>
+              </li>
+              <li>
+                <a routerLink="pages/privacy-policy">
+                  {{ 'page.privacy.name'|translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <ul>
+              <li class="name">
+                {{ 'footer.name.using.name'|translate }}
+              </li>
+              <li>
+                <a routerLink="pages/contact">
+                  {{ 'page.contact.name'|translate }}
+                </a>
+              </li>
+              <li>
+                <a href="https://steem.io/" target="_blank" rel="nofollow">
+                  {{ 'Steem.io' }}
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/strimi.it/frontend.strimi.it" target="_blank" rel="nofollow">
+                  {{ 'Strimi GitLab' }}
+                </a>
+              </li>
+              <li>
+                <a href="https://strimi.freshdesk.com" target="_blank" rel="nofollow">
+                  {{ 'footer.name.using.bug'|translate }}
+                </a>
+              </li>
+              <li>
+                <a routerLink="pages/cookies">
+                  {{ 'page.cookies.name'|translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <ul>
+              <li class="name">
+                {{ 'footer.name.social_media'|translate }}
+              </li>
+              <li>
+                <a href="https://www.facebook.com/strimi.it/" target="_blank" rel="nofollow">
+                  {{ 'Facebook' }}
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/strimi_app" target="_blank" rel="nofollow">
+                  {{ 'Telegram' }}
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.gg/Z46ecQe" target="_blank" rel="nofollow">
+                  {{ 'Discord' }}
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/strimipl" target="_blank" rel="nofollow">
+                  {{ 'Twitter' }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

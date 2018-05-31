@@ -1,0 +1,17 @@
+<ng-container *ngIf="data && data.length>0">
+  <app-posts-container [posts]="data"></app-posts-container>
+  <div class="row-fluid">
+    <app-button-next (clickButton)="nextPosts()" *ngIf="showButton" [disabled]="disabledButton" [showSpinner]="showSpinnerButton" [message]="'no_content.default'"></app-button-next>
+  </div>
+</ng-container>
+
+<!-- Info no content to show -->
+<app-no-content-info *ngIf="showNoContent" [message]="'no_content.default'"></app-no-content-info>
+
+<!-- info about errors -->
+<app-error-info *ngIf="showError" [message]="'no_content.error'"></app-error-info>
+
+<!-- Spinner after request -->
+<div class="loading-content" *ngIf="showSpinner">
+  <app-spinner></app-spinner>
+</div>

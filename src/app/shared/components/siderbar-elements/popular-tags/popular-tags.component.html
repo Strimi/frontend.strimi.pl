@@ -1,0 +1,21 @@
+<div class="sidebar tags-lists">
+  <div class="sidebar-title">
+    {{ "sidebar.popular_tags.name"|translate }}
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-content-popular-tags">
+      <app-serach-input (newValue)="onValueChange($event)"></app-serach-input>
+      <ul>
+        <li *ngFor="let tag of tags">
+          <span class="name">
+            #<a [routerLink]="['/trending', tag.name]" [title]="tag.name">{{ tag.name }}</a>
+          </span>
+          <span class="count">
+            {{ tag.top_posts | number}}
+            <i class="fa fa-pencil-square-o"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<ng-container *ngIf="fillOrder">
+  <div class="reward-avatar exchange"></div>
+  <div class="reward-content">
+    <div class="reward-content-name">
+      {{ 'user.wallet.exchange.name'|translate }}
+    </div>
+    <div class="reward-content-time">
+      <app-date [date]="timestamp"></app-date>
+    </div>
+    <div class="reward-content-description">
+      <div class="reward-content-description-amount">
+        {{ fillOrder.current_pays }}
+      </div>
+      <div class="reward-content-description-on">
+        {{ 'user.wallet.exchange.on'|translate }}
+      </div>
+      <div class="reward-content-description-amount">
+        {{ fillOrder.open_pays }}
+      </div>
+    </div>
+  </div>
+</ng-container>

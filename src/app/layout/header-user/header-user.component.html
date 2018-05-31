@@ -1,0 +1,49 @@
+<div class="user-header" [style.backgroundImage]="style">
+  <div class="container">
+    <div class="user-header-avatar" [style.background-image]="'url(https://cdn.steemitimages.com/u/' + name + '/avatar)'">
+      <div class="user-header-avatar-reputation">{{reputation}}</div>
+    </div>
+    <div class="user-header-meta">
+      <div class="user-header-meta-username">
+        {{ '@' + name }}
+      </div>
+      <div class="user-header-meta-created">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <app-date [date]="created"></app-date>
+      </div>
+    </div>
+  </div>
+  <div class="user-header-menu">
+    <div class="container">
+      <a routerLink="feed" routerLinkActive="active">
+        {{ "user.profil_menu.feed"|translate }}
+      </a>
+      <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        {{ "user.profil_menu.posts"|translate }}
+      </a>
+      <a routerLink="comments" routerLinkActive="active">
+        {{ "user.profil_menu.comments"|translate }}
+      </a>
+      <a routerLink="replies" routerLinkActive="active">
+        {{ "user.profil_menu.replies"|translate }}
+      </a>
+      <a routerLink="votes" routerLinkActive="active">
+        {{ "user.profil_menu.votes"|translate }}
+      </a>
+      <a routerLink="following" routerLinkActive="active">
+        {{ "user.profil_menu.following"|translate }}
+        <span class="count">{{stats?.following_count}}</span>
+      </a>
+      <a routerLink="followers" routerLinkActive="active">
+        {{ "user.profil_menu.followers"|translate }}
+        <span class="count">{{stats?.follower_count}}</span>
+      </a>
+      <a routerLink="transfers" routerLinkActive="active">
+        {{ "user.profil_menu.wallet"|translate }}
+      </a>
+      <a routerLink="settings" routerLinkActive="active" *ngIf="showSettings">
+        {{ "user.profil_menu.settings"|translate }}
+      </a>
+    </div>
+  </div>
+</div>

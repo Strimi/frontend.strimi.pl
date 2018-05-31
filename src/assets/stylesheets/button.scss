@@ -1,0 +1,334 @@
+.btn {
+  @include border-radius(5px);
+  font-size: 1.4rem;
+  border-color: transparent;
+  &.small {
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding: 1px 5px;
+  }
+  &.medium {
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding: 3px 10px;
+  }
+  &.large {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding: .85rem 2.13rem;
+  }
+  &.submit {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+}
+
+.btn-primary {
+  @include border-radius(25px);
+  position: relative;
+  background-color: $purple; //box-shadow: 0 2px 5px 0 rgba($black, .16), 0 2px 10px 0 rgba($black,.12);
+  color: $white;
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled):active:focus,
+  &:hover,
+  &:active,
+  &:focus {
+    @extend .trans;
+    background-color: lighten($purple, 10%);
+    color: $white;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  &:disabled {
+    background-color: lighten($purple, 20%);
+    border-color: lighten($purple, 20%);
+    color: $white;
+  }
+  .loading-oval-content {
+    margin: 0;
+    width: 20px;
+    height: 21px;
+  }
+  &.spinner {
+    background-color: $sidebarBackground;
+    border: 1px solid lighten($sidebarBorder, 3%);
+    height: 41px;
+    width: 44px;
+    top: -1px;
+    left: 1px;
+    .loading-oval-content {
+      background-size: 25px 25px;
+      padding: 20px;
+      top: 0px;
+      left: 1px;
+      margin-top: 0;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus,
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $sidebarBackground;
+      border: 1px solid lighten($sidebarBorder, 3%);
+      box-shadow: none;
+      cursor: default;
+    }
+  }
+}
+
+.btn-green {
+  @include border-radius(25px);
+  position: relative;
+  background-color: $green; //box-shadow: 0 2px 5px 0 rgba($black, .16), 0 2px 10px 0 rgba($black,.12);
+  color: $white;
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled):active:focus,
+  &:hover,
+  &:active,
+  &:focus {
+    @extend .trans;
+    background-color: lighten($green, 10%);
+    color: $white;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  .loading-oval-content {
+    margin: 0;
+    width: 20px;
+    height: 21px;
+  }
+  &.spinner {
+    background-color: $sidebarBackground;
+    border: 1px solid lighten($sidebarBorder, 3%);
+    height: 41px;
+    width: 44px;
+    top: -1px;
+    left: 1px;
+    .loading-oval-content {
+      background-size: 25px 25px;
+      padding: 20px;
+      top: 0px;
+      left: 1px;
+      margin-top: 0;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus,
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $sidebarBackground;
+      border: 1px solid lighten($sidebarBorder, 3%);
+      box-shadow: none;
+      cursor: default;
+    }
+  }
+}
+
+.btn-white {
+  @include border-radius(25px);
+  border-color: $white;
+  position: relative;
+  background-color: $white; //box-shadow: 0 2px 5px 0 rgba($black, .16), 0 2px 10px 0 rgba($black,.12);
+  color: $purple;
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled):active:focus,
+  &:hover,
+  &:active,
+  &:focus {
+    @extend .trans;
+    background-color: darken($white, 10%);
+    color: $purple;
+    border-color: $white;
+    box-shadow: none;
+  }
+}
+
+/* Watch | Mute */
+.btn-mute,
+.btn-watch {
+  @extend .btn-green;
+  border: 2px solid $green;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: .5px;
+  padding: .85rem 1.8rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  &:hover {
+    cursor: pointer;
+  }
+  &.active {
+    position: relative;
+    background-color: transparent;
+    border: 2px solid $green;
+    color: $green;
+    padding-left: 32px;
+    &:after {
+      position: absolute;
+      content: "\f058";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      font-size: 1.8rem;
+      left: 8px;
+      top: 10px;
+    }
+  }
+}
+/* Mute */
+.btn-mute {
+  margin-left: 15px;
+  background-color: $red;
+  border: 2px solid $red;
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+  &.active {
+    position: relative;
+    background-color: transparent;
+    border: 2px solid $red;
+    color: $red;
+    padding-left: 32px;
+    &:after {
+      position: absolute;
+      content: "\f058";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      font-size: 1.8rem;
+      left: 8px;
+      top: 10px;
+    }
+  }
+}
+
+/* Header Menu */
+.btn-header-menu {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: lighten($purple, 45%);
+  margin-top: 7px;
+  margin-right: 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 6px 8px;
+  &:first-child {
+    margin-left: 10px;
+  }
+  &.tagActive {
+    box-shadow: none;
+    background-color: $purple;
+    color: $white;
+    &:hover {
+      background-color: $purple;
+      color: $white;
+    }
+  }
+  &.add-content {
+    float: right;
+    border-color: $green;
+  }
+  &.active,
+  &:hover,
+  &:focus {
+    @extend .trans;
+    color: $green2;
+    outline: transparent;
+    box-shadow: none;
+    .count {
+      color: $green2;
+    }
+  }
+  .count {
+    @include border-radius(3px);
+    background-color: darken($purple, 5%);
+    color: lighten($purple, 30%);
+    padding: 2px 6px;
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
+
+/* Button My Strimi */
+.btn-header-login {
+  @include border-radius(25px);
+  background-color: darken($purple, 5%);
+  border: 2px solid $green2;
+  float: right;
+  margin-top: 9px;
+  color: lighten($purple, 45%);
+  font-weight: 500;
+  padding: 6px 12px;
+  &:focus,
+  &:hover {
+    @extend .trans;
+    background-color: transparent;
+    border-color: $white;
+  }
+}
+
+/* Dropdown */
+.btn-outline-primary {
+  color: $purple;
+  font-weight: 500;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $purple;
+    border-color: $purple;
+    color: $white;
+  }
+}
+
+.dropdown-toggle {
+  color: $purple;
+}
+
+.show {
+  .btn-outline-primary {
+    &.dropdown-toggle {
+      background-color: $purple;
+      border-color: $purple;
+      box-shadow: none;
+      color: $white;
+      outline: none;
+      &:active,
+      &:hover,
+      &:focus,
+      &.active {
+        background-color: $purple;
+        border-color: $purple;
+        box-shadow: none;
+        color: $white;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  box-shadow: $shadow;
+  .dropdown-item {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $purple;
+      border-color: $purple;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.container-sorting {
+  @include border-radius(3px);
+  position: relative;
+  background-color: $sidebarBackground;
+  border: 1px solid $sidebarBorder;
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px;
+  width: 100%;
+  color: $purple;
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  &-order {
+    color: lighten($purple, 30%);
+    a {
+      color: lighten($purple, 30%);
+    }
+  }
+  &-time {
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    color: lighten($purple, 30%);
+    a {
+      color: lighten($purple, 30%);
+    }
+  }
+  a {
+    position: relative;
+    margin-right: 10px;
+    padding-right: 15px;
+    color: lighten($purple, 30%);
+    font-weight: 500;
+    &.active {
+      color: $purple;
+      text-decoration: none;
+    }
+    &.hot {
+      color: $red;
+    }
+    &:hover {
+      @extend .trans;
+      color: $purple;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    &:after {
+      position: absolute;
+      color: lighten($purple, 50%);
+      content: "•";
+      font-size: 1.8rem;
+      opacity: 0.3;
+      top: 2px;
+      right: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      &:after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+}

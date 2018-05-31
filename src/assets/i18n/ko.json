@@ -1,0 +1,389 @@
+{
+  "header": {
+    "top_menu": {
+      "logo": "Strimi",
+      "created": "새로운",
+      "hot": "뜨거운",
+      "stream": "흐름",
+      "type": {
+        "content": "함유량",
+        "stream": "흐름"
+      },
+      "my_strimi": {
+        "name": "나의 Strimi",
+        "title": "로그인",
+        "username": "로그인",
+        "password": "비밀번호 또는 WIF",
+        "submit": "로그인",
+        "no_account": "계정 없음?",
+        "sign_up": "가입",
+        "bad_login": "잘못된 로그인",
+        "bad_pass":"잘못된 암호",
+        "accept": "나는",
+        "regulations": "서비스 조건에 동의한다",
+        "service": "."
+      }
+    }
+  },
+  "welcome": {
+    "title": "Blockchain에 오신 것을 환영합니다!",
+    "description": "귀하의 투표가 중요합니다.",
+    "button": {
+      "login": "로그인",
+      "more": "더 알아보기"
+    }
+  },
+  "cookies": {
+    "text": "Cookies help us to deliver our services. By using our Services or clicking I agree, you agree to our use of cookies. See more in ",
+    "privacy": "개인 정보 정책",
+    "agree": "나는 동의한다"
+  },
+  "language": {
+    "polish": "Polski",
+    "english": "English",
+    "korean": "한국의"
+  },
+  "switch": {
+    "total": "모두",
+    "polish": "polish"
+  },
+  "sidebar": {
+    "exchange_cantor": {
+      "name": "대략적인 교환",
+      "information": "위의 값은 추정치이며 언제든지 변경 될 수 있습니다."
+    },
+    "popular_tags": {
+      "name": "인기 태그"
+    },
+    "users_lists": {
+      "name": "사용자 검색"
+    }
+  },
+  "page": {
+    "contact": {
+      "name": "접촉",
+      "description": "If you have questions, comments, ideas or suggestions, please contact us.</br> You can send us an email to hello@strimi.pl<p></p><p>Best regards</br>Strimi Team</p>"
+    },
+    "cookies": {
+      "name": "쿠키",
+      "description": "<p>Serwis Strimi.it korzysta z plików cookies (tzw. \"ciasteczka\"). Cookies są to małe pliki tekstowe przechowywane w urządzeniu końcowym (najczęściej w przeglądarce internetowej). Pliki cookies są podstawą funkcjonowania Internetu i większość stron internetowych z nich korzysta. Najczęściej są wykorzystywane do zapisania informacji o sesji użytkownika, dzięki czemu użytkownik może być zalogowany na stronie, ale mogą także pełnić inne różnorodne funkcje, np. przechowywać informacje o preferencjach użytkowników dotyczących interfejsu strony.</p><p>Stosujemy dwa rodzaje plików cookies: \"sesyjne\" (session cookies) oraz \"stałe\" (persistent cookies). Cookies \"sesyjne\" są tymczasowe i przechowywane są w urządzeniu końcowym do czasu wylogowania lub wyłączenia urządzenia końcowego. \"Stałe\" pliki cookies przechowywane są w urządzeniu końcowym przez określony w pliku cookies czas lub do czasu usunięcia go przez użytkownika.</p><p>Nie przechowujemy w plikach cookies żadnych poufnych czy prywatnych informacji o naszych użytkowaniach. Pliki cookies wykorzystywane są wyłącznie do realizacji podstawowych funkcji serwisu, które bez plików cookies byłyby niemożliwe. Korzystamy z następujących plików cookies: session - plik przechowuje identyfikator sesji w celu zapamiętania zalogowania użytkownika (plik \"sesyjny\"), auth_autologin - plik zapisywany jest gdy użytkownik wyrazi zgodę na zapamiętanie zalogowania (plik \"stały\" zapamiętywany na 60 dni). Okazjonalnie zapisujemy pliki cookies, które zapamiętują indywidualne ustawienia interfejsu użytkownika. Serwis Strimi.it korzysta z narzędzia Google Analytics, które zapisuje dodatkowe pliki cookies w celu generowania anonimowych statystyk oglądalności serwisu.</p><p>Plikami cookies można zarządzać przeważnie z poziomu ustawień urządzenia końcowego. Popularne przeglądarki internetowe umożliwiają usuwanie i blokowanie plików cookies. Informujemy, że zablokowanie plików cookies może ograniczyć funkcjonalność serwisu, przede wszystkim nie będzie możliwe zalogowanie się.</p><p><strong>Google Analytics</strong></p><p>Strimi.it korzysta z Google Analytics, usługi analizy oglądalności stron internetowych udostępnianej przez Google, Inc. (\"Google\"). Google Analytics używa \"cookies\", czyli plików tekstowych umieszczanych na komputerze użytkownika w celu umożliwienia witrynie przeanalizowania sposobu, w jaki użytkownicy z niej korzystają. Informacje generowane przez cookie na temat korzystania z witryny przez użytkownika (włącznie z jego adresem IP) będą przekazywane spółce Google i przechowywane przez nią na serwerach w Stanach Zjednoczonych.</p><p>Google będzie korzystał z tych informacji w celu oceny korzystania z witryny przez użytkownika, tworzenia raportów dotyczących ruchu na stronach dla operatorów witryn oraz świadczenia innych usług związanych z ruchem na witrynach internetowych i korzystaniem z internetu. Google może również przekazywać te informacje osobom trzecim, jeżeli będzie zobowiązana to uczynić na podstawie przepisów prawa lub w przypadku, gdy osoby te przetwarzają takie informacje w imieniu Google.</p><p>Google nie będzie łączyła adresu IP użytkownika z żadnymi innymi danymi będącymi w jej posiadaniu. Użytkownik może zrezygnować z cookies wybierając odpowiednie ustawienia na przeglądarce, jednak należy pamiętać, że w takim przypadku korzystanie z wszystkich funkcji witryny może okazać się niemożliwe Korzystając z niniejszej witryny internetowej użytkownik wyraża zgodę na przetwarzanie przez Google dotyczących go danych w sposób i w celach określonych powyżej.</p><p><strong>Facebook</strong></p><p>Na stronach Strimi.it znajduje się zintegrowany plugin (wtyczka) portalu społecznościowego Facebook, 1601 South Carolina Avenue, Palo Alto, CA 943404, USA. Plugin Facebooka znajduje się pod przyciskiem \"Lubię to\" na naszej stronie. Listę pluginów na Facebooku znajdziesz tutaj.</p><p>Kiedy odwiedzasz naszą stronę, następuje automatyczne połączenie poprzez plugin pomiędzy serwerem Facebooka, a Twoją przeglądarką internetową. Facebook otrzyma wtedy informację, że Ty pod swoim adresem IP odwiedziłeś naszą stronę. Jeśli klikniesz na przycisk \"Lubię to\" w czasie kiedy jesteś zalogowany w swoim koncie na Facebooku, to zawartość naszej strony może zostać podlinkowana do Twojego profilu. Dodatkowe informacje znajdziesz na stronach Facebooka.</p><p>Jeśli nie życzysz sobie, aby Facebook odnotowywał fakt Twoich odwiedzin na naszej stronie, prosimy wylogować się ze swojego konta użytkownika na Facebooku.</p>"
+    },
+    "idea": {
+      "name": "생각",
+      "description": "Strimi to miejsce do publikowania treści na dowolny temat. Tematy kreowane przez społeczność pogrupowane są w tagi o różnorodnej tematyce. Dołącz do nas już teraz i rozwijaj swoje zainteresowania. Strimi to Ty."
+    },
+    "privacy": {
+      "name": "개인 정보 정책",
+      "description": "<p>Serwis Strimi szanuje prywatność swoich użytkowników. Przeczytaj dokładnie poniższe informacje, aby lepiej zapoznać się z naszą polityką prywatności.</p><p><strong>Prawa autorskie</strong></p><p>Serwis Strimi zawiera przekierowania (linki) do innych stron www wraz ze zwięzłym opisem. Treści zawarte na tych stronach są przedmiotem praw autorskich przysługujących ich twórcy i podlegają ochronie zgodnie z prawem autorskim.</p><p><strong>Zastrzeżenia prawne i odpowiedzialność</strong></p><p>Wszelkie materiały zawarte w serwisie Strimi są bezpłatne. Użytkownicy oraz zespół serwisu Strimi nie odpowiadają za jakiekolwiek szkody wynikłe z ich korzystania. Serwis Strimi zastrzega sobie \"usuwania\" materiałów oraz blokowania użytkowników, którzy naruszają regulamin serwisu Strimi.</p><p><strong>Wyłączenie odpowiedzialności</strong></p><p>Serwis Strimi nie ponosi odpowiedzialności za treści i opinie wyrażane przez użytkowników w komentarzach lub wpisach. Są one wyłącznie własnością użytkowników, od których pochodzą.</p><p><strong>Informacje logowania</strong></p><p>Podczas korzystania z serwisu Strimi nasze serwery automatycznie rejestrują informacje przesyłane przez przeglądarkę użytkownika w trakcie wyświetlania witryny. Dzienniki serwera mogą zawierać takie informacje jak: żądanie sieciowe, adres IP, typ przeglądarki, język przeglądarki, data i godzina przesłania żądania oraz co najmniej jeden plik cookie.</p>"
+    },
+    "regulations": {
+      "name": "서비스 약관",
+      "description": ""
+    },
+    "faq": {
+      "name": "FAQ - 자주 묻는 질문",
+      "description": ""
+    },
+    "tags_ranking": {
+      "name": "태그 순위",
+      "table": {
+        "name": "이름",
+        "comments": "코멘트",
+        "content": "함유량",
+        "payout": "지불금"
+      }
+    },
+    "users_ranking": {
+      "name": "사용자 순위",
+      "table": {
+        "name": "사용자",
+        "steem": "Steem",
+        "sbd": "SteemDollars",
+        "voting_power": "Voting Power",
+        "steem_power": "SteemPower"
+      }
+    },
+    "registration": {
+      "title": "기재"
+    }
+  },
+  "footer": {
+    "information": {
+      "rights_info": "By using this website, you accept the <a href=\"%regulations%\">Regulations</a>. Opinions expressed on Strimi they are the property of their authors.",
+      "short_info": "Strimi is a place to publish content on any topic. Join us now and develop your interests. <span>Strimi it's you.</span>"
+    },
+    "name": {
+      "useful": "유능한",
+      "using": {
+        "name": "정보",
+        "bug": "버그를 제보하기"
+      },
+      "social_media": "소셜 미디어"
+    }
+  },
+  "pagination": {
+    "next": "다음 것"
+  },
+  "post": {
+    "vote": {
+      "modal_votes": {
+        "title": "유권자 목록"
+      },
+      "votes": "목소리"
+    },
+    "meta": {
+      "to": "에",
+      "from": "...에서",
+      "comments": "코멘트"
+    },
+    "comments": {
+      "title": "코멘트",
+      "no_comments": "표시 할 설명이 없습니다.",
+      "error_comments": "연결 문제. 이 페이지 새로 고침.",
+      "hide": "숨는 장소",
+      "show": "보여 주다",
+      "reply": "응답",
+      "sorting": {
+        "best": "베스트",
+        "new": "최신",
+        "old": "가장 오래된"
+      }
+    }
+  },
+  "post-details": {
+    "source": "출처",
+    "error": "연결 문제가 발생하면 페이지를 다시로드하십시오."
+  },
+  "post-new": {
+    "sidebar": {
+      "title": "Good practices",
+      "info": "Read our few rules to avoid unnecessary situation.",
+      "info_0": "Do not use any HTML tags, use only Markdown.",
+      "info_1": "Add content that does not violate our regulations in any way.",
+      "info_2": "Honestly fill all fields when adding.",
+      "info_3": "Always choose the right tags for your content.",
+      "info_4": "Your link may not always have a thumbnail. Sometimes it's even better when it's not there at all.",
+      "info_5": "Consider if your content is only for people over the age of eighteen.",
+      "info_6": "Do not add links from the same domains, usually this has the opposite effect to the intended one."
+    },
+    "text": {
+      "title": "텍스트 추가",
+      "title_input": "Title <span>- is the core interest of our community. From 10 - 180 characters </span>",
+      "description": "Text <span>- good content is read in one breath, try to write succinctly and on the subject. From 25 - 25000 characters</span>",
+      "tags": "Tags <span>(min 1, max 5)</span>",
+      "nsfw": {
+        "title": "Nsfw?",
+        "yes": "예",
+        "no": "아니"
+      },
+      "payout": {
+        "title": "보상",
+        "50": "50% / 50%",
+        "100": "100% SteemPower",
+        "resignation": "사임"
+      },
+      "submit": "게시"
+    },
+    "link": {
+      "link": "Link <span>- paste in the field below the link you want to add </ span>",
+      "thumb": "Thumb",
+      "title": "링크 추가",
+      "description": "Description <span>- describe in your own words the added link (do not copy any text). From 25 - 180 characters</span>",
+      "submit": "제출"
+    },
+    "error": {
+      "add_error": "There was a problem adding content to steem. Please try again later.",
+      "add_error_to_often": "You can add content once every 5 minutes.",
+      "add_error_to_often_comment": "You can add content once every 20 seconds."
+    }
+  },
+  "content_sorting": {
+    "default": "태만",
+    "observed": "관찰 된",
+    "followed": "뒤따른",
+    "popular": "인기 있는",
+    "new": "최신",
+    "commented": "댓글 달기"
+  },
+  "stream": {
+    "new_post": "새 게시물이 있습니다. ",
+    "show_more": "자세히보기",
+    "hide": "덜보기",
+    "submit": {
+      "description": "무슨 일이야?",
+      "submit": "게시",
+      "markdown": "Markdown",
+      "clean": "깨끗한",
+      "cancel": "취소",
+      "edit": "구하다"
+    }
+  },
+  "payment": {
+    "payment": "잠재적 지불",
+    "payout": "지불 합계",
+    "author": "작성자 지불",
+    "curators": "큐레이터",
+    "release": "석방 예정",
+    "released": "출시 됨",
+    "declined": "대금 지급 거부 됨"
+  },
+  "user": {
+    "vote_slider": {
+      "name": "Voting power:",
+      "vote": "Vote",
+      "close": "Close"
+    },
+    "sidebar": {
+      "voting_power": "Voting power",
+      "voting_power_dollar": "Voting value",
+      "bandwith": "Available bandwith",
+      "ranking": "in ranking",
+      "watch": "따라",
+      "mute": "음소거"
+    },
+    "profil_menu": {
+      "add_post": "Write text",
+      "add_link": "Add link",
+      "hashtags": "HashTags: ",
+      "notification": "Notifications: ",
+      "voting_power": "Voting Power: ",
+      "bandwith": "Bandwith: ",
+      "your_profile": "Your Profile",
+      "feed": "Feed",
+      "posts": "Posts",
+      "comments": "Comments",
+      "replies": "Replies",
+      "votes": "Votes",
+      "following": "Followed",
+      "followers": "Followers",
+      "wallet": "Wallet",
+      "settings": "Settings",
+      "notifications": "Notifications",
+      "logout": "Logout"
+    },
+    "notifications": {
+      "name": "Notifications",
+      "type": {
+        "watch": "Watching you",
+        "comments_content": "Commented your content",
+        "comments_stream": "Commented your content in Stream",
+        "comments_response": "He replied to your comment",
+        "comments_response_stream": "He replied to your comment in Stream",
+        "tagged_content": "Tagged you in content",
+        "tagged_comment": "Tagged you in comment",
+        "tagged_stream": "Tagged you in Stream",
+        "post_voted": "Voted for your post",
+        "post_voted_stream": "Voted for your post",
+        "comment_voted": "Voted for your comment",
+        "comment_voted_stream": "Voted for your comment"
+      },
+      "see-all": "See next",
+      "read-all": "Mark all as read"
+    },
+    "wallet": {
+      "receive": "Receive rewards",
+      "error_recive": "Some error occured",
+      "steem": {
+        "description": "Tradeable tokens that may be transferred anywhere at anytime. Steem can be converted to Steem Power in a process called powering up."
+      },
+      "steem_power": {
+        "description": "Influence tokens which give you more control over post payouts and allow you to earn on curation rewards.",
+        "description_delegated": "Part of Steem Power is currently delegated. Delegation is donated for influence or to help new users perform actions on strimi. Your delegation amount can fluctuate."
+      },
+      "steem_dollars": {
+        "description": "Tokens worth about $1.00 of Steem, currently collecting 0% APR."
+      },
+      "savings": {
+        "name": "Savings",
+        "description": "Balance subject to 3 day withdraw waiting period, SteemDollars currently collecting 0% APR."
+      },
+      "estimated_account_value": {
+        "name": "Estimated account value",
+        "description": "The estimated value is based on an average value of Steem in US dollars."
+      },
+      "spam_alert": "<p>Beware of spam and phishing links in transfer memos!</p><p>Do not open links from users you do not trust.</p> Do not provide your private keys to any third party websites.",
+      "transfer": {
+        "reward": "Reward",
+        "from": "from",
+        "to": "to",
+        "author": "Author",
+        "vote": "Vote"
+      },
+      "transfer-vesting": "SteemPower - Increased",
+      "exchange": {
+        "name": "Exchange",
+        "on": "on"
+      },
+      "delegation": "Delegate: ",
+      "fee": "Fee: ",
+      "delegate-vesting": "SteemPower - Delegate",
+      "account-create": "Account create"
+    },
+    "settings": {
+      "title": "Editing profile",
+      "alias": "Alias",
+      "about": "Description",
+      "location": "Location",
+      "avatar": "Profile picture url",
+      "background": "Cover image url",
+      "website": "Website",
+      "submit": "Save",
+      "error": "Some problem occurred during update",
+      "update": "Account update"
+    }
+  },
+  "no_content": {
+    "default": "No data to display.",
+    "error": "There was a problem downloading the data, try again in a moment."
+  },
+  "search-inp": {
+    "search": "수색"
+  },
+  "drop-down": {
+    "label": "정렬",
+    "best": "베스트",
+    "desc": "최신",
+    "asc": "가장 오래된"
+  },
+  "user-rank": {
+    "title": "Users ranking",
+    "user": "User",
+    "rep": "Reputation",
+    "rank": "Ranking",
+    "fol": "Followers",
+    "con": "Contents",
+    "steem": "Steem",
+    "sbd": "SBD",
+    "vp": "VP",
+    "eav": "EAV",
+    "sp": "SP"
+  },
+  "theme": {
+    "light": "빛",
+    "dark": "어두운"
+  },
+  "page-404": {
+    "title": "Sorry! This page doesn't exist.",
+    "info": "You can also read again ours ",
+    "or": "or",
+    "info_title": {
+      "homepage": "Homepage",
+      "created": "Created",
+      "hot": "Hot",
+      "stream": "Stream"
+    }
+  },
+  "page-403": {
+    "title": {
+      "author": "User has been removed from Strimi.",
+      "content": "The content has been removed from Strimi.",
+      "tag": "The tag has been removed from Strimi."
+    }
+  },
+  "banned": {
+    "comments": {
+      "author": "[MOD] User removed from the Website.",
+      "content": "[MOD] Comment removed from the Website."
+    }
+  }
+}

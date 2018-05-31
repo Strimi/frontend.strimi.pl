@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xl-9 col-lg-8 col-md-12">
+    <div class="page">
+      <h1 class="page-title">
+        {{ 'post-new.link.title' | translate }}
+      </h1>
+      <div class="page-content user-new-content">
+
+        <span *ngIf="errorLink" style="color: red"> {{ 'post-new.error.add_error_link'|translate }}</span>
+        <div class="row">
+          <div class="col-xl-10">
+            <div class="input">
+              <div class="input-title" [innerHtml]="'post-new.link.link'|translate"></div>
+              <div class="input-inline">
+                <input [(ngModel)]="link" type="text" class="form-control" id="title" name="title">
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2">
+            <button [disabled]="!notDisable()" (click)="recognizeLink()" id="link-preview" class="btn submit btn-green">
+              {{ 'post-new.link.submit'|translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-4 d-xl-block d-lg-block d-none">
+    <app-sidebar-info></app-sidebar-info>
+  </div>
+</div>

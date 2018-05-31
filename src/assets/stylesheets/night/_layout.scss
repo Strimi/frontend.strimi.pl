@@ -1,0 +1,22 @@
+body {
+  &.night {
+    background-color: $NightBodyBackground;
+    header {
+      background-color: $NightHeaderBackground;
+      border-bottom: 1px solid $NightBorder;
+      //box-shadow: none;
+      .mobile-global-menu {
+        background-color: $NightPostBackground;
+        border: 1px solid $NightPostBorder;
+        color: lighten($NightMeta, 15%);
+      }
+      .logo {
+        color: lighten($purple, 55%);
+      }
+    }
+    footer {
+      background-color: $NightHeaderBackground;
+      border-top: 1px solid $NightBorder;
+    }
+  }
+}

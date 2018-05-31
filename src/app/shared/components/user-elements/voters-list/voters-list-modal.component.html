@@ -1,0 +1,51 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <div class="modal-title">
+      {{ 'post.vote.modal_votes.title'|translate }}
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="modal-votes">
+      <div class="modal-votes-lists">
+        <div class="vote-single" *ngFor="let voter of activeVotes">
+          <app-avatar-post [author]="voter.voter" [classStyle]="'vote-avatar'"></app-avatar-post>
+          <div class="vote-content">
+            <div class="vote-content-author">
+              <app-author-post (click)="closeModal()" [author]="voter.voter" [reputation]="voter.reputation" [classRep]="'vote-content-author-reputation'"
+                [classAuthor]="'vote-content-author-username'"></app-author-post>
+              <app-date [date]=voter.time [classDate]="'vote-content-author-time'"></app-date>
+            </div>
+            <div class="vote-content-votes">
+              <span class="vote-plus" *ngIf="voter.percent / 100 > 0">
+                {{ voter.percent/100 + '%' }}
+              </span>
+              <span class="vote-minus" *ngIf="voter.percent / 100 < 0">
+                {{ voter.percent/100 + '%' }}
+              </span>
+              <!-- <span class="vote-separator">{{ '~' }}</span> -->
+              <span class="vote-cash">
+                {{voter.value_dollar | currency:'USD':'symbol':'1.3'}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- info about errors -->
+    <div class="modal-content-error" *ngIf="showError" >
+        <app-error-info [message]="'no_content.error'"></app-error-info>
+    </div>
+
+    <!-- Spinner after request -->
+    <div class="loading-content modal-votes" *ngIf="showSpinner">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+
+</ng-template>
+<span (click)="open(content)">{{votes}}</span>

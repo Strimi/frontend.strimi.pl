@@ -1,0 +1,162 @@
+body {
+  &.night {
+    .modal-content {
+      background-color: $NightFirst;
+      border: 1px solid $NightThird;
+    }
+    .modal-header {
+      border-bottom: 1px solid darken($NightMeta, 10%);
+      .modal-title {
+        color: lighten($purple, 55%);
+      }
+      .close {
+        color: lighten($purple, 55%);
+        text-shadow: transparent;
+      }
+    }
+    .modal-votes {
+      &-lists {
+        .vote-single {
+          border-bottom: 1px solid darken($NightMeta, 15%);
+          .vote-content {
+            &-author-time {
+              color: lighten($NightMeta, 15%);
+            }
+            &-votes {
+              .vote-plus,
+              .vote-minus {
+                color: lighten($purple, 55%);
+              }
+              .vote-cash {
+                color: lighten($purple, 45%);
+                border: 2px solid darken($NightMeta, 15%);
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal-login {
+      .modal-dialog {
+        .modal-content {
+          .modal-header {
+            .modal-title {
+              color: lighten($purple, 45%);
+            }
+          }
+          .modal-body {
+            form {
+              input {
+                border-color: $NightBorderInput;
+                background-color: $NightFirst;
+                color: lighten($purple, 35%) !important;
+                &:focus {
+                  border-color: $NightBorderInput;
+                  box-shadow: none;
+                }
+              }
+              .form-control {
+                &:focus {
+                  color: lighten($purple, 35%) !important;
+                }
+              }
+              label {
+                color: $text54;
+              }
+              button {
+                color: lighten($purple, 45%);
+                color: lighten($purple, 45%);
+                &:not(:disabled):not(.disabled):active,
+                &:not(:disabled):not(.disabled):active:focus,
+                &:hover,
+                &:active,
+                &:focus {
+                  @extend .trans;
+                  color: $white;
+                }
+              }
+            }
+          }
+          .modal-footer {
+            background-color: $NightSecond;
+            border-top: 1px solid $NightThird;
+            .new-account {
+              color: lighten($purple, 45%);
+              a {
+                color: lighten($purple, 45%);
+                &:not(:disabled):not(.disabled):active,
+                &:not(:disabled):not(.disabled):active:focus,
+                &:hover,
+                &:active,
+                &:focus {
+                  @extend .trans;
+                  color: $white;
+                  border-color: transparent;
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal-mobile-global-menu {
+      .modal-dialog {
+        .modal-content {
+          background-color: $NightHeaderBackground;
+          border: 1px solid $NightHeaderBackground;
+          .modal-body {
+            ul {
+              li {
+                &:last-child {
+                  border-top: 1px solid $NightBorder;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal-user-settings,
+    .modal-notification {
+      .modal-dialog {
+        .modal-content {
+          .modal-body {
+            .notification-container {
+              .notification-single {
+                border-bottom: 1px solid darken($NightMeta, 10%);
+                &.active,
+                &:hover {
+                  @extend .trans;
+                  background-color: darken($NightFirst, 3%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal-user-settings {
+      .modal-dialog {
+        .modal-content {
+          .modal-body {
+            color: lighten($purple, 30%);
+            input {
+              border-color: $NightBorderInput;
+              background-color: $NightFirst;
+              &:focus {
+                border-color: $NightBorderInput;
+                box-shadow: none;
+              }
+            }
+            .form-control {
+              &:focus {
+                color: lighten($purple, 35%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

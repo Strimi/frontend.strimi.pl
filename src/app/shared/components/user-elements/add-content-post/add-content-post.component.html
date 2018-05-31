@@ -1,0 +1,26 @@
+<div class="stream-submit">
+  <form (ngSubmit)="submit()" #textForm="ngForm">
+    <simplemde [options]="{ shortcuts: {toggleCodeBlock:'', drawImage:'', toggleOrderedList:''}, spellChecker: false, toolbarTips: false, hideIcons: ['fullscreen', 'side-by-side', 'heading', 'guide'], showIcons: ['code', 'table', 'strikethrough'], autosave: { enabled: false, uniqueId: 1 }, status: false }"
+      id="text" name="text" [(ngModel)]="text"></simplemde>
+    <div class="stream-submit-meta">
+      <button type="submit" id="submit" class="btn medium btn-primary" [disabled]="dissableButton()">
+        <span *ngIf="!showSpinner && !isEdited">
+          {{ 'stream.submit.submit'|translate }}
+        </span>
+        <span *ngIf="!showSpinner && isEdited">
+          {{ 'stream.submit.edit'|translate }}
+        </span>
+        <app-spinner *ngIf="showSpinner"></app-spinner>
+      </button>
+      <a id="markdown" class="btn medium btn-white" href="https://guides.github.com/features/mastering-markdown/" target="_blank"
+        rel="nofollow">
+        {{ 'stream.submit.markdown'|translate }}
+      </a>
+      <button type="button" class="btn medium btn-white" *ngIf="showCancel" (click)="onCancel()">
+        {{ 'stream.submit.cancel'|translate }}
+      </button>
+      <span *ngIf="showError"> {{ 'post-new.error.add_error'|translate }}</span>
+      <span *ngIf="errorLimitTime"> {{ 'post-new.error.add_error_to_often_comment'|translate }}</span>
+    </div>
+  </form>
+</div>

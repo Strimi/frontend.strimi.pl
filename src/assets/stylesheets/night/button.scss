@@ -1,0 +1,38 @@
+body {
+  &.night {
+    .btn-header-menu {
+      .count {
+        background-color: $NightThird; // color: lighten($purple, 30%);
+      }
+    }
+    .btn-header-login {
+      background-color: $NightSecond;
+    }
+    .btn-primary {
+      background-color: $NightPrimaryBackground;
+      border: 1px solid $NightPrimaryBorder;
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):active:focus,
+      &:hover,
+      &:active,
+      &:focus {
+        @extend .trans;
+        background-color: lighten($NightPrimaryBackground, 10%);
+      }
+      &.spinner {
+        background-color: $NightThird;
+        color: lighten($purple, 30%);
+        border: 1px solid $NightThird;
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled):active:focus,
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $NightThird;
+          color: lighten($purple, 30%);
+          border: 1px solid $NightThird;
+        }
+      }
+    }
+  }
+}

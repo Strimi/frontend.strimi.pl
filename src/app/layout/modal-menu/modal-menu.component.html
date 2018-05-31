@@ -1,0 +1,36 @@
+<ng-template #content let-c="close" let-d="dismiss">
+
+  <div class="modal-body">
+    <ul>
+      <li>
+        <a routerLink="/" class="logo" (click)="c('Close click')">
+          {{ 'header.top_menu.logo'|translate }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/created" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  (click)="c('Close click')">
+          {{ 'header.top_menu.created'|translate }}
+        </a>
+      </li>
+      <!-- <li>
+        <a routerLink="/hot" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="c('Close click')">
+          {{ 'header.top_menu.hot'|translate }}
+        </a>
+      </li> -->
+      <li>
+        <a routerLink="/stream" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="c('Close click')">
+          {{ 'header.top_menu.stream' | translate }}
+        </a>
+      </li>
+      <li>
+        <a class="modal-close" (click)="c('Close click')">Zamknij</a>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<div class="mobile-global-menu" (click)="open(content)">
+  <i class="fa fa-bars" aria-hidden="true"></i>
+</div>
+
+

@@ -1,0 +1,64 @@
+@media (max-width: 575px) {
+  header {
+    .mobile-global-menu {
+      display: inline-block;
+    }
+    .header-user {
+      .voting-power,
+      .bandwidth {
+        display: none;
+      }
+    }
+  }
+  .welcome-banner {
+    &-title {
+      font-size: 2.8rem;
+      line-height: 3.6rem;
+      margin-top: 35px;
+    }
+  }
+  footer {
+    height: auto;
+    padding-top: 25px;
+    ul {
+      margin-top: 25px;
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header {
+    .mobile-global-menu {
+      display: inline-block;
+    }
+
+  }
+  .welcome-banner {
+    &-title {
+      font-size: 4.8rem;
+      line-height: 3.6rem;
+      margin-top: 50px;
+    }
+  }
+  footer {
+    height: auto;
+    padding-top: 25px;
+    ul {
+      margin-top: 25px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    .mobile-global-menu {
+      display: inline-block;
+    }
+  }
+  footer {
+    height: auto;
+    padding-top: 25px;
+    ul {
+      margin-top: 25px;
+    }
+  }
+}

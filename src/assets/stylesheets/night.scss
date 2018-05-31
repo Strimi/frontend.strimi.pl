@@ -1,0 +1,40 @@
+// Night New
+$NightBodyBackground: #1D2326;
+$NightHeaderBackground: #171F1F;
+$NightPostBackground: #22282b;
+$NightPostBorder: #2f3538;
+$NightBorder: #2f3538;
+// $NightMetaColor: #cacaca;
+$NightMetaColor: #5C6165;
+$NightVotesColor: #74898f;
+
+// Button
+$NightPrimaryBackground: #74898f;
+$NightPrimaryBorder: #74898f;
+
+$NightFirst: #171F1F;
+$NightSecond: #22282B;
+$NightThird: #1D2326;
+// #171F1F
+
+// Night
+// $NightFirst: #2f3136;
+// $NightSecond: #202225;
+// $NightThird: #36393e;
+$NightMeta: #5C6165; //hsla(0, 0%, 100%,.2);
+$NightBorderInput: #484b52;
+
+@import "./night/_layout";
+@import "./night/post";
+@import "./night/button";
+@import "./night/sidebar";
+@import "./night/tag";
+@import "./night/comments";
+@import "./night/stream";
+@import "./night/bootstrap/modal";
+@import "./night/bootstrap/popover";
+@import "./night/user";
+@import "./night/markdown";
+@import "./night/page";
+@import "./night/loaders";
+@import "./night/sorting";

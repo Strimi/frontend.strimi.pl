@@ -1,0 +1,18 @@
+<div class="comments-container profil-lists" *ngFor="let post of comments">
+  <a (click)="toPost(post)"  class="root-title">{{post.root_title}}</a>
+  <ul>
+    <li>
+      <app-avatar-post [author]="post.author" [classStyle]="'comment-avatar'"></app-avatar-post>
+      <div class="comment">
+        <div class="comment-author">
+          <app-author-post [author]="post.author" [reputation]="post.author_reputation" [classAuthor]="'comment-author-username'" [classRep]="'comment-author-reputation'"></app-author-post>
+          <app-cash-post [post]="post" [classCash]="'comment-author-cash'"></app-cash-post>
+          <app-date [date]=post.created [classDate]="'comment-author-time'"></app-date>
+          <app-report-post [classReport]="'comment-author-flag'"></app-report-post>
+        </div>
+        <div class="comment-description description-comments-markdown" [innerHTML]="post.body | markdown | sanitize: post.json_metadata">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

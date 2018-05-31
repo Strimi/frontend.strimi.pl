@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="page margin-bottom">
+      <h1 class="page-title">
+        {{ 'page.users_ranking.name' | translate }}
+      </h1>
+      <div class="page-content">
+        <div class="row-fluid">
+          <div class="page-content-search">
+            <app-serach-input (newValue)="onValueChange($event)"></app-serach-input>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="page-content-table user-ranking">
+            <mat-table #table [dataSource]="dataSource" class="example-table" matSort matSortActive="upvoteWorth" matSortDisableClear
+              matSortDirection="desc">
+              <ng-container matColumnDef="index">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true" class="align-left ranking">#</mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  {{ row.ranking | number }}
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true" class="align-left username">
+                  {{ 'page.users_ranking.table.name' | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <app-avatar-post [author]="row.name" [classStyle]="'avatar'"></app-avatar-post>
+                  <a [routerLink]="['/','@' + row.name]" [title]="row.name" class="username">
+                    {{ row.name }}
+                    <span class="reputation">({{ row.reputation }})</span>
+                  </a>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="steemBalance">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">
+                  {{ 'page.users_ranking.table.steem' | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.steemBalance | number }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="steemDolarBalance">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">
+                  {{ 'page.users_ranking.table.sbd' | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.steemDolarBalance | number }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="upvoteWorth">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">
+                  {{ 'page.users_ranking.table.voting_power' | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.upvoteWorth | currency }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="steemPower">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">
+                  {{ 'page.users_ranking.table.steem_power' | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.steemPower | currency }}</mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <button class="btn large btn-primary" (click)="nextUsers()" [hidden]="hiddenButton">
+        {{ 'pagination.next'|translate }}
+      </button>
+    </div>
+  </div>
+</div>

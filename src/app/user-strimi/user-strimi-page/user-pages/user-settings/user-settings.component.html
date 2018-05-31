@@ -1,0 +1,125 @@
+<div class="row">
+  <div class="col-xl-12">
+    <div class="page">
+      <h1 class="page-title small-title">
+        {{ 'user.settings.keys.name.title'|translate }}
+        <span>
+            ({{ 'user.settings.keys.name.info.public'|translate }})
+        </span>
+      </h1>
+      <div class="page-content user-settings keys">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="key-info">
+                {{ 'user.settings.keys.name.alert'|translate }}
+            </div>
+            <div class="key-single">
+              <div class="name">{{ 'Posting' }}</div>
+              <div class="key" *ngIf="user">{{ user.posting.key_auths[0][0] }}</div>
+              <div class="description" [innerHtml]="'user.settings.keys.posting.text'|translate"></div>
+            </div>
+            <div class="key-single">
+              <div class="name">{{ 'Active' }}</div>
+              <div class="key" *ngIf="user">{{ user.active.key_auths[0][0] }}</div>
+              <div class="description" [innerHtml]="'user.settings.keys.active.text'|translate"></div>
+            </div>
+            <div class="key-single">
+              <div class="name">{{ 'Owner' }}</div>
+              <div class="key" *ngIf="user">{{ user.owner.key_auths[0][0] }}</div>
+              <div class="description" [innerHtml]="'user.settings.keys.owner.text'|translate"></div>
+            </div>
+            <div class="key-single">
+              <div class="name">{{ 'Memo' }}</div>
+              <div class="key" *ngIf="user">{{ user.memo_key }}</div>
+              <div class="description" [innerHtml]="'user.settings.keys.memo.text'|translate"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-xl-12">
+    <div class="page">
+      <h1 class="page-title small-title">
+        {{ 'user.settings.title' | translate }}
+      </h1>
+      <div class="page-content user-settings">
+        <form (ngSubmit)="onSubmit()" #settingForm="ngForm">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="input">
+                <div class="input-title">
+                  {{ 'user.settings.alias'|translate }}
+                </div>
+                <div class="input-inline">
+                  <input [(ngModel)]="profile.name" name="login" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-title">
+                  {{ 'user.settings.location'|translate }}
+                </div>
+                <div class="input-inline">
+                  <input [(ngModel)]="profile.location" name="location" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-title">
+                  {{ 'user.settings.avatar'|translate }}
+                </div>
+                <div class="input-inline">
+                  <input [(ngModel)]="profile.profile_image" name="profile_image" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-title">
+                  {{ 'user.settings.background'|translate }}
+                </div>
+                <div class="input-inline">
+                  <input [(ngModel)]="profile.cover_image" name="cover_image" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="input">
+                <div class="input-title">
+                  {{ 'user.settings.about'|translate }}
+                </div>
+                <div class="input-inline">
+                  <textarea [(ngModel)]="profile.about" name="abot" type="text" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-title">
+                  {{ 'user.settings.website'|translate }}
+                </div>
+                <div class="input-inline">
+                  <input [(ngModel)]="profile.website" name="website" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="input">
+                <span *ngIf="showError" style="color: red">{{ 'user.settings.error'|translate }}</span>
+                <span *ngIf="showInfoUpdatea" style="color: green">{{ 'user.settings.update'|translate }}</span>
+                <button type="submit" class="btn submit btn-green">
+                  <span *ngIf="!showSpinner">
+                    {{ 'user.settings.submit'|translate }}
+                  </span>
+                  <app-spinner *ngIf="showSpinner"></app-spinner>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

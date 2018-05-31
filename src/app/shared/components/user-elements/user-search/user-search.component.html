@@ -1,0 +1,22 @@
+<div class="sidebar tags-lists hidden-sm hidden-xs">
+  <div class="sidebar-title">
+    {{ "sidebar.users_lists.name"|translate }}
+  </div>
+
+  <div class="sidebar-content">
+    <div class="sidebar-content-users-lists">
+      <app-serach-input (newValue)="onValueChange($event)"></app-serach-input>
+      <ul *ngIf="users.length > 0">
+        <li *ngFor="let user of users">
+          <span class="username">
+            <a class="user-avatar" [title]="user.name" [routerLink]="['/','@' + user.name]">
+              <app-avatar-post [author]="user.name" [classStyle]="'avatar'"></app-avatar-post>
+            </a>
+            <a class="user-username" [title]="user.name" [routerLink]="['/','@' + user.name]">{{ user.name }}</a>
+            <span class="reputation">({{ user.reputation }})</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+body {
+  &.night {
+    .description-markdown {
+      a {
+        color: lighten($purple, 30%);
+        &:hover {
+          color: lighten($purple, 35%);
+        }
+      }
+    }
+    .description-comments-markdown {
+      a {
+        color: lighten($purple, 30%);
+        &:hover {
+          color: lighten($purple, 35%);
+        }
+      }
+    }
+  }
+}

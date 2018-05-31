@@ -1,0 +1,585 @@
+.post {
+  .posts-lists {
+    display: inline-block;
+    width: 100%;
+    &-sorting {
+      position: relative;
+      @include border-radius(3px);
+      background-color: $sidebarBackground;
+      border: 1px solid $sidebarBorder;
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px;
+      width: 100%;
+      color: $purple;
+      font-size: 1.3rem;
+      text-transform: lowercase;
+      &-sorting {
+        text-align: right;
+        display: inline-block;
+        width: 100%;
+      }
+      a {
+        position: relative;
+        margin-right: 10px;
+        padding-right: 15px;
+        color: lighten($purple, 30%);
+        font-weight: 500;
+        &.active {
+          color: $purple;
+          text-decoration: none;
+        }
+        &:hover {
+          @extend .trans;
+          color: $purple;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        &:after {
+          position: absolute;
+          color: lighten($purple, 50%);
+          content: "•";
+          font-size: 1.8rem;
+          opacity: 0.3;
+          top: 2px;
+          right: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+          &:after {
+            content: '';
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &-single {
+    @include border-radius(3px);
+    padding: 10px;
+    background-color: $white;
+    box-shadow: $shadow;
+    margin-bottom: 10px;
+    width: 100%;
+    display: inline-block;
+    &.detail {
+      margin-bottom: 25px;
+    }
+    &:first-child {
+      margin-top: 25px;
+    }
+    &:last-child {
+      margin-bottom: 15px;
+    }
+    .container-reblogged {
+      width: 100%;
+      display: inline-block;
+      color: lighten($purple, 30%) !important;
+      border-bottom: 1px solid $border;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2.3rem;
+      .fa {
+        margin-right: 5px;
+      }
+      &-time {
+        position: relative;
+        padding-left: 15px;
+        margin-left: 5px;
+        &:before {
+          position: absolute;
+          content: "•";
+          font-size: 1.8rem;
+          opacity: 0.3;
+          left: 0;
+          top: -2px;
+        }
+      }
+    }
+    .container-vote {
+      position: absolute;
+      display: inline-block;
+      width: 45px;
+      height: 62px;
+      float: left;
+      line-height: 21px;
+      margin-right: 15px;
+      left: 0;
+      &.spinner {
+        .loading-oval-content {
+          margin: 0 auto;
+          width: 30px;
+          height: 30px;
+        }
+      }
+      &.app-user {
+        &:hover {
+          cursor: pointer;
+          .vote-name {
+            @extend .trans;
+            background-color: $purple;
+          }
+        }
+        &.active {
+          .vote-name {
+            background-color: $purple;
+          }
+        }
+      }
+      &.voted {
+        &.app-user {
+          &:hover {
+            cursor: pointer;
+            .vote-count {
+              border: 2px solid darken($green, 5%);
+              color: darken($green, 5%);
+              &:after {
+                border-top: 7px solid darken($green, 5%);
+              }
+            }
+            .vote-name {
+              @extend .trans;
+              background-color: darken($green, 5%);
+            }
+          }
+        }
+        .vote-count {
+          border: 2px solid $green;
+          color: $green;
+          &:after {
+            border-top: 7px solid $green;
+          }
+        }
+        .vote-name {
+          background-color: $green;
+        }
+      }
+      .vote-count {
+        @include border-radius(3px);
+        position: relative;
+        border: 2px solid lighten($purple, 50%);
+        color: lighten($purple, 30%);
+        text-align: center;
+        height: 26px;
+        line-height: 23px;
+        font-weight: 500;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 14px;
+          top: 23px;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid lighten($purple, 50%);
+          clear: both;
+        }
+      }
+      .vote-name {
+        @include border-radius(3px); // light
+        background-color: lighten($purple, 30%);
+        color: $white;
+        position: relative;
+        font-weight: 500;
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        margin-top: 10px;
+      }
+    }
+    .container-vote-small {
+      position: relative;
+      display: inline-block;
+      &.spinner {
+        width: 75px;
+        height: 20px;
+        .loading-oval-content {
+          margin: 0 auto;
+          width: 15px;
+          height: 15px;
+        }
+      }
+      &.app-user {
+        &:hover {
+          cursor: pointer;
+          .vote-name {
+            @extend .trans;
+            background-color: $purple;
+          }
+        }
+        &.active {
+          .vote-name {
+            background-color: $purple;
+          }
+        }
+      }
+      &.voted {
+        &.app-user {
+          &:hover {
+            cursor: pointer;
+            .vote-count {
+              border: 2px solid darken($green, 5%);
+              color: darken($green, 5%);
+              &:after {
+                border-right: 7px solid darken($green, 5%);
+              }
+            }
+            .vote-name {
+              @extend .trans;
+              background-color: darken($green, 5%);
+            }
+          }
+        }
+        .vote-count {
+          border: 2px solid $green;
+          color: $green;
+          &:after {
+            border-right: 7px solid $green;
+          }
+        }
+        .vote-name {
+          background-color: $green;
+        }
+      }
+      .vote-name {
+        @include border-radius(3px);
+        background-color: lighten($purple, 30%);
+        color: $white;
+        position: relative;
+        display: inline-block;
+        float: left;
+        font-weight: 500;
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        padding: 0 6px;
+      }
+      .vote-count {
+        @include border-radius(3px);
+        position: relative;
+        display: inline-block;
+        border: 2px solid lighten($purple, 50%);
+        color: lighten($purple, 30%);
+        text-align: center;
+        height: 23px;
+        line-height: 21px;
+        font-weight: 500;
+        padding: 0 6px;
+        margin-left: 8px;
+        &:after {
+          content: '';
+          position: absolute;
+          left: -8px;
+          top: 2px;
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-right: 7px solid lighten($purple, 50%);
+          clear: both;
+        }
+        &:hover {
+          @extend .trans;
+          cursor: pointer;
+          border: 2px solid lighten($purple, 51%);
+          color: lighten($purple, 31%);
+          &:after {
+            border-right: 7px solid lighten($purple, 51%);
+          }
+        }
+      }
+    }
+    .container-wrapper {
+      position: relative;
+      display: inline-block;
+      float: left;
+      width: 100%;
+      padding-left: 58px;
+      &.details-link,
+      &.details-text,
+      &.details-video,
+      &.details-image {
+        padding-left: 0;
+      }
+      .container-meta {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 10px;
+        padding-top: 7px;
+        color: lighten($purple, 30%);
+        &.details {
+          margin-bottom: 15px;
+        }
+        &.post-text-footer {
+          width: 100%;
+          display: inline-block;
+          margin-bottom: 5px;
+        }
+        a {
+          color: lighten($purple, 30%);
+          text-decoration: none;
+          &:hover {
+            @extend .trans;
+            color: $purple;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+        .meta-author-container {
+          position: relative;
+          display: inline-block;
+          margin-left: 5px;
+          .meta-author-avatar {
+            top: -4px;
+          }
+        }
+        .meta-author-avatar {
+          position: absolute;
+          background-color: $sidebarBackground;
+          background-position: center center;
+          background-size: cover;
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          display: block;
+          top: 3px;
+        }
+        .meta-author {
+          margin-left: 30px;
+        }
+        .meta-author,
+        .meta-domain {
+          font-weight: 500;
+        }
+        .meta-cash,
+        .meta-comment,
+        .meta-time {
+          position: relative;
+          padding-left: 15px;
+          margin-left: 5px;
+          .fa {
+            margin-right: 3px;
+          }
+          &:before {
+            position: absolute;
+            content: "•";
+            font-size: 1.8rem;
+            opacity: 0.3;
+            left: 0;
+            top: 2px;
+          }
+          &.resignation {
+            text-decoration: line-through;
+          }
+        }
+        .meta-edit,
+        .meta-remove,
+        .meta-flag {
+          float: right;
+          color: lighten($purple, 55%);
+          &:hover {
+            @extend .trans;
+            color: $red;
+            cursor: pointer;
+          }
+        }
+        .meta-remove,
+        .meta-edit {
+          position: relative;
+          display: inline-block;
+          margin-right: 15px;
+          &:hover {
+            @extend .trans;
+            color: $green;
+            cursor: pointer;
+          }
+          .fa {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+        }
+        .meta-edit {
+          margin-right: 45px;
+        }
+      }
+      .container-image {
+        position: absolute;
+        @include border-radius(3px);
+        background-color: $sidebarBackground;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        width: 130px;
+        height: 92px;
+        display: block;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .container-content {
+        padding-left: 145px;
+        display: inline-block;
+        width: 100%;
+        min-height: 90px;
+        &.no-image {
+          padding-left: 6px;
+          min-height: auto;
+        }
+      }
+      h1,
+      h2 {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+        margin-bottom: 8px;
+        color: $title;
+        text-decoration: none;
+        display: table;
+        &.post-type-link {
+          padding-left: 145px;
+        }
+        &.details-text,
+        &.details-video {
+          display: inline-block;
+          width: 100%;
+          font-size: 2.6rem;
+          line-height: 3.6rem;
+          margin-top: 5px;
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          border-bottom: 1px solid lighten($purple, 55%);
+        }
+        a {
+          @extend .trans;
+          color: $title;
+          text-decoration: none;
+          &:hover {
+            color: $purple;
+            text-decoration: none;
+          }
+        }
+      }
+      .description {
+        @extend %word-break;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: $text;
+        display: inline-block;
+        width: 100%;
+        &:hover {
+          @extend .trans;
+          text-decoration: none;
+          color: $purple;
+          cursor: pointer;
+        }
+        &.post-type-link {
+          padding-left: 145px;
+          min-height: 65px;
+        }
+        &.default {
+          background-color: transparent;
+          margin-bottom: 10px;
+          &:hover {
+            cursor: text;
+            color: $text;
+          }
+        }
+      }
+    }
+    .video {
+      @include border-radius(3px);
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      iframe {
+        @include border-radius(3px);
+      }
+    }
+    .image {
+      @include border-radius(3px);
+      background-color: $sidebarBackground;
+      text-align: center;
+      padding: 10px 10px;
+      img {
+        @include border-radius(3px);
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+      }
+    }
+    .image-source {
+      width: 100%;
+      display: inline-block;
+      margin-top: 15px;
+      color: lighten($purple, 30%);
+      a {
+        color: lighten($purple, 30%);
+        text-decoration: none;
+        &:hover {
+          @extend .trans;
+          color: $purple;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+      .size {
+        position: relative;
+        padding-left: 15px;
+        margin-left: 5px;
+        &:before {
+          position: absolute;
+          content: "•";
+          font-size: 1.8rem;
+          opacity: 0.3;
+          left: 0;
+          top: 2px;
+        }
+      }
+    }
+    .container-tags {
+      font-weight: 500;
+      margin-top: 10px;
+      display: inline-block;
+      &.post-text,
+      &.post-video,
+      &.post-link {
+        display: inline-block;
+        width: 100%;
+        margin-top: 15px;
+        padding-top: 15px;
+        margin-bottom: 15px;
+        border-top: 1px solid lighten($purple, 50%);
+      }
+      &.post-video,
+      &.post-link {
+        margin-bottom: 5px;
+      }
+      &.post-link {
+        margin-top: 5px;
+      }
+      a {
+        color: lighten($purple, 30%);
+        font-weight: 500;
+        margin-right: 10px;
+        &:hover {
+          @extend .trans;
+          color: $purple;
+          cursor: pointer;
+          text-decoration: none;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

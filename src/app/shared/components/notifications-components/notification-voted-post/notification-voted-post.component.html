@@ -1,0 +1,52 @@
+<a class="notification-single active">
+  <app-avatar-post [classStyle]="'notification-avatar'" [author]="notification.voter"></app-avatar-post>
+  <div class="notification">
+    <div class="notification-author" not>
+      <app-author-post [author]="notification.voter" [classAuthor]="'notification-author-username'"></app-author-post>
+      <app-date [classDate]="'notification-author-time'" [date]="notification.date"></app-date>
+    </div>
+
+    <!-- voted on post -->
+    <ng-container *ngIf="notification.title && notification.title.length > 0 && notification.category !=='strimi-stream'">
+      <div class="notification-description">
+        <span>{{ 'user.notifications.type.post_voted'|translate }}</span>
+        <app-title-post [title]="notification.title" [author]="notification.author" [category]="notification.category" [permlink]="notification.permlink"
+          [titleLength]="40"></app-title-post>
+      </div>
+    </ng-container>
+
+    <!-- voted on comments -->
+    <ng-container *ngIf="notification.title.length === 0 && notification.root_title.length > 0 && notification.category !=='strimi-stream'">
+      <div class="notification-description">
+        <span>{{ 'user.notifications.type.comment_voted'|translate }}</span>
+        <app-title-post [title]="notification.root_title " [author]="notification.url.split('/')[2].replace('@','')" [category]="notification.url.split('/')[1]"
+          [permlink]="notification.url.split('/')[3].split('#')[0]"
+          [titleLength]="40"></app-title-post>
+      </div>
+    </ng-container>
+
+    <!-- voted on post in stream -->
+    <ng-container *ngIf="notification.category ==='strimi-stream' && notification.title.length > 0">
+      <div class="notification-description">
+        <span>{{ 'user.notifications.type.post_voted_stream'|translate }}</span>
+        <app-title-post [title]="notification.body" [author]="notification.author" [category]="'stream/detail'" [permlink]="notification.permlink"
+          [titleLength]="40"></app-title-post>
+      </div>
+    </ng-container>
+
+    <!-- voted on comment in stream -->
+    <ng-container *ngIf="notification.category ==='strimi-stream' && notification.title.length === 0">
+        <div class="notification-description">
+          <span>{{ 'user.notifications.type.comment_voted_stream'|translate }}</span>
+          <app-title-post
+          [title]="notification.body"
+          [author]="notification.url.split('/')[2].replace('@','')"
+          [category]="'stream/detail'"
+          [permlink]="notification.url.split('/')[3].split('#')[0]"
+          [titleLength]="40"></app-title-post>
+        </div>
+      </ng-container>
+
+
+  </div>
+</a>

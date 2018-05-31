@@ -1,0 +1,31 @@
+@media (max-width: 575px) {
+  .page-404 {
+    margin-top: 15px;
+    .ico-lenny {
+      font-size: 4.2rem;
+    }
+    .title {
+      margin-top: 15px;
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+    .info {
+      margin-top: 15px;
+      line-height: 2.2rem;
+      width: 80%;
+    }
+    .info-links {
+      width: 260px;
+      a {
+        margin-bottom: 25px;
+        padding-right: 0;
+        margin-right: 0;
+        width: 100%;
+        &:after {
+          display: none;
+        }
+      }
+      .or {}
+    }
+  }
+}

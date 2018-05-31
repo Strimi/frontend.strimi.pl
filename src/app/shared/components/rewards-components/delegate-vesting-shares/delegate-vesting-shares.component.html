@@ -1,0 +1,22 @@
+<ng-container *ngIf="delegateVesting">
+  <div class="reward-avatar steem-power-delegate"></div>
+  <div class="reward-content">
+    <div class="reward-content-name">
+      {{ 'user.wallet.delegate-vesting'|translate }}
+    </div>
+    <div class="reward-content-from">
+      {{'user.wallet.transfer.from'|translate}}
+      <a [title]="delegateVesting.delegatee" [routerLink]="['/','@' + delegateVesting.delegatee]">@{{delegateVesting.delegatee}}</a>
+      {{'user.wallet.transfer.to'|translate}}
+      <a [title]="delegateVesting.delegator" [routerLink]="['/','@' + delegateVesting.delegator]">@{{delegateVesting.delegator}}</a>
+    </div>
+    <div class="reward-content-time">
+      <app-date [date]="timestamp"></app-date>
+    </div>
+    <div class="reward-content-description">
+      <div class="reward-content-description-amount">
+          {{ delegateVesting.vesting_shares + ' SP' }}
+      </div>
+    </div>
+  </div>
+</ng-container>

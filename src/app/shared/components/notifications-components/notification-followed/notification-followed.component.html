@@ -1,0 +1,12 @@
+<a href="#" class="notification-single">
+  <app-avatar-post [classStyle]="'notification-avatar'" [author]="notification.follower"></app-avatar-post>
+  <div class="notification">
+    <div class="notification-author">
+      <app-author-post [author]="notification.follower" [classAuthor]="'notification-author-username'"></app-author-post>
+      <app-date [classDate]="'notification-author-time'" [date]="notification.date"></app-date>
+    </div>
+    <div class="notification-description">
+      <span>{{ 'user.notifications.type.watch'|translate }}</span>
+    </div>
+  </div>
+</a>

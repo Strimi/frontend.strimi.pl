@@ -1,0 +1,32 @@
+<div class="tag-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="row">
+            <div class="col-xl-7 col-lg-8">
+            <a [routerLink]="['/trending', tag]" routerLinkActive="active">
+              #{{ tag }}
+            </a>
+            <a class="new" [routerLink]="['/created', tag]" routerLinkActive="active">
+              {{ 'header.top_menu.created'|translate }}
+              <span class="count">({{postService.getNumberCreatedTags() | async | number }})</span>
+            </a>
+            <a [routerLink]="['/hot', tag]" routerLinkActive="active">
+              {{ 'header.top_menu.hot'|translate }}
+            </a>
+          </div>
+          <div class="col-xl-5 col-lg-4 d-xl-block d-lg-block d-none">
+            <div class="tag-header-type">
+              <a class="active" href="#">
+                {{ 'header.top_menu.type.content'|translate }}
+              </a>
+              <a href="#">
+                {{ 'header.top_menu.type.stream'|translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

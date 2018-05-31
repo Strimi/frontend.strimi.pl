@@ -1,0 +1,16 @@
+// Material
+input {
+  &.mat-input-element {
+    color: $purple3;
+  }
+}
+
+.mat-focused {
+  .mat-form-field-label {
+    color: $purple3;
+  }
+}
+
+.mat-form-field-ripple {
+  background-color: $green2;
+}

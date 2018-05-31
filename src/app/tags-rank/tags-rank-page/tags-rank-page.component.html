@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-lg-9">
+    <div class="page margin-bottom">
+      <h1 class="page-title">
+        {{ 'page.tags_ranking.name' | translate }}
+      </h1>
+      <div class="page-content">
+        <div class="row-fluid">
+          <div class="page-content-search">
+            <app-serach-input (newValue)="onValueChange($event)"></app-serach-input>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="page-content-table">
+            <mat-table #table [dataSource]="tagsList">
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef>
+                  {{ 'page.tags_ranking.table.name'|translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <a [routerLink]="['/trending',element.name]" [title]="element.name">
+                    #{{element.name}}
+                  </a>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="top_posts">
+                <mat-header-cell *matHeaderCellDef>
+                  {{ 'page.tags_ranking.table.content'|translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.top_posts}}
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="comments">
+                <mat-header-cell *matHeaderCellDef>
+                  {{ 'page.tags_ranking.table.comments'|translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.comments}}
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="total_payouts">
+                <mat-header-cell *matHeaderCellDef>
+                  {{ 'page.tags_ranking.table.payout'|translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.total_payouts}}
+                </mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <button class="btn large btn-primary" (click)="nextTags()" [hidden]="hiddenButton">
+        {{ 'pagination.next'|translate }}
+      </button>
+    </div>
+  </div>
+  <div class="col-lg-3">
+      <app-sidebar-exchange></app-sidebar-exchange>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+body {
+  &.night {
+    .popover {
+      background-color: $NightFirst;
+      border: 1px solid $NightThird;
+      box-shadow: $shadow;
+      .arrow {
+        &:after {
+          border-top-color: $NightFirst;
+        }
+      }
+    }
+
+  }
+}

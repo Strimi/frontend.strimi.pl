@@ -1,0 +1,51 @@
+<div *ngIf="user" class="sidebar user-profil hidden-sm hidden-xs">
+  <div class="sidebar-content-user-profil">
+    <ul>
+      <li *ngIf="user.json_metadata && user.json_metadata.profile && user.json_metadata.profile.name" class="name">
+        <h1>{{user.json_metadata.profile.name}}</h1>
+      </li>
+      <li class="username">
+        @{{user.name}}
+      </li>
+      <li *ngIf="user.json_metadata && user.json_metadata.profile && user.json_metadata.profile.about" class="about">
+        {{user.json_metadata.profile.about}}
+      </li>
+      <li>
+        <span class="btn-watch active">
+            {{ "user.sidebar.watch"|translate }}
+        </span>
+        <span class="btn-mute active">
+            {{ "user.sidebar.mute"|translate }}
+        </span>
+      </li>
+      <li *ngIf="user.json_metadata && user.json_metadata.profile && user.json_metadata.profile.location" class="location">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        {{user.json_metadata.profile.location}}
+      </li>
+      <li *ngIf="user.json_metadata && user.json_metadata.profile && user.json_metadata.profile.website" class="website">
+        <i class="fa fa-external-link" aria-hidden="true"></i>
+        <a target="_blanc" rel="nofollow" [href]="user.json_metadata.profile.website">{{extractHostname(user.json_metadata.profile.website)}}</a>
+      </li>
+      <li class="created">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <app-date [date]="user?.created"></app-date>
+      </li>
+      <li class="voting_power">
+        <i class="fa fa-bolt" aria-hidden="true"></i>
+        {{ "user.sidebar.voting_power"|translate }} {{ (user.voting_info.voting_power/100).toFixed(0) }}%
+      </li>
+      <li class="voting_power">
+        <i class="fa fa-usd" aria-hidden="true"></i>
+        {{ "user.sidebar.voting_power_dollar"|translate }} {{ user.voting_info.vote_value | currency:'USD':'symbol':'1.3'}}
+      </li>
+      <li class="voting_power">
+        <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+        {{ "user.sidebar.bandwith"|translate }} {{ user.voting_info.bandwidth_percent_remaining + '%' }}
+      </li>
+      <!-- <li *ngIf="user.ranking" class="ranking">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+        {{user.ranking | number}} {{ "user.sidebar.ranking"|translate }}
+      </li> -->
+    </ul>
+  </div>
+</div>

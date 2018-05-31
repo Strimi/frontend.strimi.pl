@@ -1,0 +1,11 @@
+<div class="language">
+  <span [ngClass]="{'active' : enButton}" (click)="selectLanguageEN()">
+    {{ 'language.english'|translate }}
+  </span>
+  <span [ngClass]="{'active' : plButton}" (click)="selectLanguagePL()">
+    {{ 'language.polish'|translate }}
+  </span>
+  <span [ngClass]="{'active' : koButton}" (click)="selectLanguageKO()">
+    {{ 'language.korean'|translate }}
+  </span>
+</div>

@@ -1,0 +1,22 @@
+.tooltip {
+}
+.tooltip-inner {
+  font-size: 1.4rem;
+  max-width: 250px;
+  padding: 0.5rem 1rem;
+  color: $white;
+  text-align: center;
+  border-radius: 0.25rem;
+
+  ul.payout {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+}

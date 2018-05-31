@@ -1,0 +1,179 @@
+body {
+  &.night {
+    .comments {
+      .stream-submit {
+        background: $NightFirst;
+        box-shadow: none;
+        border: 1px solid $NightPostBorder;
+        &-meta {
+          .btn-white,
+          #markdown {
+            background-color: $NightPostBackground;
+            border: none;
+            color: lighten($purple, 35%);
+          }
+        }
+        /* Editor */
+        .editor-preview {
+          background: $NightFirst;
+          color: lighten($purple, 35%);
+        }
+        .editor-toolbar {
+          border-top: 1px solid $NightBorderInput;
+          border-left: 1px solid $NightBorderInput;
+          border-right: 1px solid $NightBorderInput;
+          &.disabled-for-preview {
+            a {
+              &:not(.no-disable) {
+                background: transparent;
+              }
+            }
+          }
+          a {
+            color: $white !important;
+            &.active,
+            &:hover {
+              background: $NightFirst;
+              border-color: $NightBorderInput;
+            }
+          }
+          i {
+            &.separator {
+              border-left: 1px solid $NightBorderInput;
+              border-right: 1px solid $NightBorderInput;
+            }
+          }
+        }
+        .CodeMirror {
+          background: $NightFirst;
+          border: 1px solid $NightBorderInput;
+          color: lighten($purple, 35%);
+        }
+        .CodeMirror-cursor {
+          border-left: 1px solid lighten($purple, 35%);
+        }
+      }
+      &-header {
+        &-name {
+          color: lighten($purple, 45%);
+          .count {
+            background-color: $NightThird;
+            border: 1px solid $NightThird;
+          }
+        }
+        &-sorting {
+          span {
+            &:hover,
+            &.active {
+              @extend .trans;
+              color: lighten($purple, 30%);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &-container {
+        background-color: $NightPostBackground;
+        box-shadow: transparent;
+        border: 1px solid $NightPostBorder;
+        .root-title {
+          border-bottom: 1px solid $NightPostBorder;
+          color: lighten($purple, 55%) !important;
+          &:hover {
+            color: lighten($purple, 60%) !important;
+          }
+        }
+        ul {
+          li {
+            .comment {
+              &-author,
+              &-author-reputation {
+                color: $green;
+                a {
+                  color: $green;
+                  &:hover {
+                    color: $green;
+                  }
+                }
+              }
+              &-author-cash,
+              &-author-time,
+              &-author-collapse {
+                color: $NightMeta;
+                a {
+                  color: $NightMeta;
+                  &:hover {
+                    color: $NightMeta;
+                    cursor: text;
+                  }
+                }
+              }
+              &-author-collapse {
+                &:hover {
+                  color: lighten($NightMeta, 5%);
+                }
+              }
+              &-author-edit,
+              &-author-remove,
+              &-author-flag {
+                color: $NightMeta;
+                &:hover {
+                  color: $red;
+                }
+              }
+              &-author-edit,
+              &-author-remove {
+                &:hover {
+                  color: $green;
+                }
+              }
+              &-description {
+                color: lighten($purple, 45%);
+                &:hover {
+                  cursor: text;
+                }
+              }
+              &-meta {
+                color: $NightMeta;
+                .container-vote-small {
+                  .vote-name,
+                  .vote-count {
+                    color: lighten($purple, 30%);
+                    &:hover {
+                      color: lighten($purple, 35%);
+                    }
+                  }
+                  &.voted {
+                    &.app-user {
+                      &:hover {
+                        cursor: pointer;
+                        .vote-count {
+                          color: darken($green, 5%);
+                        }
+                        .vote-name {
+                          @extend .trans;
+                          color: darken($green, 5%);
+                        }
+                      }
+                    }
+                    .vote-count {
+                      color: $green;
+                    }
+                    .vote-name {
+                      color: $green;
+                    }
+                  }
+                }
+                &-response {
+                  &:hover {
+                    color: lighten($NightMeta, 15%);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

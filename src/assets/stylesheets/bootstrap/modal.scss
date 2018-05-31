@@ -1,0 +1,523 @@
+.modal-title {
+  color: $purple;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.modal-body {}
+
+.modal-content-error {
+  .no-content {
+    margin-bottom: 15px;
+  }
+}
+
+.modal-votes {
+  &-lists {
+    width: 100%;
+    display: inline-block;
+    .vote-single {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid lighten($purple, 55%);
+      margin-bottom: 12px;
+      padding-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0px !important;
+      }
+      .vote-avatar {
+        position: absolute;
+        background-color: $sidebarBackground;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+        float: left;
+      }
+      .vote-content {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        padding-left: 40px;
+        &-author {
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          color: $purple;
+          font-weight: 500;
+          display: table;
+          float: left;
+          width: 100%;
+          margin-bottom: 5px;
+          padding-top: 4px;
+          &-username {
+            color: $green;
+            text-decoration: none;
+            margin-right: 3px;
+            &:hover {
+              @extend .trans;
+              text-decoration: none;
+              cursor: pointer;
+            }
+          }
+          &-reputation {
+            color: $purple;
+            font-weight: 400;
+            color: $green;
+          }
+          &-cash,
+          &-time {
+            position: relative;
+            color: lighten($purple, 30%);
+            font-weight: 400;
+            text-decoration: none;
+            padding-left: 15px;
+            margin-left: 10px;
+            &:hover {
+              @extend .trans;
+              text-decoration: none;
+              cursor: text;
+            }
+            .fa {
+              margin-right: 3px;
+            }
+            &:before {
+              content: "•";
+              position: absolute;
+              font-size: 1.8rem;
+              opacity: 0.3;
+              left: 0;
+              top: -1px;
+            }
+          }
+        }
+        &-votes {
+          @extend %word-break;
+          position: absolute;
+          right: 0;
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          color: $text;
+          display: inline-block;
+          .vote-plus,
+          .vote-minus,
+          .vote-cash {
+            padding: 3px 6px;
+            color: $white;
+            font-size: 1.4rem;
+            padding: 4px 6px;
+            padding-left: 10px;
+          }
+          .vote-plus {
+            @include border-left-radius(5px);
+            background-color: $green;
+          }
+          .vote-minus {
+            @include border-left-radius(5px);
+            background-color: $red;
+          }
+          .vote-separator {
+            padding: 4px 6px;
+            margin-left: 5px;
+            margin-right: 5px;
+            color: lighten($purple, 30%);
+          }
+          .vote-cash {
+            @include border-right-radius(5px);
+            border-left-width: 0;
+            border-left-color: transparent;
+            border: 2px solid lighten($purple, 50%);
+            color: $purple;
+            font-weight: 500;
+            height: 27px;
+            display: inline-block;
+            padding: 2px 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-login {
+  .modal-dialog {
+    width: 380px;
+    .modal-content {
+      .modal-header {
+        border-bottom-color: transparent;
+        .modal-title {
+          width: 100%;
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: $purple;
+          text-align: center;
+          margin-top: 5px;
+        }
+      }
+      .modal-body {
+        form {
+          #username,
+          #password {
+            @include border-radius(3px);
+            height: 45px;
+            font-size: 1.6rem;
+            padding: 10px 16px;
+            margin-bottom: 15px;
+          }
+          #password {
+            margin-bottom: 10px;
+          }
+          label {
+            display: inline-block;
+            width: 100%;
+            margin-top: 10px;
+            input {
+              float: left;
+              margin-right: 10px;
+            }
+            a {
+              color: $green;
+              text-decoration: none;
+              &:not(:disabled):not(.disabled):active,
+              &:not(:disabled):not(.disabled):active:focus,
+              &:hover,
+              &:active,
+              &:focus {
+                @extend .trans;
+                color: lighten($green, 5%);
+                text-decoration: none;
+              }
+            }
+          }
+          button {
+            @include border-radius(5px);
+            width: 100%;
+            padding: 10px 16px;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-top: 20px;
+          }
+        }
+      }
+      .modal-footer {
+        @include border-bottom-radius(5px);
+        background-color: $body;
+        .new-account {
+          width: 100%;
+          display: inline-block;
+          .new-account-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            color: lighten($purple, 20%);
+            margin-top: 10px;
+            margin-bottom: 25px;
+          }
+          a {
+            background-color: $green;
+            color: $white;
+            width: 100%;
+            display: inline-block;
+            padding: 10px 16px;
+            font-size: 1.8rem;
+            font-weight: 400;
+            &:not(:disabled):not(.disabled):active,
+            &:not(:disabled):not(.disabled):active:focus,
+            &:hover,
+            &:active,
+            &:focus {
+              @extend .trans;
+              background-color: lighten($green, 5%);
+              color: $white;
+              border-color: transparent;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-mobile-global-menu {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+    height: 100%;
+    .modal-content {
+      max-width: 100%;
+      margin: 0;
+      height: 100%;
+      background-color: $purple;
+      border: 1px solid $purple;
+      .modal-body {
+        ul {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          padding-left: 0;
+          margin-bottom: 0;
+          li {
+            list-style: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 2.4rem;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            color: lighten($purple, 45%);
+            &:last-child {
+              border-top: 1px solid darken($purple, 5%);
+              padding-top: 25px;
+              margin-top: 15px;
+            }
+            a {
+              color: lighten($purple, 45%);
+              &.active {
+                color: $green;
+              }
+              &.logo {
+                position: relative;
+                display: inline-block;
+                font-family: 'Baloo Bhaina', cursive;
+                color: $white;
+                font-size: 3.8rem;
+                text-transform: lowercase;
+                text-decoration: none;
+                &:after {
+                  content: 'beta';
+                  position: absolute;
+                  font-family: $fontRoboto;
+                  font-size: 1.1rem;
+                  font-weight: 400;
+                  color: lighten($purple, 45%);
+                  right: 1px;
+                  top: 13px;
+                }
+              }
+              .count {
+                @include border-radius(3px);
+                background-color: darken($purple, 5%);
+                color: lighten($purple, 30%);
+                padding: 8px 8px;
+                font-size: 2.2rem;
+                display: inline-block;
+                margin-left: 8px;
+              }
+              &.modal-close {
+                color: lighten($purple, 25%); // color: darken($purple, 2%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-user-settings,
+.modal-notification {
+  .modal-dialog {
+    .modal-content {
+      .modal-header {
+        .modal-title {
+          position: relative;
+          display: inline-block;
+          span {
+            @include border-radius(3px);
+            position: absolute;
+            background-color: $red;
+            color: $white;
+            font-size: 1.2rem;
+            padding: 1px 5px;
+            top: 2px;
+            right: -30px;
+          }
+        }
+      }
+      .modal-body {
+        padding: 0;
+        .notification-container {
+          position: relative;
+          width: 100%;
+          display: inline-block;
+          .notification-single {
+            width: 100%;
+            display: inline-block;
+            padding: 1rem;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $border;
+            &.active,
+            &:hover {
+              @extend .trans;
+              background-color: lighten($border, 2%)
+            }
+            .notification-avatar {
+              position: absolute;
+              background-color: $sidebarBackground;
+              background-position: center center;
+              background-size: cover;
+              border-radius: 50%;
+              margin-right: 10px;
+              height: 35px;
+              width: 35px;
+              float: left;
+            }
+            .notification {
+              width: 100%;
+              display: inline-block;
+              padding-left: 45px;
+              margin-bottom: 1px;
+              &-author {
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+                color: $purple;
+                font-weight: 500;
+                display: table;
+                float: left;
+                width: 100%; // margin-bottom: 5px;
+                &-username {
+                  color: $green;
+                  text-decoration: none;
+                  margin-right: 3px;
+                  display: inline-block;
+                  &:hover {
+                    @extend .trans;
+                    text-decoration: none;
+                    cursor: pointer;
+                  }
+                  &.banned {
+                    position: relative;
+                    color: lighten($purple, 30%);
+                    &:after {
+                      position: absolute;
+                      display: inline-block;
+                      content: "";
+                      width: 100%;
+                      height: 2px;
+                      background-color: lighten($purple, 40%);
+                      top: 8px;
+                      left: -2px;
+                    }
+                  }
+                }
+                &-time {
+                  position: relative;
+                  color: lighten($purple, 30%);
+                  font-size: 1.2rem;
+                  font-weight: 400;
+                  text-decoration: none;
+                  padding-left: 15px;
+                  margin-left: 5px;
+                  display: inline-block;
+                  &:hover {
+                    @extend .trans;
+                    text-decoration: none;
+                    cursor: pointer;
+                  }
+                  &:before {
+                    content: "•";
+                    position: absolute;
+                    font-size: 1.8rem;
+                    opacity: 0.3;
+                    left: 0;
+                    top: 0;
+                  }
+                }
+              }
+              &-description {
+                @extend %word-break;
+                font-size: 1.4rem;
+                line-height: 2.2rem;
+                font-weight: 500;
+                color: $black;
+                display: inline-block;
+                width: 100%;
+                span {
+                  color: $purple;
+                  margin-right: 2px;
+                  display: inline-block;
+                }
+                h2 {
+                  display: inline-block;
+                  font-size: 1.4rem;
+                  line-height: 2.2rem;
+                  a {
+                    color: $green;
+                    text-decoration: none;
+                    &:hover {
+                      @extend .trans;
+                      color: lighten($green, 10%);
+                      text-decoration: none;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .modal-footer {
+        justify-content: space-between;
+        text-align: left;
+        color: $green;
+        font-size: 1.4rem; // font-weight: 500;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 1px solid transparent;
+        a {
+          display: inline-block;
+          float: left;
+          color: $green;
+          text-decoration: none;
+          &:hover {
+            @extend .trans;
+            cursor: pointer;
+            color: lighten($green, 5%);
+            text-decoration: none;
+          }
+          &.all-read {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-user-settings {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+        input {
+          height: 38px;
+          margin-top: 15px;
+          font-size: 1.4rem;
+        }
+      }
+      .modal-footer {
+        button {
+          float: right;
+          font-size: 1.5rem;
+          font-weight: 400;
+          letter-spacing: .5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 6px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+}

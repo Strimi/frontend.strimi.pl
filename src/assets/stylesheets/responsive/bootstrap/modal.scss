@@ -1,0 +1,34 @@
+@media (max-width: 575px) {
+  .modal-login {
+    .modal-dialog {
+      width: auto;
+    }
+  }
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        .modal-votes {
+          &-lists {
+            .vote-single {
+              .vote-content {
+                &-author {
+                  &-time {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .modal-login {
+    .modal-dialog {
+      width: auto;
+    }
+  }
+}

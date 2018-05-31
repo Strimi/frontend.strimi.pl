@@ -1,0 +1,45 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <div class="modal-title">
+      {{ 'header.top_menu.my_strimi.title'|translate }}
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('dismiss click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="errInfo">{{errInfo | translate}}</div>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <input type="text" class="form-control" name="username" id="username" placeholder="{{ 'header.top_menu.my_strimi.username'|translate }}"
+        [(ngModel)]="loginModel.login" required/>
+      <input type="password" class="form-control" name="password" id="password" autocomplete="on" placeholder="{{ 'header.top_menu.my_strimi.password'|translate }}"
+        [(ngModel)]="loginModel.pass" required/>
+      <label for="">
+        <span>
+        {{ 'header.top_menu.my_strimi.accept'|translate }}
+          <a (click)="goToRegulations()">
+              {{ 'header.top_menu.my_strimi.regulations'|translate }}
+          </a>
+          {{ 'header.top_menu.my_strimi.service'|translate }}
+        </span>
+        <input type="checkbox" id="regulations" name="regulations" class="" [(ngModel)]="isAccept" required>
+      </label>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">
+        {{ 'header.top_menu.my_strimi.submit'|translate }}
+      </button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="new-account">
+      <div class="new-account-title">
+        {{ 'header.top_menu.my_strimi.no_account'|translate }}
+      </div>
+      <a class="btn large" routerLink="register" target="_blank">
+        {{ 'header.top_menu.my_strimi.sign_up'|translate }}
+      </a>
+    </div>
+  </div>
+</ng-template>
+<span [class]="buttonClass" (click)="open(content)">
+  {{ buttonText |translate }}
+</span>
