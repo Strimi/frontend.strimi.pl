@@ -3,11 +3,10 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatChipInputEvent} from '@angular/material';
 import {TagRankingService} from '../../shared/services/tag-ranking.service';
 import {Constants, PAYOUT_TYPE, PayoutType} from '../../shared/settings';
-import {createImgForLinkPost, NewPost, PostResult} from '../../shared/index';
+import {NewPost, PostResult} from '../../shared/index';
 import {AddContentService} from '../../shared/services/add-content/add-content.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {PostService} from '../../shared/services/post.service';
-import {createFooterForPost} from '../../shared';
 import {NewLinkService} from '../../shared/services/new-link/new-link.service';
 import {RecognizedLink} from '../../shared/models/recognize-link.model';
 
@@ -220,13 +219,11 @@ export class NewPostComponent implements OnInit {
     this.editMode = true;
     this.showSelectReward = false;
     const editPost = new NewPost();
-    let text = post.body.replace(createFooterForPost(post.author, post.permlink), '');
-
-    if (this.isLinkPost()) {
-      text = text.replace(createImgForLinkPost(post.author, post.permlink, post.json_metadata.strimi_metadata.thumb), '');
-      this.linkPost = true;
+    if (post.json_metadata && post.json_metadata.strimi_metadata && post.json_metadata.strimi_metadata.body) {
+      editPost.body = post.json_metadata.strimi_metadata.body;
+    } else {
+      editPost.body = post.body;
     }
-    editPost.body = text;
     editPost.title = post.title;
     this.newPost = editPost;
     this.slectedTags = post.json_metadata.tags.filter(e => e !== Constants.STRIMI_TAG && e !== Constants.STRIMI_TAG_PL);

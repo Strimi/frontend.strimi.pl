@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {createFooterForPost, createImgForLinkPost, PostResult} from '../../index';
+import {createFooterForLinkPost, createFooterForPost, createImgForLinkPost, PostResult} from '../../index';
 import {NewPost} from '../../models';
 import {PostService} from '../post.service';
 import {Constants} from '../../settings';
@@ -300,7 +300,7 @@ export class AddContentService {
           author: this.postService.loggedData.loginData.login,
           permlink: permlink,
           title: removeMarkdown(this.removeHTML(newPost.title)),
-          body: this.addFooterAndImgToLinkPost(newPost.body, author, permlink, recognizedLink.thumbnails[0]),
+          body: this.addFooterAndImgToLinkPost(newPost.body, author, permlink, recognizedLink.thumbnails[0], recognizedLink.source),
           json_metadata: JSON.stringify({
             app: Constants.STRIMI_20,
             format: 'html',
@@ -321,11 +321,13 @@ export class AddContentService {
         extensions: Constants.BENEFICIARIES
       }]
     ];
-    return operations;
+    console.log(operations);
+    //return operations;
   }
 
   prepareUpdateLinkPost(newPost: NewPost, odlPost: PostResult, permlink: string, arrayLinks: [Array<string>, Array<string>], author: string) {
     const img  = odlPost.json_metadata.strimi_metadata.thumb;
+    const source = odlPost.json_metadata.strimi_metadata.source;
     const operations = [
       ['comment',
         {
@@ -334,7 +336,7 @@ export class AddContentService {
           author: author,
           permlink: permlink,
           title: removeMarkdown(this.removeHTML(newPost.title)),
-          body: this.addFooterAndImgToLinkPost(newPost.body, author, permlink, img),
+          body: this.addFooterAndImgToLinkPost(newPost.body, author, permlink, img, source),
           json_metadata: JSON.stringify({
             app: Constants.STRIMI_20,
             format: 'html',
@@ -354,7 +356,7 @@ export class AddContentService {
         allow_curation_rewards: true
       }]
     ];
-
+console.log(operations);
     return operations;
   }
 
@@ -369,9 +371,9 @@ export class AddContentService {
     return `${text}\n` + createFooterForPost(author, permlink);
   };
 
-  addFooterAndImgToLinkPost = (body: string, author: string, permlink: string, img: string) => {
+  addFooterAndImgToLinkPost = (body: string, author: string, permlink: string, img: string, source: string) => {
     let text = this.removeHTML(body);
-    text = this.addFooter(body, author, permlink);
+    text = `${text}\n` + createFooterForLinkPost(author, permlink, source);
     text = createImgForLinkPost(author, permlink, img) + `${text}`;
     return text;
   };
