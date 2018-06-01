@@ -6,7 +6,7 @@
       <app-date [classDate]="'notification-author-time'" [date]="notification.date"></app-date>
     </div>
 
-    <!-- user tagged in comment -->
+    <!-- TU NE - user tagged in comment -->
     <ng-container *ngIf="notification.category !=='strimi-stream'">
       <div class="notification-description">
         <span>{{ 'user.notifications.type.tagged_comment'|translate }}</span>

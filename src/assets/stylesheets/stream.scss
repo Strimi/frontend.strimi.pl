@@ -119,6 +119,7 @@
           }
           &-time {
             position: relative;
+            font-size: 1.2rem;
             color: lighten($purple, 30%);
             font-weight: 400;
             text-decoration: none;
@@ -304,6 +305,7 @@
             }
           }
           &-cash {
+            font-size: 1.2rem;
             &:hover {
               cursor: text;
             }

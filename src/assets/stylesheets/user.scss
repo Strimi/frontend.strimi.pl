@@ -651,6 +651,7 @@
           font-weight: 500;
         }
         .key {
+          @extend %word-break;
           font-size: 1.8rem;
           font-weight: 300;
           width: 100%;

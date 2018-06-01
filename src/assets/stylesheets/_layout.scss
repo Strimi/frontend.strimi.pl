@@ -76,18 +76,18 @@ header {
     text-transform: lowercase;
     text-decoration: none;
     padding-right: 35px;
-    padding-top: 22px;
+    padding-top: 24px;
     float: left;
-    &:after {
-      content: 'beta';
-      position: absolute;
-      font-family: $fontRoboto;
-      font-size: 1rem;
-      font-weight: 400;
-      color: lighten($purple, 45%);
-      top: 35px;
-      left: 55px;
-    }
+    // &:after {
+    //   content: 'beta';
+    //   position: absolute;
+    //   font-family: $fontRoboto;
+    //   font-size: 1rem;
+    //   font-weight: 400;
+    //   color: lighten($purple, 45%);
+    //   top: 35px;
+    //   left: 55px;
+    // }
     &:hover {
       @extend .trans;
       color: lighten($purple, 45%);

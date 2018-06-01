@@ -5,6 +5,7 @@
     <div class="stream-single-content-author">
       <app-author-post [author]="post.author" [reputation]="post.author_reputation" [classAuthor]="'stream-single-content-author-username'"
         [classRep]="'stream-single-content-author-reputation'"></app-author-post>
+      <app-cash-post [post]="post" [classCash]="'stream-single-content-meta-cash'"></app-cash-post>
       <app-date [routerLink]="['detail', '@' + post.author, post.permlink]" [date]=post.created [classDate]="'stream-single-content-author-time'"></app-date>
       <app-report-post
         [classReport]="'stream-single-content-author-flag'"
@@ -20,7 +21,7 @@
 
     <div class="stream-single-content-meta">
       <app-vote-post-thumb [post]="post"></app-vote-post-thumb>
-      <app-cash-post [post]="post" [classCash]="'stream-single-content-meta-cash'"></app-cash-post>
+
       <span class="stream-single-content-meta-comments">
         <app-comments-post [routerLink]="['detail', '@' + post.author, post.permlink]" fragment="comments" [children]="post.children"></app-comments-post>
       </span>

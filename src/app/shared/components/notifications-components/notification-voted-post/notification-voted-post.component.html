@@ -11,7 +11,7 @@
       <div class="notification-description">
         <span>{{ 'user.notifications.type.post_voted'|translate }}</span>
         <app-title-post [title]="notification.title" [author]="notification.author" [category]="notification.category" [permlink]="notification.permlink"
-          [titleLength]="40"></app-title-post>
+          [titleLength]="25"></app-title-post>
       </div>
     </ng-container>
 
@@ -21,7 +21,7 @@
         <span>{{ 'user.notifications.type.comment_voted'|translate }}</span>
         <app-title-post [title]="notification.root_title " [author]="notification.url.split('/')[2].replace('@','')" [category]="notification.url.split('/')[1]"
           [permlink]="notification.url.split('/')[3].split('#')[0]"
-          [titleLength]="40"></app-title-post>
+          [titleLength]="25"></app-title-post>
       </div>
     </ng-container>
 
@@ -30,7 +30,7 @@
       <div class="notification-description">
         <span>{{ 'user.notifications.type.post_voted_stream'|translate }}</span>
         <app-title-post [title]="notification.body" [author]="notification.author" [category]="'stream/detail'" [permlink]="notification.permlink"
-          [titleLength]="40"></app-title-post>
+          [titleLength]="25"></app-title-post>
       </div>
     </ng-container>
 
@@ -43,7 +43,7 @@
           [author]="notification.url.split('/')[2].replace('@','')"
           [category]="'stream/detail'"
           [permlink]="notification.url.split('/')[3].split('#')[0]"
-          [titleLength]="40"></app-title-post>
+          [titleLength]="25"></app-title-post>
         </div>
       </ng-container>
 
