@@ -39,10 +39,10 @@ export const createFooterForPost = (author: string, permlink: string) => {
 };
 
 export const createFooterForLinkPost = (author: string, permlink: string, source: string) => {
-  return `<hr><p><center><em>Posted on `
-    + `<a href="https://strimi.it/strimi/@${author}/${permlink}">`
-    + `<strong>Strimi.it</strong></a></em></p>`
-    + `<p>Link to: <a href="${source}">source</a></p>`;
+  return `<hr><p><center><em><strong>`
+    + `Posted via <a href="https://strimi.it/strimi/@${author}/${permlink}">Strimi</a> `
+    +  `<p>Source: <a href="${source}">view</a></p> `
+    + `</strong></em></center></p>`;
 };
 
 export const createImgForLinkPost = (author: string, permlink: string, img: string) => {
