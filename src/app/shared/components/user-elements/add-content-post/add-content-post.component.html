@@ -1,6 +1,6 @@
 <div class="stream-submit">
   <form (ngSubmit)="submit()" #textForm="ngForm">
-    <simplemde [options]="{ shortcuts: {toggleCodeBlock:'', drawImage:'', toggleOrderedList:''}, spellChecker: false, toolbarTips: false, hideIcons: ['fullscreen', 'side-by-side', 'heading', 'guide'], showIcons: ['code', 'table', 'strikethrough'], autosave: { enabled: false, uniqueId: 1 }, status: false }"
+    <simplemde [options]="{ shortcuts: {toggleCodeBlock:'', drawImage:'', toggleOrderedList:''}, spellChecker: false, toolbarTips: false, hideIcons: ['fullscreen', 'side-by-side', 'heading', 'guide'], showIcons: ['code', 'table', 'strikethrough'], status: false }"
       id="text" name="text" [(ngModel)]="text"></simplemde>
     <div class="stream-submit-meta">
       <button type="submit" id="submit" class="btn medium btn-primary" [disabled]="dissableButton()">

@@ -10,7 +10,9 @@
       <li>
         <a routerLink="/created" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  (click)="c('Close click')">
           {{ 'header.top_menu.created'|translate }}
+          <span class="count">{{postSrvice.getNumberCreatedPosts() | async | number}}</span>
         </a>
+
       </li>
       <!-- <li>
         <a routerLink="/hot" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="c('Close click')">
@@ -23,7 +25,9 @@
         </a>
       </li>
       <li>
-        <a class="modal-close" (click)="c('Close click')">Zamknij</a>
+        <a class="modal-close" (click)="c('Close click')">
+          {{ 'header.top_menu.close'|translate }}
+        </a>
       </li>
     </ul>
   </div>

@@ -60,6 +60,16 @@ body {
             }
           }
         }
+
+        &.registration {
+          .option {
+            border: 2px solid darken($NightMeta, 10%);
+            &-title {
+              color: lighten($purple, 25%);
+            }
+          }
+        }
+
       }
     }
     .page-404 {

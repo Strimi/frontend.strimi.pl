@@ -1,4 +1,21 @@
 @media (max-width: 575px) {
+  .page {
+    &-content {
+      &.registration {
+        .option {
+          margin-bottom: 25px;
+          &-steem {
+            &-name {
+              margin-top: 0;
+            }
+            &-help {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
   .page-404 {
     margin-top: 15px;
     .ico-lenny {
@@ -26,6 +43,47 @@
         }
       }
       .or {}
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .page {
+    &-content {
+      &.registration {
+        .option {
+          margin-bottom: 25px;
+          &-steem {
+            &-name {
+              margin-top: 0;
+            }
+            &-help {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .page {
+    &-content {
+      &.registration {
+        .option {
+          margin-bottom: 25px;
+          &-steem {
+            &-name {
+              margin-top: 15px;
+            }
+            &-help {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
   }
 }

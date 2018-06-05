@@ -9,6 +9,7 @@
         "content": "content",
         "stream": "stream"
       },
+      "close": "Close",
       "my_strimi": {
         "name": "My Strimi",
         "title": "Sign In",
@@ -104,7 +105,30 @@
       }
     },
     "registration": {
-      "title": "Registration"
+      "title": "Registration",
+      "header": {
+        "name": "Currently, there are three possibilities",
+        "text": "*Strimi not responsible with the registration of external sites. You do it at your own risk."
+      },
+      "friend": {
+        "name": "Friend",
+        "text": "Ask a friend who already has a Blockchain Steem account to create an account for you. This is currently the best and fastest method."
+      },
+      "steemit":{
+        "name": "Steemit.com",
+        "text": "External service enabling registration in Blockchain Steem. It requires a phone number and an email address to verify.",
+        "go": "Go to Steemit.com"
+      },
+      "anon": {
+        "name": "AnonSteem.network",
+        "text": "External Site for anonymous registration in Blockchain Steem, but for a fee. Available transfers: Steem, Bitcoin or Litcoin.",
+        "go": "Go to AnonSteem.network"
+      },
+      "blockchain": {
+        "name": "Blockchain Steem",
+        "info_first": "Each account that will be once created in Blockchain Steem will be able to log in to any available Blockchain Steem interface, regardless of how it was recorded, whether by a friend, Steemit.com or AnonNetwork or any other available method that allows registration in the Steem network.",
+        "info_second": "If you have questions, please contact us via Social Media or via the email address provided in the contact page."
+      }
     }
   },
   "footer": {
