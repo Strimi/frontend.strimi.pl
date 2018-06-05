@@ -19,7 +19,9 @@
       [showEdit]="showEdit"
       (edit)="postToEdit.next(post)"
       [showDelete]="showDelete"
-      (delete)="postToDelete.next(post)"></app-report-post>
+      (delete)="postToDelete.next(post)"
+      [post]="post"
+      [showDownVote]="showDownVote"></app-report-post>
   </div>
   <h1 class="details-text" [innerHTML]="metaStrimi.title | sanitize"></h1>
   <div class="description default description-markdown" [innerHTML]="metaStrimi.body | markdown | sanitize" san></div>
@@ -39,6 +41,15 @@
     <span class="d-xl-inline-block d-lg-inline-block d-md-inline-block d-sm-none d-none">
       <app-date [date]=post.created [classDate]="'meta-time'"></app-date>
     </span>
-    <app-report-post [classReport]="'meta-flag'" [classRemove]="'meta-remove'" [classEdit]="'meta-edit'"></app-report-post>
+    <app-report-post
+      [classReport]="'meta-flag'"
+      [classRemove]="'meta-remove'"
+      [classEdit]="'meta-edit'"
+      [showEdit]="showEdit"
+      (edit)="postToEdit.next(post)"
+      [showDelete]="showDelete"
+      (delete)="postToDelete.next(post)"
+      [post]="post"
+      [showDownVote]="showDownVote"></app-report-post>
   </div>
 </div>

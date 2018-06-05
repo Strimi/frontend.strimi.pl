@@ -33,7 +33,9 @@
         (edit)="onEdit(post)"
         [showEdit]="showEdit(post)"
         (delete)="onDeletePost(post)"
-        [showDelete]="showDelete(post)"></app-report-post>
+        [showDelete]="showDelete(post)"
+        [post]="post"
+        [showDownVote]="showDownVote(post)"></app-report-post>
     </div>
     <app-image-post [routerLink]="['/', post.category, '@' + post.author, post.permlink]"
                     [jsonMeta]="post.json_metadata"></app-image-post>

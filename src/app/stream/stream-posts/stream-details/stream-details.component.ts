@@ -63,6 +63,11 @@ export class StreamDetailsComponent implements OnInit {
     });
   }
 
+  canReport() {
+    return this.postService.loggedData !== null
+      && postAfter7Days(this.post.created);
+  }
+
   canEdit() {
     return this.postService.loggedData !== null
       && this.postService.loggedData.user.name === this.post.author

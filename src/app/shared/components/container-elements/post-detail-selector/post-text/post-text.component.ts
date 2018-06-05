@@ -15,6 +15,8 @@ export class PostTextComponent {
   showEdit: boolean;
   @Input()
   showDelete: boolean;
+  @Input()
+  showDownVote: boolean;
   @Output()
   postToEdit = new EventEmitter<PostResult>();
   @Output()

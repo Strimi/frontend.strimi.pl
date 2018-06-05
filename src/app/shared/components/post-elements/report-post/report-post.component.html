@@ -1,4 +1,4 @@
-<span [class]="classReport">
+<span [class]="classReport" (click)="openDownVote()" *ngIf="showDownVote">
   <i class="fa fa-flag-o" aria-hidden="true"></i>
 </span>
 <span [class]="classRemove" (click)="deletePost()" *ngIf="showDelete">

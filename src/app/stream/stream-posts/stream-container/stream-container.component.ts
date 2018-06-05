@@ -38,4 +38,9 @@ export class StreamContainerComponent implements OnInit {
       && post.children === 0 && post.net_votes === 0;
   }
 
+  showDownVote(post: PostResult) {
+    return this.loggedData
+      && postAfter7Days(post.created);
+  }
+
 }
