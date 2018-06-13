@@ -1,6 +1,6 @@
-<app-banner *ngIf="localStorage.shouldShowBanner()"></app-banner>
+<app-banner *ngIf="localStorage.shouldShowBanner() &&  showBaner"></app-banner>
 
-<div class="row " [ngClass]="{'welcome-banner-padding': localStorage.shouldShowBanner()}">
+<div class="row " [ngClass]="{'welcome-banner-padding': localStorage.shouldShowBanner() && showBaner}">
   <div class="col-xl-9 col-lg-8 col-md-12">
     <app-sort-header (eventSortParam)="onSort($event)"></app-sort-header>
     <div class="post" *ngIf="data">
