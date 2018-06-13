@@ -4,7 +4,43 @@
   font-weight: 500;
 }
 
-.modal-body {}
+.modal-body {
+  .report-text {
+    font-weight: 500;
+    margin-top: 10px;
+    ul {
+      margin-bottom: 10px;
+      margin-top: 15px;
+      li {
+        font-weight: 400;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .report-slider {
+    .voting-slider {
+      display: inline-block;
+      width: 100%;
+      margin-top: 15px;
+    }
+    .voting-slider-count {
+      color: $red;
+      font-size: 1.8rem;
+    }
+
+    .mat-slider-track-background {
+      background-color: lighten($red, 10%); // Line bg
+    }
+    .mat-accent .mat-slider-thumb-label,
+    .mat-accent .mat-slider-thumb {
+      background-color: $red; // Circle
+    }
+    .mat-accent .mat-slider-track-fill {
+      background-color: $red; // Line
+    }
+  }
+}
 
 .modal-content-error {
   .no-content {

@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    {{ 'user.report_modal.name'|translate }}
+  </h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('dismiss click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="report-text">
+    {{ 'user.report_modal.text'|translate }}
+    <ul>
+      <li>
+        {{ 'user.report_modal.lists.0'|translate }}
+      </li>
+      <li>
+        {{ 'user.report_modal.lists.1'|translate }}
+      </li>
+      <li>
+        {{ 'user.report_modal.lists.2'|translate }}
+      </li>
+      <li>
+        {{ 'user.report_modal.lists.3'|translate }}
+      </li>
+      <li>
+        {{ 'user.report_modal.lists.4'|translate }}
+      </li>
+    </ul>
+  </div>
+  <div class="report-slider">
+    <div class="voting-slider">
+      <div class="voting-slider-count">
+        {{ 'user.report_modal.power'|translate }} {{ value + '%' }}
+      </div>
+      <mat-slider *ngIf="canVote" [max]="max" [min]="min" [step]="step" [thumb-label]="thumbLabel" [tick-interval]="tickInterval"
+                  [vertical]="false"
+                  [value]="startValue" (input)="value= $event.value">
+      </mat-slider>
+    </div>
+  </div>
+  <span *ngIf="showError">
+    {{ 'user.report_modal.error'|translate }} {{ value + '%' }}
+  </span>
+</div>
+<div class="modal-footer">
+  <div class="voting-slider-buttons" *ngIf="!showSpinner">
+    <button class="btn small btn-primary" (click)="close()">
+      {{ 'user.vote_slider.close'|translate }}
+    </button>
+    <button class="btn small btn-red" (click)="vote()">
+      {{ 'user.report_modal.report'|translate }}
+    </button>
+  </div>
+  <div class="voting-slider-buttons" *ngIf="showSpinner">
+      <app-spinner *ngIf="showSpinner"></app-spinner>
+  </div>
+</div>

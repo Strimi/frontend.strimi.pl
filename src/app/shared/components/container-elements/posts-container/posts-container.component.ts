@@ -52,6 +52,11 @@ export class PostsContainerComponent implements OnInit {
       && post.children === 0 && post.net_votes === 0;
   }
 
+  showDownVote(post: PostResult) {
+    return this.loggedData
+      && postAfter7Days(post.created);
+  }
+
   onDeletePost(post: PostResult) {
     const modalRef = this.modalService.open(ConfirmDeleteComponent, {windowClass: 'modal-user-settings'});
     modalRef.result.then(result => {

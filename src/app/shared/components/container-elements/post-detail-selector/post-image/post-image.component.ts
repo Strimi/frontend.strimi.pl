@@ -14,6 +14,8 @@ export class PostImageComponent {
   showEdit: boolean;
   @Input()
   showDelete: boolean;
+  @Input()
+  showDownVote: boolean;
   @Output()
   postToEdit = new EventEmitter<PostResult>();
   @Output()

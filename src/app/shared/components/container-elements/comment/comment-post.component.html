@@ -22,7 +22,9 @@
         (edit)="onEditPost()"
         [showEdit]="showEdit"
         [showDelete]="showDelete"
-        (delete)="onDelete.next(comment)"></app-report-post>
+        (delete)="onDelete.next(comment)"
+        [post]="comment"
+        [showDownVote]="showDownVote"></app-report-post>
     </div>
     <div *ngIf="comment.is_banned_content" class="comment-description banned">
       {{ 'banned.comments.content'|translate }}

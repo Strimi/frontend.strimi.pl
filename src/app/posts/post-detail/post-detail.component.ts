@@ -31,6 +31,7 @@ export class PostDetailComponent implements OnInit, AfterViewInit {
   showDelete: boolean;
   isDeleting: boolean;
   deleteError: boolean;
+  showDownVote: boolean;
 
   constructor(
     private postService: PostService,
@@ -53,6 +54,8 @@ export class PostDetailComponent implements OnInit, AfterViewInit {
         && loggedData.loginData.login === this.post.author
         && postAfter7Days(this.post.created)
         && this.post.children === 0 && this.post.net_votes === 0;
+
+      this.showDownVote = this.loggedData && postAfter7Days(this.post.created);
     });
   }
 
