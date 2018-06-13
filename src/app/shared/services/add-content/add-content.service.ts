@@ -321,8 +321,7 @@ export class AddContentService {
         extensions: Constants.BENEFICIARIES
       }]
     ];
-    console.log(operations);
-    //return operations;
+    return operations;
   }
 
   prepareUpdateLinkPost(newPost: NewPost, odlPost: PostResult, permlink: string, arrayLinks: [Array<string>, Array<string>], author: string) {
@@ -356,7 +355,6 @@ export class AddContentService {
         allow_curation_rewards: true
       }]
     ];
-console.log(operations);
     return operations;
   }
 

@@ -3,7 +3,8 @@
     <app-vote-post-small [post]="post"></app-vote-post-small>
     <div class="meta-author-container">
       <app-avatar-post [author]="post.author" [classStyle]="'meta-author-avatar'"></app-avatar-post>
-      <app-author-post [author]="post.author" [reputation]="post.author_reputation" [classAuthor]="'meta-author'" [classRep]="'meta-author-reputation'"></app-author-post>
+      <app-author-post [author]="post.author" [reputation]="post.author_reputation" [classAuthor]="'meta-author'"
+                       [classRep]="'meta-author-reputation'"></app-author-post>
     </div>
 
     <span class="d-xl-inline-block d-lg-none d-md-none d-sm-none d-none">
@@ -22,7 +23,9 @@
       [showEdit]="showEdit"
       (edit)="postToEdit.next(post)"
       [showDelete]="showDelete"
-      (delete)="postToDelete.next(post)"></app-report-post>
+      (delete)="postToDelete.next(post)"
+      [post]="post"
+      [showDownVote]="showDownVote"></app-report-post>
   </div>
   <h1 class="details-video" [innerHTML]="metaStrimi.title | sanitize"></h1>
   <div class="description default">

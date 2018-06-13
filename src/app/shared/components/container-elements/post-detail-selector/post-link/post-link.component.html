@@ -19,7 +19,9 @@
       [showEdit]="showEdit"
       (edit)="postToEdit.next(post)"
       [showDelete]="showDelete"
-      (delete)="postToDelete.next(post)"></app-report-post>
+      (delete)="postToDelete.next(post)"
+      [post]="post"
+      [showDownVote]="showDownVote"></app-report-post>
   </div>
   <app-image-post [jsonMeta]="post.json_metadata"></app-image-post>
   <h1 class="post-type-link">

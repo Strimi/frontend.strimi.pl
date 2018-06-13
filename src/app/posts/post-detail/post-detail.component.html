@@ -19,7 +19,8 @@
         [showEdit]="showEdit"
         (postToEdit)="onEditPost($event)"
         [showDelete]="showDelete"
-        (postToDelete)="onDeletePost($event)"></app-post-detail-selector>
+        (postToDelete)="onDeletePost($event)"
+        [showDownVote]="showDownVote"></app-post-detail-selector>
     </div>
 
     <span #commentsRef></span>

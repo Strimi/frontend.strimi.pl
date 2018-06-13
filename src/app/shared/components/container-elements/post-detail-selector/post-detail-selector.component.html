@@ -5,6 +5,7 @@
     [postResult]="postResult"
     [showDelete]="showDelete"
     (postToDelete)="postToDelete.emit($event)"
+    [showDownVote]="showDownVote"
     *ngSwitchCase="'link'">...</app-post-link>
   <app-post-text
     (postToEdit)="postToEdit.emit($event)"
@@ -12,6 +13,7 @@
     [postResult]="postResult"
     [showDelete]="showDelete"
     (postToDelete)="postToDelete.emit($event)"
+    [showDownVote]="showDownVote"
     *ngSwitchCase="'text'">...</app-post-text>
   <app-post-image
     (postToEdit)="postToEdit.emit($event)"
@@ -19,6 +21,7 @@
     [postResult]="postResult"
     [showDelete]="showDelete"
     (postToDelete)="postToDelete.emit($event)"
+    [showDownVote]="showDownVote"
     *ngSwitchCase="'image'">...</app-post-image>
   <app-post-video
     (postToEdit)="postToEdit.emit($event)"
@@ -26,6 +29,7 @@
     [postResult]="postResult"
     [showDelete]="showDelete"
     (postToDelete)="postToDelete.emit($event)"
+    [showDownVote]="showDownVote"
     *ngSwitchCase="'video'">...</app-post-video>
   <app-post-external
     (postToEdit)="postToEdit.emit($event)"
@@ -33,5 +37,6 @@
     [postResult]="postResult"
     [showDelete]="showDelete"
     (postToDelete)="postToDelete.emit($event)"
+    [showDownVote]="showDownVote"
     *ngSwitchDefault></app-post-external>
 </div>

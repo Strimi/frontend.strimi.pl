@@ -20,6 +20,8 @@
                 (edit)="onEditPost()"
                 (delete)="onDeletePost()"
                 [showDelete]="canDelete()"
+                [showDownVote]="canReport()"
+                [post]="post"
               ></app-report-post>
             </div>
             <div *ngIf="!isEdit" class="stream-single-content-description description-markdown"
@@ -32,7 +34,7 @@
               [showCancel]="true"
               (isCancel)="onCancel()"
               (editedMessage)="onEditComment($event)"
-              [showSpinner]="showSpinnerUpdate"
+              [showSpinner]="showSpinnerUpdate"F
               [showError]="showError"></app-add-content-post>
 
             <div class="stream-single-content-meta">

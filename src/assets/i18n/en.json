@@ -258,6 +258,20 @@
       "vote": "Vote",
       "close": "Close"
     },
+    "report_modal": {
+      "name": "Reporting inappropriate content",
+      "text": "If you are convinced that it is:",
+      "lists": [
+        "Content breaking the Strimi rules",
+        "Advertising content, spam or deliberately misleading content",
+        "Content that is offensive, spreading hatred or depicting violence",
+        "Violation of my rights or my privacy",
+        "Sexually Explicit Content"
+      ],
+      "power": "Strength of report",
+      "report": "Report",
+      "error": "An unexpected error occurred during the report content, try again."
+    },
     "sidebar": {
       "voting_power": "Voting power",
       "voting_power_dollar": "Voting value",
