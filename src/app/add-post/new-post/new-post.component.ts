@@ -233,7 +233,7 @@ export class NewPostComponent implements OnInit {
 
   newLinkPost() {
     const linkPost = new NewPost();
-    linkPost.body = this.recognizedLink.description.substring(0, 179);
+    linkPost.body = ''; // this.recognizedLink.description.substring(0, 179);
     linkPost.title = this.recognizedLink.title;
     this.newPost = linkPost;
   }

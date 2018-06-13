@@ -258,6 +258,20 @@
       "vote": "Głosuj",
       "close": "Zamknij"
     },
+    "report_modal": {
+      "name": "Zgłoszenie nieodpowiedniej treści",
+      "text": "Jeśli jesteś przekonany, że jest to:",
+      "lists": [
+        "Treść łamiąca regulamin serwisu",
+        "Treść reklamowa, spam lub treść wprowadzająca celowo w błąd",
+        "Treść obraźliwa, szerząca nienawiść lub przedstawiająca przemoc",
+        "Naruszenie moich praw lub mojej prywatności",
+        "Treść o charakterze pornograficznym"
+      ],
+      "power": "Siła zgłoszenia",
+      "report": "Zgłoś",
+      "error": "Wystąpił nieoczekiwany błąd podczas zgłoszenia treści, spróbuj za chwilę jeszcze raz."
+    },
     "sidebar": {
       "voting_power": "Siła głosu",
       "voting_power_dollar": "Wartość głosu",
