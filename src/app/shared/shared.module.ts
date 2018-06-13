@@ -74,6 +74,7 @@ import {MarkdownPipe, RemoveHtmlPipe, SanitizePipe, SanitizeStylePipe, SanitizeU
 import { ConfirmDeleteComponent } from './components/user-elements/confirm-delete/confirm-delete.component';
 import { DeletingSpinnerModalComponent } from './components/user-elements/deleting-spinner-modal/deleting-spinner-modal.component';
 import { DeletingErrorModalComponent } from './components/user-elements/deleting-error-modal/deleting-error-modal.component';
+import { DownVoteComponent } from './components/user-elements/down-vote/down-vote.component';
 
 @NgModule({
   declarations: [
@@ -140,7 +141,8 @@ import { DeletingErrorModalComponent } from './components/user-elements/deleting
     SanitizeStylePipe,
     ConfirmDeleteComponent,
     DeletingSpinnerModalComponent,
-    DeletingErrorModalComponent
+    DeletingErrorModalComponent,
+    DownVoteComponent
   ],
   imports: [
     TranslateModule,
@@ -222,9 +224,10 @@ import { DeletingErrorModalComponent } from './components/user-elements/deleting
     SanitizeStylePipe,
     ConfirmDeleteComponent,
     DeletingSpinnerModalComponent,
-    DeletingErrorModalComponent
+    DeletingErrorModalComponent,
+    DownVoteComponent
   ],
-  entryComponents: [SettingModalComponent, ConfirmDeleteComponent, DeletingSpinnerModalComponent, DeletingErrorModalComponent]
+  entryComponents: [SettingModalComponent, ConfirmDeleteComponent, DeletingSpinnerModalComponent, DeletingErrorModalComponent, DownVoteComponent]
 })
 export class SharedModule {
 }

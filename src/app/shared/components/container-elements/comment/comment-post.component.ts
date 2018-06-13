@@ -4,9 +4,6 @@ import {postAfter7Days, PostResult} from '../../..';
 import {LoggedData} from '../../../models';
 import {AddContentService} from '../../../services/add-content/add-content.service';
 import {PostService} from '../../../services/post.service';
-import {DeletingSpinnerModalComponent} from '../../user-elements/deleting-spinner-modal/deleting-spinner-modal.component';
-import {DeletingErrorModalComponent} from '../../user-elements/deleting-error-modal/deleting-error-modal.component';
-import {ConfirmDeleteComponent} from '../../user-elements/confirm-delete/confirm-delete.component';
 
 /**
  * Shows single comment but by recursion
@@ -28,6 +25,7 @@ export class CommentPostComponent implements OnInit {
   text = null;
   showEdit = false;
   showDelete = false;
+  showDownVote = false;
   isEdited = false;
 
   @Input()
@@ -51,6 +49,8 @@ export class CommentPostComponent implements OnInit {
       && this.isLogged.loginData.login === this.comment.author
       && postAfter7Days(this.comment.created)
       && this.comment.children === 0 && this.comment.net_votes === 0;
+
+    this.showDownVote = this.isLogged && postAfter7Days(this.comment.created);
   }
 
   sendNewComment(commentPost) {

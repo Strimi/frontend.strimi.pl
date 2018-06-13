@@ -19,7 +19,9 @@
       [showEdit]="showEdit"
       (edit)="postToEdit.next(post)"
       [showDelete]="showDelete"
-      (delete)="postToDelete.next(post)"></app-report-post>
+      (delete)="postToDelete.next(post)"
+      [post]="post"
+      [showDownVote]="showDownVote"></app-report-post>
   </div>
   <h1 class="details-video" [innerHTML]="metaStrimi.title | sanitize" ></h1>
   <div class="description default">

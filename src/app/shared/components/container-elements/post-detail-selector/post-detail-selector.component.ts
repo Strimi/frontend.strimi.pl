@@ -15,7 +15,8 @@ export class PostDetailSelectorComponent {
   showEdit: boolean;
   @Input()
   showDelete: boolean;
-
+  @Input()
+  showDownVote: boolean;
   @Output()
   postToEdit = new EventEmitter<PostResult>();
 

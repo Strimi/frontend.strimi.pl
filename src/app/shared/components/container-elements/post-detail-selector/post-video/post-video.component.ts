@@ -28,6 +28,8 @@ export class PostVideoComponent {
   showEdit: boolean;
   @Input()
   showDelete: boolean;
+  @Input()
+  showDownVote: boolean;
   @Output()
   postToEdit = new EventEmitter<PostResult>();
   @Output()

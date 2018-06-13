@@ -1,6 +1,6 @@
-import { Input } from '@angular/core';
-import { LoggedData, PostResult } from '../index';
-import { AuthService } from '../services/auth/auth.service';
+import {Input} from '@angular/core';
+import {LoggedData, PostResult} from '../index';
+import {AuthService} from '../services/auth/auth.service';
 
 export class CommonVote {
 
@@ -49,10 +49,9 @@ export class CommonVote {
       } else {
         this.postResult.net_votes = value; // comments have net_votes
       }
-
       this.postResult.isVoted = true;
     } else if (error) {
       this.errorVote = true;
     }
-  }
+  };
 }
